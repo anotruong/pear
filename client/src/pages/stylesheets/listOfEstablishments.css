@@ -1,0 +1,201 @@
+h2 {
+  /* margin: 0rem 0rem .5rem 0rem; */
+  margin: 0rem;
+} 
+
+h3{
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+#list-container {
+  background: white;
+  width: 100%;
+  height: 100%;
+  /* background-color: #F0F0F0; */
+}
+
+#list-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 2rem 0rem 0rem 2rem;
+  /* align-content: flex-start; */
+}
+
+.catName-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: .1rem solid black;
+  min-width: 8rem;
+  white-space: nowrap;
+  padding: .5rem 5vw;
+  /* padding: .5rem 1.5rem; */
+  border-radius: 1rem;
+  margin: .5rem .5rem .5rem 0rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* width: 100%; */
+  height: 100%;
+}
+
+#searchBar-container {
+  height: 4vh;
+  width: 100%;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.searchBar-flex {
+  /* background-image: url(../../images/searchbarIcon.png); */
+  /* background-size: 2rem; */
+  background-size: 7vw;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-color: #F0F0F0;
+  /* color: #484848; */
+
+  /* width: 87%; */
+  /* background-color: #f0f0f0; */
+  border: .5rem solid #f0f0f0;
+  border-radius: 2rem;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 1rem;
+  margin-right: 2rem;
+  height: 100%;
+}
+
+/* Might keep the focus but unsure. Might change to underline feature rather than box. */
+/* input::focus,
+select::focus,
+textarea::focus,
+button::focus {
+  outline: none;
+} */
+
+input#searchBar {
+  width: 90%;
+  background-color: #f0f0f0;
+  font-size: 4vw;
+  border: 0rem;
+  /* height: 1.5rem; */
+  height: 100%;
+  font-weight: 100;
+  color: black;
+}
+
+#topRest-container,
+#filterBy-container,
+#activeInvite-container {
+  width: 100%;
+}
+
+#horizontalscroll-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+  height: fit-content;
+  width: 100%;
+  overflow: scroll;
+
+
+  /* overflow: scroll; */
+  width: -webkit-fill-available;
+  margin: 1rem 0rem;
+}
+
+.rest-container {
+  /* margin: .5rem; */
+  margin: .5rem 1rem .5rem 0rem;
+  width: fit-content;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.rest-container::-webkit-scrollbar {
+  display: hidden;
+}
+
+.tempRest-container {
+  background-repeat: none;
+  /* background-image: url('../../images/tempRestaurant.png'); */
+  background-size: 18rem;
+  border-radius: 1rem;
+  /* height: 9rem;
+  width: 9rem; */
+  /* width: 14vh;
+  height: 15vh; */
+  height: 24vw;
+  width: 24vw;
+  /* font-size: 17vw; */
+}
+
+.cat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
+  /* min-width: 6rem; */
+  border: .1rem black solid;
+  border-radius: 2rem;
+  /* padding: .5rem 1.5rem; */
+  margin: 0rem .5rem 0rem 0rem;
+
+  min-width: 25vw;
+  min-height: 3vh;
+  padding: .8vh 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-flex {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+}
+
+#invite-container {
+  height: 35vh;
+  width: 100%;
+  /* overflow: scroll; */
+}
+
+a#mapLink {
+  font-size: 4vw;
+  padding-left: 5vw;
+}
+
+#mapLink-container {
+  display: inline-flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  height: fit-content;
+  background-image: url(../../images/mapLinkIcon.png);
+  background-repeat: no-repeat;
+  background-position: left center; /* Adjusted for horizontal centering */
+  background-size: contain;
+
+  /* padding-left: 20px; Add some padding to the left of the text to create space for the image */
+}
+
+
+#verticalScroll {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  /* height: 35vh; */
+}
+

@@ -1,0 +1,87 @@
+#map-container {
+  /* width: 100%; */
+  height: 100%;
+  /* border: 10px rgb(79, 79, 79) dashed; */
+}
+
+#searchPage-container {
+  height: 100vh;
+  width: 100vw;
+  background: #FFCAC4;
+  /* border: 10px red solid; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* #invite-container {
+  background: white;
+  width: inherit;
+  height: fit-content;
+  overflow: scroll;
+  height: 50vh;
+} */
+
+/* #invite-flex {
+  z-index: 3;
+  width: inherit;
+  height: inherit;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+} */
+
+/* .inviteLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  overflow: hidden;
+  height: fit-content;
+} */
+
+/* .profile-container {
+  width: 80vw;
+  filter: drop-shadow(6px 8px 6px darkgrey);
+  padding: 5%;
+  background-color: #FFF1F1;
+  margin: 1rem 0rem 2rem 0rem;
+} */
+
+/* #availableNow-container {
+  width: 90%;
+  padding: 1rem 0rem;
+  overflow: scroll;
+} */
+
+/* #profile-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+} */
+
+/* #card-display {
+  height: 85%;
+  width: 100%;
+  max-width: 90vw;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+  border-radius: 2rem 2rem 0rem 0rem;
+  margin-top: 50%;
+
+  padding: 10% 6%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: flex-start;
+
+} */

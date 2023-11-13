@@ -1,0 +1,184 @@
+{
+  "accounts": [
+    {
+      "id": "001",
+      "username": "sharky21",
+      "password": "laksdjf22#@#",
+      "firstName": "yoona",
+      "lastName": "kim",
+      "alcohol": "non-drinker",
+      "diet": "none",
+      "personality": "talkative"
+    },
+    {
+      "id": "002",
+      "username": "velveetaVreeland",
+      "password": "alsdjkf12#",
+      "firstName": "vaungh",
+      "lastName": "vreeland",
+      "alcohol": "socially",
+      "diet": "gluten-free",
+      "personality": "soft-spoken"
+    },
+    {
+      "id": "003",
+      "username": "tatioca",
+      "password": "laksdjf123213",
+      "firstName": "tatiana",
+      "lastName": "hernadez",
+      "alcohol": "active",
+      "diet": "nut-allergy",
+      "personality": "energetic"
+    },
+    {
+      "id": "004",
+      "username": "sundae",
+      "password": "",
+      "firstName": "sunni",
+      "lastName": "moon",
+      "alcohol": "socially",
+      "diet": "dislike cilantro and pigs feet",
+      "personality": "chill"
+    },
+    {
+      "id": "005",
+      "username": "hiHyeon",
+      "password": "oweru21",
+      "firstName": "hye-yeon",
+      "lastName": "lee",
+      "alcohol": "non-drinker",
+      "diet": "none",
+      "personality": "talkative"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "012",
+      "name": "Hoe-hyeon Resturant",
+      "address": " 9-8 Toegye-ro 2-gil, Hoehyeon-dong, Jung-gu, Seoul, South Korea",
+      "hours": {
+        "monday": "5:30-9PM",
+        "tuesday": "11:30AM-3PM, 5:30-9PM",
+        "wednesday": "11:30AM-3PM, 5:30-9PM",
+        "thursday": "11:30AM-3PM, 5:30-9PM",
+        "friday": "11:30AM-3PM, 5:30-9PM",
+        "saturday": "11:30AM-3PM, 5:30-9PM",
+        "sunday": "CLOSED"
+      },
+      "lng": 37.557154304961195,
+      "lat": 126.97808246017657
+    },
+    {
+      "id": "123",
+      "name": "428 Resturant & Rooftop Bar",
+      "address": "1F, 428 Bongeunsa-ro, Gangnam-gu, Seoul, South Korea",
+      "hours": {
+        "monday": "11:30AM-2PM, 5:30-9PM",
+        "tuesday": "11:30AM-2PM, 5:30-9PM",
+        "wednesday": "11:30AM-2PM, 5:30-9PM",
+        "thursday": "11:30AM-2PM, 5:30-9PM",
+        "friday": "11:30AM-2PM, 5:30-9PM",
+        "saturday": "11:30AM-3PM, 6-11PM",
+        "sunday": "11:30AM-2PM, 5:30-8PM"
+      },
+      "lng": 37.51653244013048,
+      "lat": 127.0603959030974
+    },
+    {
+      "id": "029",
+      "name": "Hongdae Resturant",
+      "address": "South Korea, Seoul, Mapo-gu, Seogyo-dong, Hongik-ro 5an-gil, 32 준빌라",
+      "hours": {
+        "monday": "11:30AM-10PM",
+        "tuesday": "11:30AM-10PM",
+        "wednesday": "11:30AM-10PM",
+        "thursday": "11:30AM-10PM",
+        "friday": "11:30AM-10PM",
+        "saturday": "11:30AM-10PM",
+        "sunday": "11:30AM-10PM"
+      },
+      "lng": 37.57743986174412,
+      "lat": 126.85509700582057
+    },
+    {
+      "id": "098",
+      "name": "Yang Good",
+      "address": "South Korea, Seoul, Nonhyeon-ro 95-gil, 15 평화빌딩 1층 양국",
+      "hours": {
+        "monday": "4-11PM",
+        "tuesday": "4-11PM",
+        "wednesday": "4-11PM",
+        "thursday": "4-11PM",
+        "friday": "4-11PM",
+        "saturday": "4-9PM",
+        "sunday": "CLOSED"
+      },
+      "lng": 37.4959713684921, 
+      "lat": 127.03104971226949
+    },
+    {
+      "id": "493",
+      "name": "Royal Indian Resturant",
+      "address": "42 Dongil-ro 22-gil, Hwayang-dong, Gwangjin-gu, Seoul, South Korea",
+      "hours": {
+        "monday": "11AM-9:30PM",
+        "tuesday": "11AM-9:30PM",
+        "wednesday": "11AM-9:30PM",
+        "thursday": "11AM-9:30PM",
+        "friday": "11AM-9:30PM",
+        "saturday": "11AM-9:30PM",
+        "sunday": "11AM-9:30PM"
+      },
+      "lng": 37.572201877051036,
+      "lat": 127.11482046184396
+    },
+    {
+      "id": "789",
+      "name": "Brera Resturant",
+      "address": "295 Dongho-ro 17-gil, Sindang-dong, Jung-gu, Seoul, South Korea",
+      "hours": {
+        "monday": "11AM-11PM",
+        "tuesday": "11AM-11PM",
+        "wednesday": "11AM-11PM",
+        "thursday": "11AM-11PM",
+        "friday": "11AM-11PM",
+        "saturday": "11AM-11PM",
+        "sunday": "11AM-11PM"
+      },
+      "lng": 37.554784629600945,
+      "lat": 127.02852567500031
+    } 
+  ],
+  "openInvite": [
+    {
+      "userId": "002",
+      "restId": "789",
+      "time": "2-4pm",
+      "date": "thursday"
+    },
+    {
+      "userId": "003",
+      "restId": "493",
+      "time": "8-9Pm",
+      "date": "friday"
+    },
+    {
+      "userId": "004",
+      "restId": "012",
+      "time": "11am-12pm",
+      "date": "thursday"
+    },
+    {
+      "userId": "005",
+      "restId": "098",
+      "time": "6-7pm",
+      "date": "monday"
+    },
+    {
+      "userId": "001",
+      "restId": "029",
+      "time": "1-3pm",
+      "date": "tuesday"
+    }
+  ]
+}

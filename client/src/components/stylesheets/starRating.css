@@ -1,0 +1,17 @@
+img.star {
+  width: 10%;
+}
+
+#starRating-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 10rem;
+  height: 1rem;
+  margin: .5em 0rem;
+  align-items: center;
+}
+
+p#reviewNum {
+  font-weight: 700;
+}

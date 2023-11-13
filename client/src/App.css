@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,500&display=swap');
+
+.App {
+  text-align: center;
+  /* background: linear-gradient(); */
+  height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  /* size: 16px; */
+  font-size: 1.8vh;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+/* The font-size is altered to make it responsive. */
+
+h1 {
+  /* originally 30px; bold */
+  font-size: 8.5vw;
+  font-weight: bold;
+  background: -webkit-linear-gradient(180deg, #FF7A97, #FF8948);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: .5rem 0rem;
+}
+
+h2 {
+  /* originally 22px bold */
+  font-size: 7.5vw; 
+  font-weight: bold;
+  margin: .5rem 0rem;
+}
+
+h3 {
+  /* originally 16px bold */
+  font-size: 5.5vw;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 5vw;
+}
+
+p {
+  font-size: 4.5vw;
+  /* font-size: 3.7vw; */
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  /* border: transparent solid; */
+  /* border-radius: 1rem; */
+
+  /* padding: 0.5rem 1rem; */
+  /* position: relative; */
+  /* background-color: white;
+  background-clip: padding-box; */
+  /* border: 2px solid transparent; */
+  /* border-radius: 1.75rem; */
+  /* background-image: linear-gradient(
+    90deg,
+    #FF884A,
+    #FF7F98
+  );*/
+}
+
+a {
+  font-size: larger;
+  font-weight: bold;
+  background: linear-gradient(45deg, #FF884A, #FF7F98);
+  /* background-repeat: no-repeat; */
+  /* background-size: 4px 4px; */
+  /* background-position: 0 22px; */
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input {
+  size: 16px;
+  font-weight: bold;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  } 
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

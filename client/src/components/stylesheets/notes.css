@@ -1,0 +1,32 @@
+.notes-container {
+  background: white;
+  width: 100%;
+  height: fit-content;
+  max-height: 50%;
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.notes {
+  text-align-last: left;
+  padding-bottom: 2rem;
+  padding-left: 20px;
+  line-height: 2rem;
+  margin: 1rem 1.5rem;
+}
+
+ul{
+  list-style-type: none;
+  text-align-last: left;
+  padding-bottom: 2rem;
+  padding-left: 20px;
+  line-height: 3rem;
+  margin: 1px 0px;
+}
+
+ul li::before {
+  content: "\2022";
+  color: #FF8A76;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}

@@ -1,0 +1,219 @@
+#homePage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-content: center; */
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  background-color: #FFE0DD;
+}
+
+#homePage-flex {
+  padding: 2rem 2rem;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+}
+
+#greeting-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-content: center; */
+  width: 100%;
+}
+
+#smallLogo {
+  width: 9vw;
+}
+
+#upperNavi-container {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+div#upperNaviBtn-container {
+  width: 24vw;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#white-container {
+  background: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  filter: drop-shadow(6px 6px 6px lightgrey);
+}
+
+a#calLink {
+  font-size: 5vw;
+  display: inline-flex;
+}
+
+button.upperNavi-btn {
+  height: 8vw;
+  width: 8vw;
+  background-color: transparent;
+  background-size: contain;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 1vw;
+}
+
+img#smallCalIcon {
+  height: 5vw;
+  padding-right: 1vw;
+}
+
+/* button#notification-btn {
+  background-image: url(../../images/notificationOnIcon.png);
+}
+
+button#chat-btn {
+  background-image: url(../../images/chatOnIcon.png)
+} */
+
+
+/* Upcoming Event */
+
+img.littleIcon {
+  padding-right: .8rem;
+}
+
+img.miniProfileIcon {
+  /* background-size: 4rem 4rem; */
+  width: 80%;
+  /* height: 50%; */
+  border-radius: 2rem;
+}
+
+/* .miniProfile-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  filter: drop-shadow(3px 4px 3px lightgrey);
+  padding: 5%;
+  background-color: #FFFAFA;
+  margin: 1rem 0rem 2rem 0rem;
+} */
+
+/* .miniProfile-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+} */
+
+#request-btn {
+  font-size: 4.5vw;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+}
+
+#newTime-btn {
+  margin: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* color: transparent; */
+  font-weight: bolder;
+  font-size: 3.7vw;
+  line-height: 1.5rem;
+}
+
+button#pending {
+  margin-left: 1rem;
+}
+
+button#upcoming {
+  margin-right: 1rem;
+}
+
+#eventBtn-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 1rem 0rem;
+}
+
+button.eventBtn {
+  /* width: -moz-fit-content; */
+  /* width: fit-content; */
+  text-wrap: nowrap;
+  border: none;
+  border-bottom: .2rem solid transparent;
+  background: transparent;
+  border-image-slice: 1;
+  /* border-width: 5px; */
+  /* border-bottom: solid .2rem; */
+  border-image-source: none
+}
+
+/* button.eventBtn:hover { */
+  /* border: 10px solid; */
+  /* border-image-slice: 1; */
+  /* border-width: 5px; */
+  /* border-bottom: solid .2rem;
+  border-image-source: linear-gradient(
+    90deg,
+    #FF884A,
+    #FF7F98
+  ) ; */
+/* } */
+
+h4.eventBtnName {
+  margin: 1rem 0rem;
+}
+
+.profilePic {
+    /* background-size: 4rem 4rem; */
+    width: 75%;
+    /* height: 50%; */
+    border-radius: 2rem;
+}
+
+.infoText {
+  text-align: left;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  /* align-content: center; */
+  align-items: center;
+  margin: .8rem 0rem;
+}
+
+#meetUpSpot,
+#schduledTime {
+  padding-left: 1rem;
+}
+
+p#fullName {
+  font-size: 3.7vw;
+  text-transform: capitalize;
+  color: black;
+  font-weight: bold;
+  margin: 0rem;
+}
+
+/* Pending Event */
+
+.event-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  /* width: 80vw; */
+  filter: drop-shadow(3px 4px 3px lightgrey);
+  padding: 5%;
+  background-color: #FFFAFA;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.event-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+}

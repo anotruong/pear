@@ -1,0 +1,64 @@
+#padding {
+  /* width: 87vw; */
+  width: 100%;
+  margin: 0rem 2rem;
+}
+
+/* #padding > .searchBar-container {
+  margin: 0rem 2rem 0rem 0rem;
+} */
+
+.openInvite-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 83%;
+  /* width: 80vw; */
+  filter: drop-shadow(3px 4px 3px darkgrey);
+  padding: 5%;
+  /* background-color: #FFF1F1; */
+  margin: 1rem 2rem 2rem 0rem;
+  
+}
+
+.openInvite-container .icon-container {
+  width: 23%;
+  margin: 0rem 1.5rem 0rem 0rem;
+}
+
+.openInvite-container p.fullName {
+  font-size: 3.2vw;
+}
+
+.openInvite-container .profileIcon {
+  /* width: 80%; */
+  width: 14vw;
+  height: 14vw;
+  border-radius: 3rem;
+}
+
+.openInvite-container > .profile-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: -webkit-fill-available;
+}
+
+.info-container > p.date,
+.info-container > p.restName-container {
+  font-size: 3.5vw;
+  font-weight: bold;
+  margin: .5rem 0rem
+}
+
+.info-container > p.time {
+  font-weight: 400;
+  font-size: 3.5vw;
+  margin: .5rem 0rem
+}
+
+p.restName-container {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold;
+}
