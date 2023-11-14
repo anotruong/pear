@@ -1,5 +1,5 @@
 let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
-const apiKey = '' //Add your key here
+const apiKey = 'KRAvNPZoD6_9lLB6ajZEmG25SExG5IsGIVCXREs7Wtdz2SYJ3d3Vy0M6KaGS3CmBbH6kXm8gfeDAOW18O9f3y2Ql8b_73f7ucC3atH2QPmlrPTFgVw3oJ7LHyX9NZXYx' //Add your key here
 
 $.ajax({
     url: queryURL,
