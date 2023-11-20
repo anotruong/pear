@@ -1,0 +1,53 @@
+#chatIndex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-content: center; */
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+#chatHeader-flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+#chatHeader-flex > .btn-container {
+  width: fit-content;
+}
+
+#pink-container {
+  max-width: -webkit-fill-available;
+  width: 100%;
+  padding: 1rem 8vw;
+  background: linear-gradient(180deg, #FFC9C2, #FFE5DE);
+  border-radius: 0rem 0rem 2rem 2rem;
+}
+
+button#backBtn,
+button#expandBtn {
+  width: 37px;
+  height: 37px;
+  border: none;
+  /* background-size: 2rem; */
+  background: transparent;
+}
+
+button#backBtn {
+  background-repeat: no-repeat;
+  background-image: url('../../images/back-btn.png');
+}
+
+button#expandBtn {
+  font-weight: bolder;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAaCAYAAABByvnlAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJQSURBVHgB5ZqNTcMwEIUfLEBHuA3oBngDGCEjdAO6QbtB2YARUiYoTOBs0DJByVFHClF/crafBeWTHgLk9p57Z6e+BLiMa/Xcqm7lW+2DtuF/i1ZTlMWFuJvgo/Pkg6dZK0E5JsHT6ogn/fu1VZXqyeEwuf1I1eE1TCr8LIpL0g9IwEWLdcv0pNleGAIMtQjvkROBrTiGekZ+BIfqj/GjCZyxg/S1Qb7KFNhWxbnKzIVu0ZZVEVUoWtU5ktFPSupKEeRJRs6kCPIk42JSUrapU1ogjZwF0mnUVnECQd4C6eSGgRwhyMlgI6lIfrS6BXGsSJ48BrtJTQq0D+8dgyd6WsKOEP2o5l2gKTmQysFGRfajq8R6fVuSPXkNchsmz8bBxiO4aDKeYIPtSVpNNSH34PMAGw58LN0FTaCAj9OElGh7iGHsBPkPlsewFGKp1pBoQkpMXgxjS/hRxDC2lKe7W/xfdoaxpRLyfVFvwMcyecvYFCxxGpThs1RC3g1jdyiTlA/DWIv/FBpNyBv4WCavrMHHWiQN+Kz1hwP3wKOyfkupCniyXhfmZD++H6wmBqphRz+snB3VoVawMyH6UVX9YI4YyCGOGdGTIA5W+8SXChbTxOtTEzzNEY+uEk/w9HQq2LXfoEotECXX3cJRBSK43lu4L8hHrqTMxwTTqk7Zvpb4fQ85pNwlPOfJR/oZ/ZBDH4e//xiQemI3BitkfDTpBpeZhqD34feu+psgPViuUeYw1+FwuBAe86QHPj2IvqBcywPBT+dJjnh6C57OdiG+APQI4POERDlQAAAAAElFTkSuQmCC);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../images/expand-btn.png')
+}

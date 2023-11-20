@@ -44,24 +44,21 @@ h3{
   height: 100%;
 }
 
-#searchBar-container {
+/* moved to searchBar.css in component */
+/* #searchBar-container {
   height: 4vh;
   width: 100%;
   margin: 1rem 0rem 2rem 0rem;
-}
+} */
 
-.searchBar-flex {
-  /* background-image: url(../../images/searchbarIcon.png); */
-  /* background-size: 2rem; */
+/* .searchBar-flex {
+
   background-size: 7vw;
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: center;
   background-color: #F0F0F0;
-  /* color: #484848; */
 
-  /* width: 87%; */
-  /* background-color: #f0f0f0; */
   border: .5rem solid #f0f0f0;
   border-radius: 2rem;
   justify-content: flex-start;
@@ -70,7 +67,7 @@ h3{
   padding: 0rem 1rem;
   margin-right: 2rem;
   height: 100%;
-}
+} */
 
 /* Might keep the focus but unsure. Might change to underline feature rather than box. */
 /* input::focus,
@@ -80,16 +77,16 @@ button::focus {
   outline: none;
 } */
 
-input#searchBar {
+/* input#searchBar {
   width: 90%;
   background-color: #f0f0f0;
   font-size: 4vw;
   border: 0rem;
-  /* height: 1.5rem; */
+
   height: 100%;
   font-weight: 100;
   color: black;
-}
+} */
 
 #topRest-container,
 #filterBy-container,

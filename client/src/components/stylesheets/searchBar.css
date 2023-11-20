@@ -1,0 +1,38 @@
+#searchBar-container {
+  height: 4vh;
+  width: 100%;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.searchBar-flex {
+  /* background-image: url(../../images/searchbarIcon.png); */
+  /* background-size: 2rem; */
+  background-size: 7vw;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  /* background-color: #F0F0F0; */
+  /* color: #484848; */
+
+  /* width: 87%; */
+  /* background-color: #f0f0f0; */
+  border: .5rem solid #f0f0f0;
+  border-radius: 2rem;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 1rem;
+  /* margin-right: 2rem; */
+  height: 100%;
+}
+
+input#searchBar {
+  width: 90%;
+  /* background-color: #f0f0f0; */
+  font-size: 4vw;
+  border: 0rem;
+  /* height: 1.5rem; */
+  height: 100%;
+  font-weight: 100;
+  color: black;
+}

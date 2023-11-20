@@ -4,19 +4,15 @@ import React, {
 } from 'react';
 import tempRest from '../../images/tempRestaurant.png';
 import mockData from '../../mock-data.json';
+import SearchBar from '../../components/searchBar';
 
 import '../stylesheets/listOfEstablishments.css';
 import OpenInvite from '../../components/invites/openInvites';
 import mapLinkIcon from '../../images/mapLinkIcon.png';
-import miniSearchIconOff from '../../images/miniSearchIconOff.png';
-import miniSearchIconOn from '../../images/miniSearchIconOn.png';
-
 
 const ListOfEstablishments = ({prop}) => {
   const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
   const [ inviteHeight, setInviteHeight ] = useState("");
-  // check if inputState is empty. If it evaluates empty it changes the searchIcon image.
-  const [ inputState, setInputState ] = useState(""); 
   
   // hook for responsive display
   useEffect(() => {
@@ -70,27 +66,12 @@ const ListOfEstablishments = ({prop}) => {
   return(
     <div id='list-container'>
       <div id='list-flex'>
-              {/* Search bar for resturants */}
-        <div id='searchBar-container'>
-          <div 
-            className='searchBar-flex'
-            style={{backgroundImage: `url(${!inputState ? miniSearchIconOff : miniSearchIconOn})`}}
-          >
-            {/* <div id='searchBar' > */}
-              <input 
-                type='text' 
-                id='searchBar' 
-                placeholder='Search restaurants...'
-                onInput={() => {
-                  // console.log(document.getElementById('searchBar').value)
-                  let val = document.getElementById('searchBar').value;
-                  // evaluate 'val' to falsy here instead of using hook.
-                  !val ? setInputState(false) : setInputState(true);
-                }} 
-              />
-            </div>
-          </div>
-        {/* </div> */}
+      {/* Search bar for resturants */}
+        <SearchBar 
+          rightMargin={true} 
+          placeholder={'Search restaurants...'}
+          bgColor={'F0F0F0'}
+        />
         {/* Restaurants
             - Horizontal scroll of top restaurants by user*/}
         <div id='topRest-container'>

@@ -42,8 +42,8 @@ const HomePage = () => {
 
   return (
     <div id='homePage-container'>
-              <div id='white-container'>
-      <div id='homePage-flex'>
+      <div id='white-container'>
+        <div id='homePage-flex'>
 
           <div id='upperNavi-container'>
             {/* single pear logo, notification icon, chat icon  */}

@@ -9,6 +9,7 @@ import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/search/searchPage';
 import HomePage from './pages/homePage';
 import Calendar from 'react-calendar';
+import ChatIndex from './pages/chat/chatIndex';
 
 
 function App() {
@@ -41,9 +42,10 @@ function App() {
     }}>
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
-        {!calBtn ? <></> : <CalendarPage />}
+        {/* {!calBtn ? <></> : <CalendarPage />} */}
         {!searchBtn ? <></> : <SearchPage />}
-        {!homeBtn ? <></> : <HomePage />}
+        {/* {!homeBtn ? <></> : <HomePage />} */}
+        <ChatIndex />
       </div>
     </appContext.Provider>
   );

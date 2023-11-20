@@ -180,5 +180,23 @@
       "time": "1-3pm",
       "date": "tuesday"
     }
+  ],
+  "openConvo": [
+    {
+      "user": "001",
+      "lastMessage": "See you soon"
+    },
+    {
+      "user": "002",
+      "lastMessage": "See you soon"
+    },
+    {
+      "user": "003",
+      "lastMessage": "See you soon"
+    },
+    {
+      "user": "004",
+      "lastMessage": "See you soon"
+    }
   ]
 }

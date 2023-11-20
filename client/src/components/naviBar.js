@@ -32,7 +32,7 @@ const NaviBar = () => {
     height < 375px : 2vh
     height >  425px : 3vh
     height > 768px : 4vh
-  */
+    */
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -52,35 +52,6 @@ const NaviBar = () => {
     // console.log(windowWidth);
 
   }, [window.innerWidth]);
-
-  const btnStateHandler = (type) => {
-    /* 
-      word: home, search, add (event), cal, profile 
-    */
-    /*
-      START string
-      ITERATE through switch statement
-      EVALUATE if case equates to the string passeed through
-      TRANSFORM remaining state to off.
-
-    */
-
-    // switch (type) {
-    //   case 'home':
-        
-    //     break;
-    //   case 'search':
-    //     break;
-    //   case 'add':
-    //     break;
-    //   case 'cal':
-    //     break;
-    //   case 'profile':
-    //     break;
-    //   default:
-    //     console.log('404')
-    // }
-  };
 
   return(
     <div id='naviBar-container'>
