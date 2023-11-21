@@ -14,7 +14,7 @@ const SearchBar = ({ placeholder, ...otherProps}) => {
   const rightMargin = !otherProps.rightMargin ? '0rem' : '2rem';
   const bgColor = '#' + otherProps.bgColor;
 
-  console.log(otherProps)
+  // console.log(otherProps)
 
   return (
     <div id='searchBar-container'>

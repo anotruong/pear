@@ -2,7 +2,7 @@
   "accounts": [
     {
       "id": "001",
-      "username": "sharky21",
+      "userIdname": "sharky21",
       "password": "laksdjf22#@#",
       "firstName": "yoona",
       "lastName": "kim",
@@ -12,7 +12,7 @@
     },
     {
       "id": "002",
-      "username": "velveetaVreeland",
+      "userIdname": "velveetaVreeland",
       "password": "alsdjkf12#",
       "firstName": "vaungh",
       "lastName": "vreeland",
@@ -22,7 +22,7 @@
     },
     {
       "id": "003",
-      "username": "tatioca",
+      "userIdname": "tatioca",
       "password": "laksdjf123213",
       "firstName": "tatiana",
       "lastName": "hernadez",
@@ -32,7 +32,7 @@
     },
     {
       "id": "004",
-      "username": "sundae",
+      "userIdname": "sundae",
       "password": "",
       "firstName": "sunni",
       "lastName": "moon",
@@ -42,7 +42,7 @@
     },
     {
       "id": "005",
-      "username": "hiHyeon",
+      "userIdname": "hiHyeon",
       "password": "oweru21",
       "firstName": "hye-yeon",
       "lastName": "lee",
@@ -151,31 +151,31 @@
   ],
   "openInvite": [
     {
-      "userId": "002",
+      "userIdId": "002",
       "restId": "789",
       "time": "2-4pm",
       "date": "thursday"
     },
     {
-      "userId": "003",
+      "userIdId": "003",
       "restId": "493",
       "time": "8-9Pm",
       "date": "friday"
     },
     {
-      "userId": "004",
+      "userIdId": "004",
       "restId": "012",
       "time": "11am-12pm",
       "date": "thursday"
     },
     {
-      "userId": "005",
+      "userIdId": "005",
       "restId": "098",
       "time": "6-7pm",
       "date": "monday"
     },
     {
-      "userId": "001",
+      "userIdId": "001",
       "restId": "029",
       "time": "1-3pm",
       "date": "tuesday"
@@ -183,19 +183,19 @@
   ],
   "openConvo": [
     {
-      "user": "001",
+      "userId": "001",
       "lastMessage": "See you soon"
     },
     {
-      "user": "002",
+      "userId": "002",
       "lastMessage": "See you soon"
     },
     {
-      "user": "003",
+      "userId": "003",
       "lastMessage": "See you soon"
     },
     {
-      "user": "004",
+      "userId": "004",
       "lastMessage": "See you soon"
     }
   ]
