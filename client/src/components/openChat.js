@@ -9,7 +9,7 @@ const OpenChat = ({...props}) => {
 
   // console.log(props.value);
   const openConvo = props.value;
-  console.log(openConvo.lastMessage)
+  // console.log(openConvo.lastMessage)
 
   const lastMsg = openConvo.lastMessage;
 
@@ -19,8 +19,7 @@ const OpenChat = ({...props}) => {
 
   const fullName = `${account.firstName} ${account.lastName.substring(0,1)}.`;
 
-  console.log(fullName)
-
+  // console.log(fullName)
 
   return(
     <div className='openChat-container'>
