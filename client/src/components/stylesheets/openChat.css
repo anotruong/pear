@@ -1,0 +1,71 @@
+.openChat-container {
+  /* background: lightblue; */
+  width: 100%;
+  /* height: 12%; */
+  display: flex;
+  justify-content: center;
+}
+
+.openChat-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  /* background: LAVENDER; */
+  border-bottom: darkgray .1rem solid;
+  justify-content: space-around;
+  max-width: -webkit-fill-available;
+  /* padding: 0vh 3vh; */
+  margin: 0vh 8vw;
+  padding: .5rem 0rem;
+}
+
+.openChat-flex img.profileIcon {
+  width: 65%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);}
+
+.preview-container {
+  height: 100%;
+  width: 78%;
+  padding: .5rem 0rem;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.horizontal-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.horizontal-flex p.fullName {
+  font-size: 4.3vw;
+  font-weight: bolder;
+  /* color: black; */
+}
+
+p.lastSent {
+  font-size: 3.3vw;
+  font-weight: bold;
+  /* color: grey; */
+}
+
+.preview-container p {
+  margin: .2rem;
+}
+
+p.previewMsg {
+  display: inline-flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-weight: 400;
+  font-size: 4.2vw;
+
+  white-space: nowrap;
+  overflow: hidden;
+}

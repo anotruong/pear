@@ -1,9 +1,10 @@
 import React from 'react';
 import mockData from '../../mock-data.json';
+import OpenChat from '../../components/openChat';
 import NaviBar from '../../components/naviBar';
 import SearchBar from '../../components/searchBar';
 
-import tempPic from '../../images/tempPP.png';
+// import tempPic from '../../images/tempPP.png';
 
 import './chat.css'
 
@@ -33,24 +34,30 @@ import './chat.css'
 
 const ChatIndex = () => {
 
-  console.log(mockData.openConvo[0])
-  console.log(mockData.accounts)
+  console.log(mockData.openConvo)
+  // console.log(mockData.accounts)
 
   /*
   To find firstname, use value of 'mockData.openConvo.userId' and iterate through 'mockData.accounts' and evaluate the 'userId' to 'id'.
   return the values of the 'firstName' and 'lastName'
 
   */
-  const userId = mockData.openConvo[0].userId;
-  console.log(`userId is ${userId}`)
 
-  const account = mockData.accounts.filter(acc => acc.id === userId)[0];
+  /* Invoke function to return "chatHistory"
+    START pass mockData.openConvo object and full
+    TRANFORM ele in array with return value of 'chathistory'
 
-  const fullName = `${account.firstName} ${account.lastName.substring(0,1)}.`;
+  */
+  // const userId = mockData.openConvo[0].userId;
+  // console.log(`userId is ${userId}`)
 
-  console.log(fullName)
+  // const account = mockData.accounts.filter(acc => acc.id === userId)[0];
 
-  // console.log(account[0].firstName)
+  // const fullName = `${account.firstName} ${account.lastName.substring(0,1)}.`;
+
+  // console.log(fullName);
+
+  const listOfOpenConvo = mockData.openConvo.map(ele => <OpenChat value={ele} />)
 
   return(
     <div id='chatIndex-container' >
@@ -76,27 +83,10 @@ const ChatIndex = () => {
         />
       </div>
       {/* chat history container */}
-      <div className='chatHistory-container'>
-        <div className='chatHistory-flex'>
-          {/* Iterate through mockData.json to display chat history */}
-          {/* <div className='profileInfo' >
-            <img src={tempPic} />
-          </div> */}
-          <div className='icon-container'>
-            <img 
-              src={tempPic}      
-              className='profileIcon' 
-            />
-
-          </div>
-          <div className='preview-container' >
-            <div className='horizontal-flex'>
-              <p className='fullName'>{fullName}</p>
-              <p className='lastSent'>1hr</p>
-            </div>
-            <p className='previewMsg'>this is crazy</p>
-          </div>
-        </div>
+      <div className='chatList-container'>
+        {/* <div className='chatList-flex'> */}
+        {listOfOpenConvo}
+        {/* </div> */}
       </div>
 
       {/* navi bar */}
