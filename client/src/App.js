@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { appContext } from './hook/appContext';
 import LoginPage from './pages/loginPage';
 
-import './App.css';
 import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/search/searchPage';
 import HomePage from './pages/homePage';
 import Calendar from 'react-calendar';
-import ChatIndex from './pages/chat/chatIndex';
+import ChatIndex from './pages/chat/index';
 
+import './App.css';
 
 function App() {
   const [ homeBtn, setHomeBtn ] = useState(true);
@@ -27,7 +27,6 @@ function App() {
   // HomePage hooks
   const [ upcomingState, setUpcomingState ] = useState(true);
   const [ pendingState, setPendingState ] = useState(false);
-  
 
   return (
     <appContext.Provider value={{

@@ -32,7 +32,7 @@ import './chat.css'
   ALGO:
 */
 
-const ChatIndex = () => {
+const ChatList = () => {
 
   console.log(mockData.openConvo)
   // console.log(mockData.accounts)
@@ -95,5 +95,4 @@ const ChatIndex = () => {
   )
 };
 
-export default ChatIndex;
-
+export default ChatList;

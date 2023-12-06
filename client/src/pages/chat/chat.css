@@ -1,3 +1,9 @@
+.chatRoom-flex {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
 #chatIndex-container {
   display: flex;
   flex-direction: column;
@@ -22,6 +28,7 @@
 }
 
 #pink-container {
+  flex: 0 1 auto;
   max-width: -webkit-fill-available;
   width: 100%;
   padding: 1rem 8vw;
@@ -30,7 +37,8 @@
 }
 
 button#backBtn,
-button#expandBtn {
+button#expandBtn,
+button#phoneBtn {
   width: 37px;
   height: 37px;
   border: none;
@@ -50,6 +58,13 @@ button#expandBtn {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('../../images/expand-btn.png')
+}
+
+button#phoneBtn {
+  background-image: url('../../images/phone.png');
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .chatList-container {
@@ -127,3 +142,13 @@ button#expandBtn {
   font-weight: 400;
   font-size: 4.2vw;
 } */
+
+#message-container {
+  border: 1px dashed red;
+  flex: 1 1 auto;
+}
+
+#textbox-container {
+  border: 3px solid blue;
+  flex: 0 1;
+}
