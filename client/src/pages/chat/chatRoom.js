@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+} from 'react';
 import PhoneImg from'../../images/phone.png';
 import tempPic from '../../images/tempPP.png';
 import './chat.css';
@@ -22,7 +24,7 @@ const ChatRoom = ({acc}) => {
         - account holder
           - gradient background
           - black font
-        -time
+        -date
           - for dates, displays previous dates, 'yesterday' and 'today'.
           - for time
             
@@ -43,16 +45,42 @@ const ChatRoom = ({acc}) => {
     PROBLEM:
       How to process conversation history?
 
+    EXAMPLE:
+      - moved to mockData.json
+
     EXPLICIT:
 
     IMPLICIT:
       - The conversation should be saved into two objects.
       - each object should have a sub-object
         - In the subobject should be
+      -Each conversation between two users should be given a unique id
+      -the date should be generated using 'new Date()'
+        -'new Date()' returns an object
+          -has not decided if I want the date be object or stringifyed. 
 
     ALGO:
 
   */
+  
+  // For expanding and shrinking textarea.textbox
+
+  const [ rowHeight, setRowHeight ] = useState(1);
+  const cos = Array.from({ length: 4 }, (_, index) => (index + 1) * 24);
+  const txtHeightHandler = (length) => {
+    if (length > cos[0] && length < cos[1]+ 1 ) {
+      setRowHeight(2)
+    } else if (length > cos[1] && length < cos[2] + 1) {
+      setRowHeight(3)
+    } else if (length > cos[2] && length < cos[3] + 1) {
+      setRowHeight(4)
+    } else if (length > cos[3]) {
+      setRowHeight(4)
+    } else {
+      setRowHeight(1)
+    }
+  }
+
   return(
     <div className='chatRoom-container'>
       <div className='chatRoom-flex'>
@@ -68,10 +96,58 @@ const ChatRoom = ({acc}) => {
           </div>
         </div>
         <div id='message-container'>
-          <h1>message box should be here</h1>
+          <div className='response-container'>
+            <img src={tempPic} className='icon-container'/>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                I'm not allergic to anything, are you?
+              </div>
+            </div>
+          </div>
+          <div className='sender-container'>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                I'm unfortunately only allergic to peanuts and wine. BUT, not whine~
+              </div>
+            </div>
+          </div>
+          <div className='response-container'>
+            <img src={tempPic} className='icon-container'/>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                haha, I mean that's what wine is for
+              </div>
+              <div className='chatBubble'>
+                Seee u soooon
+              </div>
+            </div>
+          </div>
+          <div className='sender-container'>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                See ya
+              </div>
+            </div>
+          </div>
         </div>
         <div id='textbox-container'>
-          <h3>the text box goes here</h3>
+          <div className='textbox-flex'>
+            <textarea 
+              id='textbox'
+              className='textbox' 
+              type='textbox'
+              placeholder='Type message...'
+              rows={rowHeight}
+              onInput={()=> {
+                let val = document.getElementById('textbox').value;
+                // console.log(typeof val)
+                txtHeightHandler(val.length)
+              }}
+            /> 
+            <button id='attach-btn' className='textbox-btn'>att</button>
+            <button id='mic-btn' className='textbox-btn'>mic</button>
+          </div>
+          {/* <button>send</button> */}
         </div>
       </div>
       

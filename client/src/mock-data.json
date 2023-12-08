@@ -198,5 +198,47 @@
       "userId": "004",
       "lastMessage": "Chipotle is alright"
     }
-  ]
+  ],
+  "convo": {
+    "convoId": [
+      {
+        "userId": "001",
+        "messages": [
+          { 
+            "date": "2023-12-07T19:04:26.231Z", 
+            "msg": "i'm free today"
+          },
+          { 
+            "date": "2023-12-07T19:05:05.912Z", 
+            "msg": "no i'm not allergic"
+          },
+          { 
+            "date": "2023-12-07T19:05:24.655Z", 
+            "msg": "great, see you tomorrow"
+          }
+        ]
+      },
+      {
+        "userId": "004",
+        "messages": [
+          {
+            "date": "2023-12-07T19:04:26.231Z",
+            "message": "Great, any allergies"
+          },
+          {
+            "date": "2023-12-07T19:05:10.128Z",
+            "message": "Me either"
+          },
+          {
+            "date": "2023-12-07T19:05:14.128Z",
+            "message": "I love eating everything"
+          },
+          {
+            "date": "2023-12-07T19:06:04.655Z",
+            "message": "see you tomorrow"
+          }
+        ]
+      }
+    ]
+  }
 }
