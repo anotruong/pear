@@ -1,3 +1,7 @@
+h4#chats {
+  margin: 1rem;
+}
+
 .chatRoom-flex {
   display: flex;
   flex-flow: column;
@@ -34,6 +38,36 @@
   padding: 1rem 8vw;
   background: linear-gradient(180deg, #FFC9C2, #FFE5DE);
   border-radius: 0rem 0rem 2rem 2rem;
+}
+
+.userIcon-container {
+  display: inline-block;
+  position: relative;
+}
+
+img#userIcon {
+  /* height: 5rem; */
+  /* border-radius: 3rem; */
+  display: block;
+  width: 5rem; /*Set your desired width*/
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* To make the image circular */
+
+  /* Add a blurred border */
+  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); Adjust the blur and color as needed */
+}
+
+#userIcon::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Adjust to fit your desired border width */
+  left: -10px; /* Adjust to fit your desired border width */
+  right: -10px; /* Adjust to fit your desired border width */
+  bottom: -10px; /* Adjust to fit your desired border width */
+  z-index: -1;
+  border-radius: 50%; /* To match the image border-radius */
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)); /* Adjust the gradient colors and positions */
+  filter: blur(10px); /* Adjust the blur radius */
 }
 
 button#backBtn,
@@ -228,6 +262,10 @@ textarea.textbox {
   border: none;
   font-size: 4vw;
   padding: .5rem;
+  font-family: 'Raleway', sans-serif;
+  overflow: auto;
+  min-height: 4vw; /* Minimum height (1 line at '4vw' font size) */
+  margin: 1rem 0rem 1rem 1rem;
 }
 
 textarea.textbox:focus {
@@ -237,4 +275,21 @@ textarea.textbox:focus {
 
 .textbox-btn {
   width: 10%;
+}
+
+button#camera-btn {
+  background-image: url('../../images/camera-btn.png');
+}
+
+button#mic-btn {
+  background-image: url('../../images/mic-btn.png');
+}
+
+button.textbox-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  height: 7vw;
+  margin: .25rem .5rem;
 }

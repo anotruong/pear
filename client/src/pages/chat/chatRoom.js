@@ -1,5 +1,7 @@
 import React, {
-  useState
+  useEffect,
+  useState,
+  useRef
 } from 'react';
 import PhoneImg from'../../images/phone.png';
 import tempPic from '../../images/tempPP.png';
@@ -65,21 +67,70 @@ const ChatRoom = ({acc}) => {
   
   // For expanding and shrinking textarea.textbox
 
-  const [ rowHeight, setRowHeight ] = useState(1);
-  const cos = Array.from({ length: 4 }, (_, index) => (index + 1) * 24);
-  const txtHeightHandler = (length) => {
-    if (length > cos[0] && length < cos[1]+ 1 ) {
-      setRowHeight(2)
-    } else if (length > cos[1] && length < cos[2] + 1) {
-      setRowHeight(3)
-    } else if (length > cos[2] && length < cos[3] + 1) {
-      setRowHeight(4)
-    } else if (length > cos[3]) {
-      setRowHeight(4)
-    } else {
-      setRowHeight(1)
+  // const [ rowHeight, setRowHeight ] = useState(1);
+  // const cos = Array.from({ length: 4 }, (_, index) => (index + 1) * 24);
+  // const txtHeightHandler = (length) => {
+  //   if (length > cos[0] && length < cos[1]+ 1 ) {
+  //     setRowHeight(2)
+  //   } else if (length > cos[1] && length < cos[2] + 1) {
+  //     setRowHeight(3)
+  //   } else if (length > cos[2] && length < cos[3] + 1) {
+  //     setRowHeight(4)
+  //   } else if (length > cos[3]) {
+  //     setRowHeight(4)
+  //   } else {
+  //     setRowHeight(1)
+  //   }
+  // }
+  const [textareaValue, setTextareaValue] = useState('');
+  const textareaRef = useRef(null);
+
+  const handleTextareaChange = (event) => {
+    setTextareaValue(event.target.value);
+  };
+
+  const calculateTextareaHeight = () => {
+    if (textareaRef.current) {
+      const fontSize = 4 * window.innerWidth / 100; // Convert '4vw' to pixels
+      const lineHeight = fontSize * 1.2; // Adjust this multiplier for better fitting
+      const maxLines = 4; // Maximum number of lines
+      const minLines = 1; // Minimum number of lines
+      const maxCharactersPerLine = 25; // Maximum characters per line
+
+      // Calculate the maximum height based on the maximum number of lines
+      const maxHeight = lineHeight * maxLines;
+      const minHeight = lineHeight * minLines;
+
+      // Calculate the number of lines based on line breaks
+      const linesFromBreaks = Math.max(textareaValue.split('\n').length, minLines);
+
+      // Calculate the number of lines based on characters
+      const linesFromCharacters = Math.ceil(textareaValue.length / maxCharactersPerLine);
+
+      // Calculate the new height based on both line breaks and character limits
+      const lines = Math.min(Math.max(linesFromBreaks, linesFromCharacters), maxLines);
+
+      // Calculate the new height based on the number of lines
+      let newHeight = lines * lineHeight;
+
+      // Limit height within the minimum and maximum values
+      newHeight = Math.min(Math.max(newHeight, minHeight), maxHeight);
+
+      // Allow scrolling if exceeding the maximum height
+      const overflow = lines > maxLines ? 'auto' : 'hidden';
+
+      return { height: `${newHeight}px`, overflow };
     }
-  }
+    return { height: 'auto', overflow: 'hidden' }; // Default height if ref is not available yet
+  };
+
+  useEffect(() => {
+    // Update the textarea's height when the textarea value changes
+    if (textareaRef.current) {
+      textareaRef.current.style.height = calculateTextareaHeight().height;
+    }
+  }, [textareaValue]);
+
 
   return(
     <div className='chatRoom-container'>
@@ -89,9 +140,17 @@ const ChatRoom = ({acc}) => {
             <div className='btn-container'>
               <button id='backBtn' />
             </div>
-            <h4>Chats</h4>
+            <h4 id='chats'>Yoona K.</h4>
             <div className='btn-container'>
               <button id='phoneBtn' />
+            </div>
+          </div>
+          <div className='userIcon-flex'>
+            <div className='userIcon-container'>
+              <img src={tempPic} id='userIcon'/>
+            </div>
+            <div className='activity-container'>
+              Active 20m ago
             </div>
           </div>
         </div>
@@ -137,15 +196,19 @@ const ChatRoom = ({acc}) => {
               className='textbox' 
               type='textbox'
               placeholder='Type message...'
-              rows={rowHeight}
-              onInput={()=> {
-                let val = document.getElementById('textbox').value;
-                // console.log(typeof val)
-                txtHeightHandler(val.length)
-              }}
+              // rows={rowHeight}
+              // onInput={()=> {
+              //   let val = document.getElementById('textbox').value;
+              //   // console.log(typeof val)
+              //   // txtHeightHandler(val.length)
+              // }}
+              ref={textareaRef}
+              value={textareaValue}
+              onChange={handleTextareaChange}
+              style={calculateTextareaHeight()}
             /> 
-            <button id='attach-btn' className='textbox-btn'>att</button>
-            <button id='mic-btn' className='textbox-btn'>mic</button>
+            <button id='mic-btn' className='textbox-btn' />
+            <button id='camera-btn' className='textbox-btn' />
           </div>
           {/* <button>send</button> */}
         </div>
