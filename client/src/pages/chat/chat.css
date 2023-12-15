@@ -1,5 +1,5 @@
 h4#chats {
-  margin: 1rem;
+  margin: 1rem 1rem .5rem 1rem;
 }
 
 .chatRoom-flex {
@@ -43,31 +43,23 @@ h4#chats {
 .userIcon-container {
   display: inline-block;
   position: relative;
+  /* background-image: url('../../images/tempPP.png');
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  filter: blur(1rem); */
+  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);  */
+  /* z-index: -1; */
+  margin: .5rem;
 }
 
 img#userIcon {
-  /* height: 5rem; */
-  /* border-radius: 3rem; */
   display: block;
-  width: 5rem; /*Set your desired width*/
+  width: 4rem; /* Set your desired width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%; /* To make the image circular */
-
-  /* Add a blurred border */
-  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5); Adjust the blur and color as needed */
-}
-
-#userIcon::before {
-  content: '';
-  position: absolute;
-  top: -10px; /* Adjust to fit your desired border width */
-  left: -10px; /* Adjust to fit your desired border width */
-  right: -10px; /* Adjust to fit your desired border width */
-  bottom: -10px; /* Adjust to fit your desired border width */
-  z-index: -1;
-  border-radius: 50%; /* To match the image border-radius */
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)); /* Adjust the gradient colors and positions */
-  filter: blur(10px); /* Adjust the blur radius */
+  position: relative;
+  box-shadow: 0 0 .2rem .2rem rgba(255, 137, 72, .5)
 }
 
 button#backBtn,
@@ -87,7 +79,7 @@ button#backBtn {
 
 button#expandBtn {
   font-weight: bolder;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAaCAYAAABByvnlAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJQSURBVHgB5ZqNTcMwEIUfLEBHuA3oBngDGCEjdAO6QbtB2YARUiYoTOBs0DJByVFHClF/crafBeWTHgLk9p57Z6e+BLiMa/Xcqm7lW+2DtuF/i1ZTlMWFuJvgo/Pkg6dZK0E5JsHT6ogn/fu1VZXqyeEwuf1I1eE1TCr8LIpL0g9IwEWLdcv0pNleGAIMtQjvkROBrTiGekZ+BIfqj/GjCZyxg/S1Qb7KFNhWxbnKzIVu0ZZVEVUoWtU5ktFPSupKEeRJRs6kCPIk42JSUrapU1ogjZwF0mnUVnECQd4C6eSGgRwhyMlgI6lIfrS6BXGsSJ48BrtJTQq0D+8dgyd6WsKOEP2o5l2gKTmQysFGRfajq8R6fVuSPXkNchsmz8bBxiO4aDKeYIPtSVpNNSH34PMAGw58LN0FTaCAj9OElGh7iGHsBPkPlsewFGKp1pBoQkpMXgxjS/hRxDC2lKe7W/xfdoaxpRLyfVFvwMcyecvYFCxxGpThs1RC3g1jdyiTlA/DWIv/FBpNyBv4WCavrMHHWiQN+Kz1hwP3wKOyfkupCniyXhfmZD++H6wmBqphRz+snB3VoVawMyH6UVX9YI4YyCGOGdGTIA5W+8SXChbTxOtTEzzNEY+uEk/w9HQq2LXfoEotECXX3cJRBSK43lu4L8hHrqTMxwTTqk7Zvpb4fQ85pNwlPOfJR/oZ/ZBDH4e//xiQemI3BitkfDTpBpeZhqD34feu+psgPViuUeYw1+FwuBAe86QHPj2IvqBcywPBT+dJjnh6C57OdiG+APQI4POERDlQAAAAAElFTkSuQmCC);
+  background-image: url('../../images/expand-btn.png');
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;

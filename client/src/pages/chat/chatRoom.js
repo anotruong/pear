@@ -5,6 +5,8 @@ import React, {
 } from 'react';
 import PhoneImg from'../../images/phone.png';
 import tempPic from '../../images/tempPP.png';
+import SentMessages from '../../components/sentMessages';
+
 import './chat.css';
 
 const ChatRoom = ({acc}) => {
@@ -147,48 +149,15 @@ const ChatRoom = ({acc}) => {
           </div>
           <div className='userIcon-flex'>
             <div className='userIcon-container'>
-              <img src={tempPic} id='userIcon'/>
+              <img src={tempPic} id='userIcon' alt='userIcon'/>
             </div>
             <div className='activity-container'>
               Active 20m ago
             </div>
           </div>
         </div>
-        <div id='message-container'>
-          <div className='response-container'>
-            <img src={tempPic} className='icon-container'/>
-            <div className='chatBubble-container'>
-              <div className='chatBubble'>
-                I'm not allergic to anything, are you?
-              </div>
-            </div>
-          </div>
-          <div className='sender-container'>
-            <div className='chatBubble-container'>
-              <div className='chatBubble'>
-                I'm unfortunately only allergic to peanuts and wine. BUT, not whine~
-              </div>
-            </div>
-          </div>
-          <div className='response-container'>
-            <img src={tempPic} className='icon-container'/>
-            <div className='chatBubble-container'>
-              <div className='chatBubble'>
-                haha, I mean that's what wine is for
-              </div>
-              <div className='chatBubble'>
-                Seee u soooon
-              </div>
-            </div>
-          </div>
-          <div className='sender-container'>
-            <div className='chatBubble-container'>
-              <div className='chatBubble'>
-                See ya
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* import component */}
+        <SentMessages />
         <div id='textbox-container'>
           <div className='textbox-flex'>
             <textarea 
@@ -196,12 +165,6 @@ const ChatRoom = ({acc}) => {
               className='textbox' 
               type='textbox'
               placeholder='Type message...'
-              // rows={rowHeight}
-              // onInput={()=> {
-              //   let val = document.getElementById('textbox').value;
-              //   // console.log(typeof val)
-              //   // txtHeightHandler(val.length)
-              // }}
               ref={textareaRef}
               value={textareaValue}
               onChange={handleTextareaChange}
