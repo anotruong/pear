@@ -12,6 +12,7 @@ const OpenChat = ({...props}) => {
   // console.log(openConvo.lastMessage)
 
   const lastMsg = openConvo.lastMessage;
+  const userId = openConvo.userId;
 
   const account = mockData.accounts.filter(acc => acc.id === openConvo.userId)[0];
 
@@ -35,7 +36,11 @@ const OpenChat = ({...props}) => {
           />
 
         </div>
-        <div className='preview-container' >
+        <div 
+          className='preview-container' 
+          id={userId} 
+          
+        >
           <div className='horizontal-flex'>
             <p className='fullName'>{fullName}</p>
             <p className='lastSent'>1hr</p>
