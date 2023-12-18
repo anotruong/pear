@@ -223,19 +223,19 @@
         "messages": [
           {
             "date": "2023-12-07T19:04:26.231Z",
-            "message": "Great, any allergies"
+            "msg": "Great, any allergies"
           },
           {
             "date": "2023-12-07T19:05:10.128Z",
-            "message": "Me either"
+            "msg": "Me either"
           },
           {
             "date": "2023-12-07T19:05:14.128Z",
-            "message": "I love eating everything"
+            "msg": "I love eating everything"
           },
           {
             "date": "2023-12-07T19:06:04.655Z",
-            "message": "see you tomorrow"
+            "msg": "see you tomorrow"
           }
         ]
       }
@@ -248,7 +248,7 @@
       },
       {
         "date": "2023-12-07T19:04:26.231Z",
-        "message": "Great, any allergies",
+        "msg": "Great, any allergies",
         "userId": "004"
       },
       { 
@@ -258,12 +258,12 @@
       },
       {
         "date": "2023-12-07T19:05:10.128Z",
-        "message": "Me either",
+        "msg": "Me either",
         "userId": "004"
       },
       {
         "date": "2023-12-07T19:05:14.128Z",
-        "message": "I love eating everything",
+        "msg": "I love eating everything",
         "userId": "004"
       },
       { 
@@ -273,8 +273,13 @@
       },
       {
         "date": "2023-12-07T19:06:04.655Z",
-        "message": "see you tomorrow",
+        "msg": "see you tomorrow",
         "userId": "004"
+      },
+      { 
+        "date": "2023-12-07T19:05:24.655Z", 
+        "msg": "The greatest thing about this is that even if the conversation is poor, the food will be super delicious. So don't be freaked out if you never meet up with randos before.",
+        "userId": "001"
       }
     ]
   }

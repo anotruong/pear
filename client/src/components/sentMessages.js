@@ -34,19 +34,34 @@ const SentMessages = () => {
   // tempID from mockData
   const convoId = 'alksdf';
 
-  const userId = '001'
+  const accId = '001'
+  const inviteeId = '004' //Need to figure out how to retrieve this information
   const convo = mockData.convo;
-  const displayConvo = convo[convoId].map(subObj => {
-    if (userId !== subObj.userId) {
-      return (
-      <div className='response-container'>
-        <img src={tempPic} className='icon-container'/>
-        <div className='chatBubble-container'>
-          <div className='chatBubble'>
-            subObj.msg
-          </div>
-        </div>
-      </div> )
+  const displayConvo = convo[convoId].map((subObj, idx) => {
+    // console.log(convo[convoId][idx].userId)
+    if (accId !== subObj.userId) {
+      if (accId !== convo[convoId][idx-1].userId) {
+        return (
+          <div className='response-container'>
+            <img src='blank'  className='icon-container'/>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                {subObj.msg}
+              </div>
+            </div>
+          </div> )
+      } else {
+        return (
+          <div className='response-container'>
+            <img src={tempPic} className='icon-container'/>
+            <div className='chatBubble-container'>
+              <div className='chatBubble'>
+                {subObj.msg}
+              </div>
+            </div>
+          </div> )
+      }
+
     } else {
       return (
       <div className='sender-container'>
