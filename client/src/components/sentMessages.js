@@ -1,6 +1,6 @@
 import React from 'react';
 import tempPic from '../images/tempPP.png';
-
+import blankPic from '../images/blankPic.png';
 import mockData from '../mock-data.json';
 
 // import '../pages/chat/chatRoom.css';
@@ -43,7 +43,7 @@ const SentMessages = () => {
       if (accId !== convo[convoId][idx-1].userId) {
         return (
           <div className='response-container'>
-            <img src='blank'  className='icon-container'/>
+            <img src={blankPic}  className='icon-container'/>
             <div className='chatBubble-container'>
               <div className='chatBubble'>
                 {subObj.msg}

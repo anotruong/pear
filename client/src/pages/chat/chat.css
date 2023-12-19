@@ -257,11 +257,12 @@ textarea.textbox {
   background: transparent;
   border: none;
   font-size: 4vw;
-  padding: .5rem;
+  /* padding: .5rem; */
+  /* padding: .75rem 0rem .75rem 2rem; */
   font-family: 'Raleway', sans-serif;
   overflow: auto;
   min-height: 4vw; /* Minimum height (1 line at '4vw' font size) */
-  margin: 1rem 0rem 1rem 1rem;
+  margin: .75rem 0rem .75rem 2rem;
 }
 
 textarea.textbox:focus {

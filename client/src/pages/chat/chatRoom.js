@@ -97,7 +97,7 @@ const ChatRoom = ({acc}) => {
       const lineHeight = fontSize * 1.2; // Adjust this multiplier for better fitting
       const maxLines = 4; // Maximum number of lines
       const minLines = 1; // Minimum number of lines
-      const maxCharactersPerLine = 25; // Maximum characters per line
+      const maxCharactersPerLine = 30; // Maximum characters per line
 
       // Calculate the maximum height based on the maximum number of lines
       const maxHeight = lineHeight * maxLines;
