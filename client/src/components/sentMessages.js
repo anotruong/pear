@@ -1,4 +1,6 @@
 import React from 'react';
+import {dateHandler} from './dateHandler';
+
 import tempPic from '../images/tempPP.png';
 import blankPic from '../images/blankPic.png';
 import mockData from '../mock-data.json';
@@ -31,6 +33,7 @@ const SentMessages = () => {
       - How to update the conversation without rerendering the entire conversation with every user input.
 
     */
+  
   // tempID from mockData
   const convoId = 'alksdf';
 
@@ -42,14 +45,19 @@ const SentMessages = () => {
     if (accId !== subObj.userId) {
       if (accId !== convo[convoId][idx-1].userId) {
         return (
-          <div className='response-container'>
-            <img src={blankPic}  className='icon-container'/>
-            <div className='chatBubble-container'>
-              <div className='chatBubble'>
-                {subObj.msg}
+          <>
+            <div className='date-container'>
+              Today 2:20pm
+            </div>
+            <div className='response-container'>
+              <img src={blankPic}  className='icon-container'/>
+              <div className='chatBubble-container'>
+                <div className='chatBubble'>
+                  {subObj.msg}
+                </div>
               </div>
             </div>
-          </div> )
+          </> )
       } else {
         return (
           <div className='response-container'>
@@ -76,6 +84,8 @@ const SentMessages = () => {
   );
 
   // console.log(convo.alksdf);
+
+  dateHandler()
 
   return (
     <div id='message-container'>

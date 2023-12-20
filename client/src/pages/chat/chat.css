@@ -262,7 +262,7 @@ textarea.textbox {
   font-family: 'Raleway', sans-serif;
   overflow: auto;
   min-height: 4vw; /* Minimum height (1 line at '4vw' font size) */
-  margin: .75rem 0rem .75rem 2rem;
+  margin: .75rem 0rem .75rem 1.5rem;
 }
 
 textarea.textbox:focus {
@@ -272,6 +272,10 @@ textarea.textbox:focus {
 
 .textbox-btn {
   width: 10%;
+}
+
+.date-container {
+  margin: 1rem;
 }
 
 button#camera-btn {
