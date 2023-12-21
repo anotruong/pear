@@ -1,4 +1,4 @@
-export const dateHandler = () => {
+export const dateHandler = (date) => {
     /*Problem: DATE HANDLER
   
   EXPLICIT:
@@ -20,11 +20,11 @@ export const dateHandler = () => {
   */
 
   // Date handler
-  const dateString = '2023-12-20T19:16:27.904Z';
+  const dateString = date;
 
   // Convert string to Date object
   const dateTimeObj = new Date(dateString);
-  console.log(`Today's ${dateTimeObj}`)
+  // console.log(`Today's ${dateTimeObj}`)
 
   // Get today's date
   const todayDate = new Date();
@@ -34,7 +34,7 @@ export const dateHandler = () => {
   const yesterdayDate = new Date(todayDate);
   yesterdayDate.setDate(yesterdayDate.getDate());
 
-  console.log(`yesterday's date is ${yesterdayDate}`)
+  // console.log(`yesterday's date is ${yesterdayDate}`)
 
     // Format time in 12-hour format
   const formattedTime = dateTimeObj.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric'});
@@ -48,14 +48,15 @@ const formattedDate = `${(dateTimeObj.getMonth() + 1).toString().padStart(2, '0'
   if (dateTimeObj.toDateString() === yesterdayDate.toDateString()) {
 
     // Display 'yesterday' with the formatted time
-    console.log(`Yesterday ${formattedTime} `);
+    // console.log(`Yesterday ${formattedTime} `);
+    return `Yesterday ${formattedTime}`;
   } else if (dateTimeObj.toDateString() === todayDate.toDateString()) {
 
-    console.log(`Today ${formattedTime}`);
+    // console.log(`Today ${formattedTime}`);
+    return `Today ${formattedTime}`
   } else {
-    console.log(`${formattedDate} ${formattedTime}`);
+    // console.log(`${formattedDate} ${formattedTime}`);
+    return `${formattedDate} ${formattedTime}`
   }
 
 }
-
-// export default dateHandler;

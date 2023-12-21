@@ -42,12 +42,14 @@ const SentMessages = () => {
   const convo = mockData.convo;
   const displayConvo = convo[convoId].map((subObj, idx) => {
     // console.log(convo[convoId][idx].userId)
+    let msgDate = dateHandler(subObj.date);
+    console.log(subObj.date)
     if (accId !== subObj.userId) {
       if (accId !== convo[convoId][idx-1].userId) {
         return (
           <>
             <div className='date-container'>
-              Today 2:20pm
+              {msgDate}
             </div>
             <div className='response-container'>
               <img src={blankPic}  className='icon-container'/>
@@ -72,13 +74,19 @@ const SentMessages = () => {
 
     } else {
       return (
-      <div className='sender-container'>
-        <div className='chatBubble-container'>
-          <div className='chatBubble'>
-           {subObj.msg}
+        <>
+          <div className='date-container'>
+              {msgDate}
+            </div>
+            <div className='sender-container'>
+          <div className='chatBubble-container'>
+            <div className='chatBubble'>
+            {subObj.msg}
+            </div>
           </div>
         </div>
-      </div>)
+       </>
+      )
     }
     }
   );
