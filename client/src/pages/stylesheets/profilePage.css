@@ -1,0 +1,83 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* align-content: center; */
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+ 
+.profilePage-flex {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.profileInfo-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0rem 1rem;
+}
+
+.profileHeader-flex {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.activity-container {
+  flex: 1 1 auto;
+  max-width: -webkit-fill-available;
+}
+
+img.profileIcon {
+  display: block;
+  width: 5rem;
+  height: auto;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 .2rem .2rem rgba(255, 137, 72, .5);
+}
+
+h3.username {
+  font-size: 4.5vw;
+  font-weight: bold;
+  background: -webkit-linear-gradient(180deg, #FF7A97, #FF8948);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0rem;
+}
+
+h3#fullName {
+  margin: 0rem;
+  text-align: left;
+}
+
+.icon-container {
+  width: fit-content;
+  margin: 0rem 1rem 0rem 0rem;
+}
+
+.ratings-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: .5rem;
+}
+
+.ratings {
+  font-weight: bold;
+  text-align: left;
+}
+
+.aboutMe-container {
+  text-align: left;
+  margin: .5rem;
+}

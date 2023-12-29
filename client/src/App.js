@@ -11,6 +11,7 @@ import Calendar from 'react-calendar';
 import ChatIndex from './pages/chat/index';
 
 import './App.css';
+import ProfilePage from './pages/profilePage';
 
 function App() {
   const [ homeBtn, setHomeBtn ] = useState(true);
@@ -42,9 +43,10 @@ function App() {
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
         {/* {!calBtn ? <></> : <CalendarPage />} */}
-        {!searchBtn ? <></> : <SearchPage />}
+        {/* {!searchBtn ? <></> : <SearchPage />} */}
         {/* {!homeBtn ? <></> : <HomePage />} */}
-        <ChatIndex />
+        {/* <ChatIndex /> */}
+        <ProfilePage />
       </div>
     </appContext.Provider>
   );

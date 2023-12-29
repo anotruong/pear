@@ -40,7 +40,7 @@ export const dateHandler = (date) => {
   const formattedTime = dateTimeObj.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: 'numeric'});
 
   // Format date in 'MM/DD/YY' format
-const formattedDate = `${(dateTimeObj.getMonth() + 1).toString().padStart(2, '0')}/${dateTimeObj.getDate().toString().padStart(2, '0')}/${dateTimeObj.getFullYear().toString().substr(-2)}`;
+  const formattedDate = `${(dateTimeObj.getMonth() + 1).toString().padStart(2, '0')}/${dateTimeObj.getDate().toString().padStart(2, '0')}/${dateTimeObj.getFullYear().toString().substr(-2)}`;
 
 
 
@@ -59,4 +59,30 @@ const formattedDate = `${(dateTimeObj.getMonth() + 1).toString().padStart(2, '0'
     return `${formattedDate} ${formattedTime}`
   }
 
+}
+
+const hourHandler = () => {
+  const dateString1 = '2023-12-20T19:16:27.904Z'; 
+  // new string
+
+  const dateString2 = '2023-12-20T18:16:27.904Z'; // An hour older than dateString1
+  //replace this string with new string if it's older then the previous time.
+  // If this string is undefined then return the time."
+
+  // Convert strings to Date objects
+  const date1 = new Date(dateString1);
+  const date2 = new Date(dateString2);
+
+  // Calculate the time difference in milliseconds
+  const timeDifference = date1 - date2;
+
+  // Define the threshold for an hour (in milliseconds)
+  const oneHourInMillis = 60 * 60 * 1000;
+
+  // Check if the time difference is approximately an hour (within a certain threshold)
+  if (timeDifference >= oneHourInMillis && timeDifference < oneHourInMillis * 2) {
+    console.log("The second date string is approximately an hour older than the first date string.");
+  } else { 
+    console.log("The second date string is not an hour older than the first date string, or the time difference is not within an hour.");
+  }
 }
