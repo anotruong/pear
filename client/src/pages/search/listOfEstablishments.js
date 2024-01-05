@@ -12,32 +12,27 @@ import mapLinkIcon from '../../images/mapLinkIcon.png';
 // import Invitation from '../../components/invites/invitation';
 
 const ListOfEstablishments = ({prop}) => {
-  const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
+  // removed hook for responsive display 01/05
+  // const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
   const [ inviteHeight, setInviteHeight ] = useState("");
   
-  // hook for responsive display
-  useEffect(() => {
-    const updateInviteHeight = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  // removed hook for responsive display 01/05
 
-    window.addEventListener('resize', updateInviteHeight);
+  /* Sort confirmed and unconfirmed invitations.
+    EXPLICIT: 
+      - Should only display open invites that haven't been confirmed.
 
-    if (windowWidth <= 624) {
-      setInviteHeight('45'); 
-    } else if (windowWidth >= 768) {
-      setInviteHeight('28');
-    } else {
-      setInviteHeight('35');
-    };
-  });
+    ALGO: 
+      START object
+      DECLARE 'pendingInvite' that points arg object
+      ITERATE through 'pendingInvite'
+      RETURN array pointed by 'pendingInvite'
+  */
 
-  //hook for checking if inputState is empty
-  // useEffect(() => {
-  //   console.log(inputState)
-  // }, inputState); 
+  
 
-/*Iterate through an array and pass through function for rest-container div */
+  /*Iterate through an array and pass through function for rest-container div */
+  const openInvite = mockData.openInvite;
   const restName = [
     'bestia', 'hoe-hyeon resturant', 'kachka', 'tomato pie',
     'tusk', 'seollungtang', 'boiling crab', "jumbo's playroom"
@@ -62,7 +57,11 @@ const ListOfEstablishments = ({prop}) => {
     END implicit statement.
   */
 
-  const openInvitations = mockData.openInvite.map((acc, idx) => <OpenInvite key={idx} account={acc} />)
+  // console.log(mockData.openInvite.filter(acc => acc.confirmed !== true))
+
+  const filteredInvite = openInvite.filter(acc => acc.confirmed !== true)
+    
+  const openInvitations = filteredInvite.map((acc, idx) => <OpenInvite key={idx} account={acc} />)
 
   return(
     <div id='list-container'>

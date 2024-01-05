@@ -18,7 +18,7 @@
 h1 {
   /* originally 30px; bold */
   font-size: 8.5vw;
-  font-weight: bold;
+  font-weight: 800;
   background: -webkit-linear-gradient(180deg, #FF7A97, #FF8948);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -40,6 +40,7 @@ h3 {
 
 h4 {
   font-size: 5vw;
+  font-weight: 700;
 }
 
 p {
@@ -53,6 +54,9 @@ button {
 }
 
 .duo-btn { 
+  font-style: normal;
+  font-weight: 600;
+  list-style: normal;
   padding: 0.5rem 1rem;
   position: relative;
   background-color: white;
@@ -69,7 +73,7 @@ button {
 
 #gradient-btn {
   font-size: 3.7vw;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-transform: capitalize;
   color: white;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.10);
@@ -82,9 +86,9 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   /* color: transparent; */
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 3.2vw;
-  line-height: 1.5rem;
+  /* line-height: 1.5rem; */
   text-wrap: nowrap;
 }
 

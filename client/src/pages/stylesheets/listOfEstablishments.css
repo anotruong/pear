@@ -166,9 +166,15 @@ button::focus {
 #invite-container {
   /* height to flex for responsive display */
   /* height: 35vh; */
-  flex: 1 1 38vh;
-  width: 100%;
+  /* flex: 1 1 38vh;
+  width: 100%; */
   /* overflow: scroll; */
+
+  /* Changes made 01/05 */
+  /* height: 42vh; */
+  flex: 1 1 41vh;
+  width: 100%;
+  overflow: scroll;
 }
 
 a#mapLink {
