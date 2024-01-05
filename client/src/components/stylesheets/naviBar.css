@@ -16,6 +16,8 @@
   position: absolute;
   bottom: 0rem;
   height: fit-content;
+
+  flex: 0 1;
 }
 
 #naviBar-flex {

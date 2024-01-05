@@ -50,20 +50,71 @@ p {
 button {
   width: 100%;
   height: 100%;
-  /* border: transparent solid; */
-  /* border-radius: 1rem; */
+}
 
-  /* padding: 0.5rem 1rem; */
-  /* position: relative; */
-  /* background-color: white;
-  background-clip: padding-box; */
-  /* border: 2px solid transparent; */
-  /* border-radius: 1.75rem; */
-  /* background-image: linear-gradient(
+.duo-btn { 
+  padding: 0.5rem 1rem;
+  position: relative;
+  background-color: white;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+
+  border-radius: 1.75rem;
+  background-image: linear-gradient(
     90deg,
     #FF884A,
     #FF7F98
-  );*/
+  );
+} 
+
+#gradient-btn {
+  font-size: 3.7vw;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.10);
+  /* border: 2px solid transparent; */
+
+}
+
+#border-btn {
+  margin: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* color: transparent; */
+  font-weight: 600;
+  font-size: 3.2vw;
+  line-height: 1.5rem;
+  text-wrap: nowrap;
+}
+
+/* #gradient-btn:before, */
+#border-btn:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  z-index: -1;
+  inset: 0;
+  padding: 3px;
+  background-image: linear-gradient(
+    90deg,
+    #FF884A,
+    #FF7F98
+  );
+  border-radius: 1.75rem;
+
+  -webkit-mask: 
+  linear-gradient(#fff 0 0) content-box, 
+  linear-gradient(#fff 0 0);
+       mask: 
+  linear-gradient(#fff 0 0) content-box, 
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
 }
 
 a {
@@ -81,6 +132,17 @@ a {
 input {
   size: 16px;
   font-weight: bold;
+}
+
+#pinkHeader-container {
+  flex: 0 1 auto;
+  max-width: -webkit-fill-available;
+  width: 100%;
+  padding: 1rem 8vw;
+  background: linear-gradient(180deg, #FFC9C2, #FFE5DE);
+  border-radius: 0rem 0rem 2rem 2rem;
+  position: absolute;
+  z-index: 0;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {

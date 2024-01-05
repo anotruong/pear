@@ -49,7 +49,7 @@ const ProfilePage = () => {
   return (
     <div className="profilePage-container">
       <div className='profilePage-flex'>
-        <div id='pink-container'>
+        <div id='pinkHeader-container'>
           {/* information about the profile */}
           <div id='chatHeader-flex'>
             <div className='btn-container'>
@@ -65,7 +65,7 @@ const ProfilePage = () => {
               <div className='icon-container'>
                 {/* photo and name */}
                 <img src={tempPic} className='profileIcon'/>
-                <h3 id='username'>@kYoo</h3>
+                <h3 className='username'>@kYoo</h3>
 
               </div>
               <div className='info-container'>
@@ -92,6 +92,21 @@ const ProfilePage = () => {
                     Hello fellow netizens~ I'm Yoona and originally from Busan, but currently live in NYC temporarily for work. I want to try all the resturants, but I can only eat so much as a table for one.
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className='profileBtn-container'>
+            <div className='profileBtn-flex'>
+              <div 
+                className='btn-container'
+              >
+                <button 
+                id='gradient-btn' className='duo-btn'>Connect</button>
+              </div>
+              <div 
+                className='btn-container'
+              >
+                <button id='border-btn' className='duo-btn'>Chat</button>
               </div>
             </div>
           </div>

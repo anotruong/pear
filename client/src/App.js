@@ -15,13 +15,13 @@ import ProfilePage from './pages/profilePage';
 
 function App() {
   const [ homeBtn, setHomeBtn ] = useState(true);
-  const [ searchBtn, setSearchBtn ] = useState(false);
+  const [ searchBtn, setSearchBtn ] = useState(true);
   const [ addBtn, setAddBtn ] = useState(false);
   const [ profileBtn, setProfileBtn ] = useState(false);
   const [ calBtn, setCalBtn ] = useState(false);
   const [ loginState, setLoginState ] = useState(true);
   const [ homeState, setHomeState ] = useState(false);
- 
+
   // Custom hook component for font and maybe something else
   const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
 
@@ -44,7 +44,7 @@ function App() {
         {/* {!loginState ? <></> : <LoginPage />} */}
         {/* {!calBtn ? <></> : <CalendarPage />} */}
         {/* {!searchBtn ? <></> : <SearchPage />} */}
-        {/* {!homeBtn ? <></> : <HomePage />} */}
+        {!homeBtn ? <></> : <HomePage />}
         {/* <ChatIndex /> */}
         <ProfilePage />
       </div>

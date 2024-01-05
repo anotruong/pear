@@ -62,7 +62,7 @@ const ChatList = () => {
   return(
     <div id='chatIndex-container' >
       {/* search bar and upper part container*/}
-      <div id='pink-container'>
+      <div id='pinkHeader-container'>
         <div id='chatHeader-flex'>
           <div className='btn-container'>
             <button

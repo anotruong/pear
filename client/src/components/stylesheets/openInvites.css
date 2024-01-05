@@ -22,11 +22,12 @@
 
 .openInvite-container .icon-container {
   width: 23%;
-  margin: 0rem 1.5rem 0rem 0rem;
+  margin: 0rem 1rem 0rem 0rem;
 }
 
 .openInvite-container p.fullName {
   font-size: 3.2vw;
+  margin: .5rem 0rem;
 }
 
 .openInvite-container .profileIcon {
@@ -39,16 +40,16 @@
 .openInvite-container > .profile-flex {
   display: inline-flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   width: -webkit-fill-available;
 }
 
 .info-container > p.date,
 .info-container > p.restName-container {
-  font-size: 3.5vw;
+  font-size: 3.8vw;
   font-weight: bold;
-  margin: .5rem 0rem
+  margin: 0rem 0rem .5rem 0rem
 }
 
 .info-container > p.time {
@@ -61,4 +62,30 @@ p.restName-container {
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
+}
+
+
+ul {
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+ul li::before {
+  width: .8rem;
+}
+
+.button-flex {
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  justify-content: space-between;
+  height: fit-content;
+  /* padding: .5rem 0rem; */
+}
+
+.btn-container {
+  /* margin: 0rem 1rem; */
+  width: 47%;
+  height: 5vh;
+  /* height: 75%; */
 }

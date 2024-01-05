@@ -151,35 +151,34 @@
   ],
   "openInvite": [
     {
-      "userIdId": "002",
+      "userId": "002",
       "restId": "789",
       "time": "2-4pm",
-      "date": "thursday"
+      "date": "2023-12-30T19:04:26.231Z"      
     },
     {
-      "userIdId": "003",
+      "userId": "003",
       "restId": "493",
       "time": "8-9Pm",
-      "date": "friday"
+      "date": "2023-05-10T19:04:26.231Z"
     },
     {
-      "userIdId": "004",
+      "userId": "004",
       "restId": "012",
       "time": "11am-12pm",
-      "date": "thursday"
+      "date": "2024-01-07T19:04:26.231Z"
     },
     {
-      "userIdId": "005",
+      "userId": "005",
       "restId": "098",
       "time": "6-7pm",
-      "date": "monday"
+      "date": "2023-09-07T19:04:26.231Z"
     },
     {
-      "userIdId": "001",
+      "userId": "001",
       "restId": "029",
       "time": "1-3pm",
-      "date": "tuesday"
-    }
+      "date": "2023-11-12T19:04:26.231Z"    }
   ],
   "openConvo": [
     {

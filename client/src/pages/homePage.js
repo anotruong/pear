@@ -29,8 +29,6 @@ const HomePage = () => {
   const tempName = 'Yoona';
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
 
-  
-
   const eventStateHandler = () => {
     setUpcomingState(!upcomingState);
     setPendingState(!pendingState);
@@ -53,16 +51,15 @@ const HomePage = () => {
             />
             <div id='upperNaviBtn-container'>
               <button 
-                  id='notification-btn'
-                  className='upperNavi-btn'
-                  style={{backgroundImage: `url(${AlertOffIcon})`}} 
-                />
-                <button 
-                  id='chat-btn'
-                  className='upperNavi-btn'
-                  style={{backgroundImage: `url(${ChatOffIcon})`}} 
-
-                />
+                id='notification-btn'
+                className='upperNavi-btn'
+                style={{backgroundImage: `url(${AlertOffIcon})`}} 
+              />
+              <button 
+                id='chat-btn'
+                className='upperNavi-btn'
+                style={{backgroundImage: `url(${ChatOffIcon})`}} 
+              />
             </div>
           </div>
 

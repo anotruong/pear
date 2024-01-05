@@ -1,5 +1,7 @@
 #searchBar-container {
-  height: 4vh;
+  /* changed from height to flex for responsive display */
+  /* height: 4vh; */
+  flex: 0 1 4vh;
   width: 100%;
   margin: 1rem 0rem 2rem 0rem;
 }

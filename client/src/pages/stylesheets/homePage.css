@@ -85,9 +85,10 @@ img.littleIcon {
 
 img.miniProfileIcon {
   /* background-size: 4rem 4rem; */
-  width: 80%;
+  width: 40%;
   /* height: 50%; */
-  border-radius: 2rem;
+  border-radius: 5rem;
+  box-shadow: 1px 4px 6px 3px rgba(3, 0, 0, 0.10);
 }
 
 /* .miniProfile-container {
@@ -106,23 +107,6 @@ img.miniProfileIcon {
   align-items: flex-start;
   width: inherit;
 } */
-
-#request-btn {
-  font-size: 4.5vw;
-  font-weight: bold;
-  text-transform: capitalize;
-  color: white;
-}
-
-#newTime-btn {
-  margin: 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  /* color: transparent; */
-  font-weight: bolder;
-  font-size: 3.7vw;
-  line-height: 1.5rem;
-}
 
 button#pending {
   margin-left: 1rem;
@@ -188,6 +172,7 @@ h4.eventBtnName {
 #meetUpSpot,
 #schduledTime {
   padding-left: 1rem;
+  font-size: 3.5vw;
 }
 
 p#fullName {
@@ -195,7 +180,7 @@ p#fullName {
   text-transform: capitalize;
   color: black;
   font-weight: bold;
-  margin: 0rem;
+  margin: .5rem 0rem;
 }
 
 /* Pending Event */
@@ -216,4 +201,10 @@ p#fullName {
   justify-content: space-between;
   align-items: flex-start;
   width: inherit;
+}
+
+.event-flex .icon-container {
+  /* width: -moz-fit-content; */
+  width: 30%;
+  margin: 1rem 0rem;
 }

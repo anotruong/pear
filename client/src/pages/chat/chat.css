@@ -31,15 +31,6 @@ h4#chats {
   width: fit-content;
 }
 
-#pink-container {
-  flex: 0 1 auto;
-  max-width: -webkit-fill-available;
-  width: 100%;
-  padding: 1rem 8vw;
-  background: linear-gradient(180deg, #FFC9C2, #FFE5DE);
-  border-radius: 0rem 0rem 2rem 2rem;
-}
-
 .userIcon-container {
   display: inline-block;
   position: relative;
@@ -62,7 +53,7 @@ img#userIcon {
   box-shadow: 0 0 .2rem .2rem rgba(255, 137, 72, .5)
 }
 
-button#backBtn,
+/* button#backBtn, */
 button#expandBtn,
 button#phoneBtn {
   width: 37px;
@@ -70,11 +61,19 @@ button#phoneBtn {
   border: none;
   /* background-size: 2rem; */
   background: transparent;
+  margin: 0rem;
 }
 
 button#backBtn {
   background-repeat: no-repeat;
   background-image: url('../../images/back-btn.png');
+  /* background-size: 25px; */
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  width: 22px;
+  height: 37px;
+  background-color: transparent;
+  border: none;
 }
 
 button#expandBtn {

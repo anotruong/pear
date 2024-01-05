@@ -1,3 +1,4 @@
+
 export const dateHandler = (date) => {
     /*Problem: DATE HANDLER
   
@@ -86,3 +87,28 @@ const hourHandler = () => {
     console.log("The second date string is not an hour older than the first date string, or the time difference is not within an hour.");
   }
 }
+
+
+// Format new Date string to 'Day, Date'
+function formatDate(dateString) {
+  const options = {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC'
+  };
+
+  const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
+  return formattedDate;
+}
+
+export const displayDate = (str) => {
+  const originalDateString = str;
+  const formattedDate = formatDate(originalDateString);
+
+  return formattedDate
+}
+
+// console.log('Original Date String:', originalDateString);
+// console.log('Formatted Date:', formattedDate);

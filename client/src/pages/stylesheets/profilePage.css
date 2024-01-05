@@ -21,7 +21,8 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   width: 100%;
-  padding: 0rem 1rem;
+  padding: 0rem;
+  margin: .5rem 0rem;
 }
 
 .profileHeader-flex {
@@ -52,7 +53,7 @@ h3.username {
   background: -webkit-linear-gradient(180deg, #FF7A97, #FF8948);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0rem;
+  margin-top: .5rem;
 }
 
 h3#fullName {
@@ -81,3 +82,14 @@ h3#fullName {
   text-align: left;
   margin: .5rem;
 }
+
+/* two big buttons */
+
+.profileBtn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .profileBtn-flex #gradient-btn {
+  height: unset;
+} */

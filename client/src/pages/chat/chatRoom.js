@@ -137,7 +137,7 @@ const ChatRoom = ({acc}) => {
   return(
     <div className='chatRoom-container'>
       <div className='chatRoom-flex'>
-         <div id='pink-container'>
+         <div id='pinkHeader-container'>
           <div id='chatHeader-flex'>
             <div className='btn-container'>
               <button id='backBtn' />

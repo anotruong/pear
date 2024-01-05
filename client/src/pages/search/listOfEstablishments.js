@@ -9,6 +9,7 @@ import SearchBar from '../../components/searchBar';
 import '../stylesheets/listOfEstablishments.css';
 import OpenInvite from '../../components/invites/openInvites';
 import mapLinkIcon from '../../images/mapLinkIcon.png';
+// import Invitation from '../../components/invites/invitation';
 
 const ListOfEstablishments = ({prop}) => {
   const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);

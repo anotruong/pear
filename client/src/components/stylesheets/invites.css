@@ -1,3 +1,5 @@
+/*  */
+
 .invite-container {
   background: white;
   width: inherit;
@@ -44,6 +46,9 @@ h3.invite {
 .icon-container {
   width: 23%;
   margin: 0rem .5rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-container {
@@ -55,13 +60,13 @@ h3.invite {
   margin: 1rem 0rem 2rem 0rem;
 }
 
-.profile-flex {
+/* .profile-flex {
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   width: inherit;
-}
+} */
 
 .profileIcon {
   /* background-size: 4rem 4rem; */
@@ -87,11 +92,11 @@ h3.invite {
   width: 77%;
 }
 
-p.date {
+/* p.date {
   font-weight: bolder;
   font-size: 4.28vw;
   margin: 0rem;
-}
+} */
 
 /* p.fullName */
 .availability-container {
@@ -106,7 +111,7 @@ p.fullName {
   margin: 0rem;
 }
 
-ul {
+/* ul {
   line-height: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -118,26 +123,24 @@ ul li::before {
 .button-flex {
   display: flex;
   flex-direction: row;
-  /* width: 100%; */
   justify-content: space-between;
   height: fit-content;
-  /* padding: .5rem 0rem; */
 }
 
 .btn-container {
-  /* margin: 0rem 1rem; */
   width: 47%;
   height: 5vh;
-  /* height: 75%; */
-}
+} */
 
+/* Moved to app.css */
+/* 
 .invite-btn { 
-
   padding: 0.5rem 1rem;
   position: relative;
   background-color: white;
   background-clip: padding-box;
   border: 2px solid transparent;
+
   border-radius: 1.75rem;
   background-image: linear-gradient(
     90deg,
@@ -146,24 +149,26 @@ ul li::before {
   );
 } 
 
-#request-btn {
-  font-size: 4.5vw;
+#gradient-btn {
+  font-size: 3.7vw;
   font-weight: bold;
   text-transform: capitalize;
   color: white;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.10);
 }
 
-#newTime-btn {
+#border-btn {
   margin: 0;
   background-clip: text;
   -webkit-background-clip: text;
-  /* color: transparent; */
-  font-weight: bolder;
-  font-size: 3.7vw;
+  font-weight: 600;
+  font-size: 3.2vw;
   line-height: 1.5rem;
+  text-wrap: nowrap;
 }
 
-#newTime-btn:before {
+
+#border-btn:before {
   content: "";
   position: absolute;
   top: -5px;
@@ -186,7 +191,6 @@ ul li::before {
        mask: 
   linear-gradient(#fff 0 0) content-box, 
   linear-gradient(#fff 0 0);
--webkit-mask-composite: xor;
-       mask-composite: exclude;
-
-}
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+} */

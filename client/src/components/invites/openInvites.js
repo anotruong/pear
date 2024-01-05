@@ -5,14 +5,21 @@ import React, {
 import mockData from '../../mock-data.json';
 import tempPic from '../../images/tempPP.png'
 
+import { displayDate } from '../dateHandler';
+
 import '../stylesheets/openInvites.css';
 
 const OpenInvite = ({account}) => {
-  // console.log(account)
+  console.log(account)
+  const [ divState, setDivState ] = useState(true);
+
 /* arg passed should have both accId and restId */
 
   const userId = account.userId;
   const restId = account.restId;
+
+  const time = account.time;
+  const date = displayDate(account.date);
   // console.log(typeof tempRestId)
   // console.log(tempAccId, tempRestId)
 
@@ -23,6 +30,7 @@ const OpenInvite = ({account}) => {
       IDENTIFY restID
     END restId
 */
+
 
   const userData = mockData.accounts;
   const restData = mockData.restaurants;
@@ -53,10 +61,11 @@ const OpenInvite = ({account}) => {
     <div 
       className='openInvite-container'
       style={{
-        background: '#FFFAFA',
+        background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`,
         // height: `${inviteHeight}vh`
     }}
-      // style={{background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`}}
+        // style={{background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`}}
+
     >
       <div className='profile-flex'>
         <div className='icon-container'>
@@ -65,28 +74,36 @@ const OpenInvite = ({account}) => {
         </div>
         <div 
           className='info-container'
-          // onClick={() => setDivState(!divState)}
+          onClick={() => setDivState(!divState)}
         >
-          <p className='date'>Thursday, October 24th, 2024</p>
-          <p className='time'>12pm-4pm</p>
+          <p className='date'>{date}</p>
+          <p className='time'>{time}</p>
           <p className='restName-container'>@ {restName}</p>
+        {/* </div> */}
+          <ul 
+            hidden={divState}
+            >
+            <li>{user.personality}</li>
+            <li>{user.diet}</li>
+            <li>{user.alcohol}</li>
+          </ul>
         </div>
       </div>
-      {/* <div className="button-flex">
+      <div className="button-flex">
         <div 
           className='btn-container'
-          // hidden={divState}
+          hidden={divState}
         >
           <button 
-          id='newTime-btn' className='invite-btn'>Propose new time</button>
+          id='border-btn' className='duo-btn'>Propose new time</button>
         </div>
         <div 
           className='btn-container'
-          // hidden={divState}
+          hidden={divState}
         >
-          <button id='request-btn' className='invite-btn'>request</button>
+          <button id='gradient-btn' className='duo-btn'>request</button>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 };

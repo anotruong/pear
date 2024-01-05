@@ -42,16 +42,16 @@ const UpcomingEvent = () => {
         <div className="button-flex">
           <div className='btn-container'>
             <button 
-              id='newTime-btn' 
-              className='invite-btn'
+              id='border-btn' 
+              className='duo-btn'
             >
               Cancel
             </button>
           </div>
           <div className='btn-container'>
             <button 
-              id='request-btn' 
-              className='invite-btn'
+              id='gradient-btn' 
+              className='duo-btn'
             >
               chat
             </button>
