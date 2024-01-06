@@ -145,7 +145,7 @@ input {
   padding: 1rem 8vw;
   background: linear-gradient(180deg, #FFC9C2, #FFE5DE);
   border-radius: 0rem 0rem 2rem 2rem;
-  position: absolute;
+  /* position: absolute; */
   z-index: 0;
 }
 

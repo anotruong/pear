@@ -1,7 +1,7 @@
 #loginPage-container {
   height: 100vh;
   width: 100vw;
-  border: solid red 1px;
+  /* border: solid red 1px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +15,7 @@
   align-content: center;
   align-items: center;
   justify-content: center;
+  min-height: 100%;
 }
 
 #intro-flex {
@@ -36,6 +37,24 @@
   width: 100%;
   margin: 1rem;
 }
+
+#login-container button#border-btn {
+  color: transparent;
+
+}
+
+#login-container button#border-btn,
+#signUp-container button#gradient-btn {
+  font-weight: 700;
+  font-size: 4.5vw;
+}
+
+#login-container,
+#signUp-container {
+  height: 52%;
+  margin-bottom: .5rem;
+}
+
 
 button.loginPage-btn {
   /* width: 100%; */

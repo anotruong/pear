@@ -10,7 +10,7 @@ import { displayDate } from '../dateHandler';
 import '../stylesheets/openInvites.css';
 
 const OpenInvite = ({account}) => {
-  console.log(account)
+  // console.log(account)
   const [ divState, setDivState ] = useState(true);
 
 /* arg passed should have both accId and restId */

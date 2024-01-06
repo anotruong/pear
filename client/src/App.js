@@ -41,9 +41,9 @@ function App() {
       pendingState, setPendingState
     }}>
       <div className="App">
-        {/* {!loginState ? <></> : <LoginPage />} */}
+        {!loginState ? <></> : <LoginPage />}
         {/* {!calBtn ? <></> : <CalendarPage />} */}
-        {!searchBtn ? <></> : <SearchPage />}
+        {/* {!searchBtn ? <></> : <SearchPage />} */}
         {/* {!homeBtn ? <></> : <HomePage />} */}
         {/* <ChatIndex /> */}
         {/* <ProfilePage /> */}

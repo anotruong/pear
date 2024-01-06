@@ -15,10 +15,10 @@ const LoginPage = () => {
         <div id='pearLogo' />
         <div id='btn-container'>
           <div id='login-container'>
-            <button id='login-btn' className='loginPage-btn'>Login</button>
+            <button id='border-btn' className='duo-btn'>Login</button>
           </div>
           <div id='signUp-container'>
-            <button id='signUp-btn' className='loginPage-btn'>Sign Up</button>
+            <button id='gradient-btn' className='duo-btn'>Sign Up</button>
           </div>
 
         </div>

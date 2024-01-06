@@ -33,10 +33,17 @@
   justify-content: space-between;
 }
 
+
 .activity-container {
   flex: 1 1 auto;
   max-width: -webkit-fill-available;
+  padding: 0rem 8vw;
+  overflow: auto;
 }
+
+.activity-container #eventBtn-flex {
+  margin:.5rem 0rem;
+} 
 
 img.profileIcon {
   display: block;
@@ -57,8 +64,10 @@ h3.username {
 }
 
 h3#fullName {
-  margin: 0rem;
+  margin: 0rem .5rem;
   text-align: left;
+  text-transform: capitalize;
+  font-weight: 800;
 }
 
 .icon-container {
@@ -69,13 +78,18 @@ h3#fullName {
 .ratings-flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: .5rem;
 }
 
 .ratings {
   font-weight: bold;
   text-align: left;
+}
+
+.connections-container,
+.pearReviews-container {
+  margin-right: 1.5rem;
 }
 
 .aboutMe-container {
@@ -85,6 +99,10 @@ h3#fullName {
 
 /* two big buttons */
 
+.profileBtn-container {
+  margin-bottom: .5rem;
+}
+
 .profileBtn-flex {
   display: flex;
   justify-content: space-between;
@@ -93,3 +111,10 @@ h3#fullName {
 /* .profileBtn-flex #gradient-btn {
   height: unset;
 } */
+
+#upcoming-container {
+  overflow: scroll;
+  /* min-height: -webkit-fill-available; */
+  height: 87%;
+}
+

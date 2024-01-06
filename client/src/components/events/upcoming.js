@@ -4,8 +4,9 @@ import ClockIcon from '../../images/clockIcon.png';
 import LocationIcon from '../../images/locationIcon.png';
 import tempPic from '../../images/tempPP.png';
 
-const UpcomingEvent = () => {
+const UpcomingEvent = ({invites}) => {
 
+  console.log(invites)
   return (
     <div 
       id='currentEvent' 

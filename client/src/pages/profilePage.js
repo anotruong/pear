@@ -1,50 +1,94 @@
 import React, {
+  useContext,
   useEffect,
   useState
 } from 'react';
 import NaviBar from '../components/naviBar.js';
 
 // import './chat/chat.css'
+
+import { appContext } from '../hook/appContext';
+
 import tempPic from '../images/tempPP.png';
+import PendingEvent from '../components/events/pending';
+import UpcomingEvent from '../components/events/upcoming';
+import mockData from '../mock-data.json';
+
 import './stylesheets/profilePage.css'
 
-const ProfilePage = () => {
-  /* This page is to display the profiles of other users.
+const ProfilePage = ({obj}) => {
+/* This page is to display the profiles of other users.
 
-  PROBLEM: 
-    - Displays other users' profiles
 
-  EXPLICIT:
-    - Display:
-      - Icon
-      - UserName
-      - # of connections
-      - rating by other users
-      - Short Bio
-      - Open Invites started by Users
-      - Archived Invites
-    - Buttons
-      - Chat
-      - Connect
-      - Navi bar at the bottom
+PROBLEM: 
+- Displays other users' profiles
 
-  IMPLICIT:
-    - Rating:
-      - At the end of the timed event, the users have a chance to rate the platonic date.
-    - # of Connections
-      -
-    - Connect and Chat btns
-      - What does it mean to connect and how is that different from chat?
+EXPLICIT:
+- Display:
+  - Icon
+  - UserName
+  - # of connections
+  - rating by other users
+  - Short Bio
+  - Open Invites started by Users
+  - Archived Invites
+- Buttons
+  - Chat
+  - Connect
+  - Navi bar at the bottom
 
-  DATA: What the arg is and the return is
+IMPLICIT:
+- Rating:
+  - At the end of the timed event, the users have a chance to rate the platonic date.
+- # of Connections
+  -
+- Connect and Chat btns
+  - What does it mean to connect and how is that different from chat?
 
-  ALGO: 
+DATA: What the arg is and the return is
 
-  ACCESS:
-    - How can the user access the profile page?
-      - click on the Icon of the user
+ALGO: 
+
+ACCESS:
+- How can the user access the profile page?
+  - click on the Icon of the user
+
+*/
   
-  */
+  // Obj should include accID.
+  const tempId = '001';
+  const accInfo = mockData.accounts.filter(acc => acc.id === tempId)[0];
+  const username = accInfo.userName;
+  const fullname = `${accInfo.firstName} ${accInfo.lastName}`
+  const firstName = accInfo.firstName.charAt(0).toUpperCase() + accInfo.firstName.slice(1);
+
+  // console.log(accInfo);
+  // console.log(usefullrname)
+
+  const { upcomingState, setUpcomingState } = useContext(appContext);
+  const { pendingState, setPendingState } = useContext(appContext);
+    
+  const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
+
+  const eventStateHandler = () => {
+    setUpcomingState(!upcomingState);
+    setPendingState(!pendingState);
+
+    console.log('this is working')
+    console.log(`pending state is ${pendingState}`)
+    console.log(`upcoming state is ${upcomingState}`)
+  };
+
+  const accInvites = mockData.pendingInvite.filter(obj => obj.userId === tempId);
+  // console.log(accInvites);
+
+  const invites = accInvites.filter(obj => obj.pending === true)
+  
+  const tester = invites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj}/>);
+  // console.log(invites)
+
+  // const archived = accInvites.filter(obj => obj.pending === false);
+  // console.log(archived)
 
   return (
     <div className="profilePage-container">
@@ -65,12 +109,12 @@ const ProfilePage = () => {
               <div className='icon-container'>
                 {/* photo and name */}
                 <img src={tempPic} className='profileIcon'/>
-                <h3 className='username'>@kYoo</h3>
+                <h3 className='username'>@{username}</h3>
 
               </div>
               <div className='info-container'>
                 <div className='info-flex'>
-                  <h3 id='fullName'>Yoona Kim</h3>
+                  <h3 id='fullName'>{fullname}</h3>
                   <div className='ratings-flex'>
                     <div className='connections-container'>
                       connections
@@ -86,7 +130,6 @@ const ProfilePage = () => {
                         4.4
                       </div>
                     </div>
-
                   </div>
                   <div className='aboutMe-container'>
                     Hello fellow netizens~ I'm Yoona and originally from Busan, but currently live in NYC temporarily for work. I want to try all the resturants, but I can only eat so much as a table for one.
@@ -111,8 +154,42 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+        {/* <div className='activity-container'>
+          display active and archived invitations 
+        </div> */}
         <div className='activity-container'>
-          {/* display active and archived invitations */}
+          {/* upcoming and pending events */}
+          <div id='eventBtn-flex'>
+            <button 
+              id='upcoming' 
+              className='eventBtn' 
+              style={{
+                borderImageSource: `
+                ${!upcomingState ? "none" : colorGradient}`,
+                color: `${!upcomingState ? "#4D4D4D" : "#000000"}`
+              }}
+              onClick={(eventStateHandler)}
+            >
+              <h4 className='eventBtnName'>{firstName}'s invites</h4>
+            </button>
+            <button 
+              id='pending' 
+              className='eventBtn'
+              style={{borderImageSource: `
+              ${!pendingState ? "none" : colorGradient}`,
+              color: `${!pendingState ? "#4D4D4D" : "#000000"}`
+            }}
+              onClick={(eventStateHandler)}
+            >
+              <h4 className='eventBtnName'>Archived</h4>
+            </button>
+          </div>
+          {/* Should display only one at a time for now */}
+          <div id='upcoming-container'>
+            {tester}
+            {/* {!upcomingState ? <></> : <UpcomingEvent />}
+            {!pendingState ? <></> : <PendingEvent />} */}
+          </div>
         </div>
         <NaviBar />
       </div>

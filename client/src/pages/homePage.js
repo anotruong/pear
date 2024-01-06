@@ -74,8 +74,11 @@ const HomePage = () => {
               <button 
                 id='upcoming' 
                 className='eventBtn' 
-                style={{borderImageSource: `
-                  ${!upcomingState ? "none" : colorGradient}`}}
+                style={{
+                  borderImageSource: `
+                  ${!upcomingState ? "none" : colorGradient}`,
+                  color: `${!upcomingState ? "#4D4D4D" : "#000000"}`
+                }}
                 onClick={(eventStateHandler)}
               >
                 <h4 className='eventBtnName'>Upcoming event</h4>
@@ -83,8 +86,11 @@ const HomePage = () => {
               <button 
                 id='pending' 
                 className='eventBtn'
-                style={{borderImageSource: `
-                ${!pendingState ? "none" : colorGradient}`}}
+                style={{
+                  borderImageSource: `
+                ${!pendingState ? "none" : colorGradient}`,
+                color: `${!pendingState ? "#4D4D4D" : "#000000"}`
+              }}
                 onClick={(eventStateHandler)}
               >
                 <h4 className='eventBtnName'>Pending</h4>

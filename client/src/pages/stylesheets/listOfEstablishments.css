@@ -201,7 +201,7 @@ a#mapLink {
   overflow: scroll;
   width: 100%;
   height: inherit;
-  margin: 1rem 0rem 1.5rem 0rem;
+  margin: 1rem 0rem .5rem 0rem;
   /* height: 35vh; */
   max-height: -webkit-fill-available;
   /* margin: 0rem; */
