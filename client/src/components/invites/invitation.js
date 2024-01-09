@@ -55,8 +55,6 @@ const Invitation = ({acc}) => {
           <li>{user.alcohol}</li>
         </ul>
       </div>
-
-
       </div>
       <div className="button-flex">
         <div 
