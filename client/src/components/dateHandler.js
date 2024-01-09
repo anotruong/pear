@@ -107,8 +107,5 @@ export const displayDate = (str) => {
   const originalDateString = str;
   const formattedDate = formatDate(originalDateString);
 
-  return formattedDate
+  return formattedDate;
 }
-
-// console.log('Original Date String:', originalDateString);
-// console.log('Formatted Date:', formattedDate);

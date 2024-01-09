@@ -1,31 +1,6 @@
 /*  */
 
-.invite-container {
-  background: white;
-  width: inherit;
-  /* height: auto; */
-  overflow: scroll;
-  /* height: 50vh; */
-}
 
-.invite-flex {
-  z-index: 3;
-  width: inherit;
-  height: inherit;
-  /* width: 100vw; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-}
-
-.inviteLink {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-}
 
 /* moved to app.css */
 /* a {
@@ -82,9 +57,10 @@ h3.invite {
 }
 
 .availableNow-container {
-  width: 90%;
-  padding: 1rem 0rem;
+  width: -webkit-fill-available;
+  padding: 1rem 1rem;
   overflow: scroll;
+  
 }
 
 .availability-container {
@@ -194,3 +170,48 @@ ul li::before {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 } */
+
+
+/* for resturant page */
+
+.invite-container {
+  background: white;
+  width: 100%;
+  /* height: auto; */
+  overflow: scroll;
+  /* height: 50vh; */
+  flex: 1 1 auto;
+}
+
+/* .invite-flex {
+  z-index: 3;
+  width: inherit;
+  height: inherit;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+} */
+
+.inviteLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: -webkit-fill-available;
+  padding: .5rem 2rem;
+  /* margin: .5rem 0rem;  */
+  background: white;
+}
+
+.availableNow-container .openInvite-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  /* width: 83%; */
+  /* width: 80vw; */
+  filter: drop-shadow(3px 4px 3px darkgrey);
+  padding: 5%;
+  /* background-color: #FFF1F1; */
+  margin: 1rem 1rem 2rem 1rem;
+}

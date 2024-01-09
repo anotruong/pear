@@ -19,10 +19,10 @@ const SearchPage = () => {
         </div> */}
 
       {/* List version */}
-      <ListOfEstablishments />
+      {/* <ListOfEstablishments /> */}
 
       {/* Restaurant Page */}
-      {/* <RestaurantPage /> */}
+      <RestaurantPage />
 
       <NaviBar />
 

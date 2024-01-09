@@ -66,7 +66,8 @@
         "sunday": "CLOSED"
       },
       "lng": 37.557154304961195,
-      "lat": 126.97808246017657
+      "lat": 126.97808246017657,
+      "cusine": "traditional korean"
     },
     {
       "id": "123",
@@ -82,23 +83,25 @@
         "sunday": "11:30AM-2PM, 5:30-8PM"
       },
       "lng": 37.51653244013048,
-      "lat": 127.0603959030974
+      "lat": 127.0603959030974,
+      "cusine": "bar"
     },
     {
       "id": "029",
-      "name": "Hongdae Resturant",
-      "address": "South Korea, Seoul, Mapo-gu, Seogyo-dong, Hongik-ro 5an-gil, 32 준빌라",
+      "name": "Dookki Tteokbokki Hongdaet",
+      "address": "8 Hongik-ro 6-gil, Mapo-gu, Seoul, South Korea",
       "hours": {
-        "monday": "11:30AM-10PM",
-        "tuesday": "11:30AM-10PM",
-        "wednesday": "11:30AM-10PM",
-        "thursday": "11:30AM-10PM",
-        "friday": "11:30AM-10PM",
-        "saturday": "11:30AM-10PM",
-        "sunday": "11:30AM-10PM"
+        "monday": "11:00AM-10PM",
+        "tuesday": "11:00AM-10PM",
+        "wednesday": "11:00AM-10PM",
+        "thursday": "11:00AM-10PM",
+        "friday": "11:00AM-10PM",
+        "saturday": "11:00AM-10PM",
+        "sunday": "11:00AM-10PM"
       },
-      "lng": 37.57743986174412,
-      "lat": 126.85509700582057
+      "lng": 37.55515586750286,
+      "lat": 126.9233125787675,
+      "cusine": "buffet"
     },
     {
       "id": "098",
@@ -114,7 +117,8 @@
         "sunday": "CLOSED"
       },
       "lng": 37.4959713684921, 
-      "lat": 127.03104971226949
+      "lat": 127.03104971226949,
+      "cusine": "korean"
     },
     {
       "id": "493",
@@ -130,7 +134,8 @@
         "sunday": "11AM-9:30PM"
       },
       "lng": 37.572201877051036,
-      "lat": 127.11482046184396
+      "lat": 127.11482046184396,
+      "cusine": "indian"
     },
     {
       "id": "789",
@@ -146,7 +151,8 @@
         "sunday": "11AM-11PM"
       },
       "lng": 37.554784629600945,
-      "lat": 127.02852567500031
+      "lat": 127.02852567500031,
+      "cusine": "italian"
     } 
   ],
   "openInvite": [
@@ -165,22 +171,50 @@
       "confirmed": false
     },
     {
-      "userId": "004",
+      "userId": "001",
       "restId": "012",
       "time": "11am-12pm",
-      "date": "2024-01-07T19:04:26.231Z",
+      "date": "2023-12-08T19:04:26.231Z",
       "confirmed": true
     },
     {
+      "userId": "002",
+      "restId": "012",
+      "time": "11am-12pm",
+      "date": "2024-02-07T19:04:26.231Z",
+      "confirmed": true
+    },
+    {
+      "userId": "003",
+      "restId": "012",
+      "time": "11am-12pm",
+      "date": "2024-01-07T19:04:26.231Z",
+      "confirmed": false
+    },
+    {
+      "userId": "004",
+      "restId": "012",
+      "time": "11am-12pm",
+      "date": "2024-01-09T19:04:26.231Z",
+      "confirmed": false
+    },
+    {
       "userId": "005",
-      "restId": "098",
+      "restId": "012",
+      "time": "11am-12pm",
+      "date": "2024-02-02T19:04:26.231Z",
+      "confirmed": false
+    },
+    {
+      "userId": "005",
+      "restId": "012",
       "time": "6-7pm",
       "date": "2023-09-07T19:04:26.231Z",
       "confirmed": false
     },
     {
       "userId": "001",
-      "restId": "029",
+      "restId": "012",
       "time": "1-3pm",
       "date": "2023-11-12T19:04:26.231Z",
       "confirmed": true

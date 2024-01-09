@@ -1,35 +1,40 @@
 import React from 'react';
 import HoeHyeong from '../images/rest-hoeHyeong.jpeg';
 import StarRating from './starRating';
+import mockData from './../mock-data.json';
 import './stylesheets/restaurant.css';
 
 
-const RestaurantDisplay = () => {
+const RestaurantDisplay = ({restId}) => {
+
+  const tempRestId = restId; 
+  // console.log(tempRestId)
+  //hoe-hyeon
+
+  const restaurantInfo = mockData.restaurants.filter(obj => obj.id === tempRestId)[0];
+
+  // console.log(restaurantInfo.name)
+
   return (
-    <div id='restaurant-container'>
-      <div 
-        id='image-container'
-        // width={window.innerWidth} 
-      >
-        <img src={HoeHyeong} 
-          width={window.innerWidth}
-          height='80%'
-        />
-      </div>
+    <div id='restaurant-container'
+    style={{
+      backgroundImage: `url(${HoeHyeong})`
+    }}>
       <div 
         id='restaurant-display'
       >
         <div id='name-container'> 
-          <h2>Hoe-hyeon Resturant</h2>
+          <h2>{restaurantInfo.name}</h2>
         </div>
         <div id='info-container'>
-          {/* <p id='starRating'>* * * * *</p> */}
           <StarRating />
           <div id='guide-container'>
             <span id='expenseGuide'>$$</span>
-            <span id='cusine'>Traditional Korean</span>
+            <span id='cusine'>{restaurantInfo.cusine}</span>
           </div>
-          <p id='location'>9-8 Toegye-ro 2-gil, Hoehyeon-dong, Jung-gu, Seoul, South Korea</p>
+          <p id='location'>
+            {restaurantInfo.address}
+            </p>
         </div>
 
       </div>

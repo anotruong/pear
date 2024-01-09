@@ -45,6 +45,34 @@
   margin:.5rem 0rem;
 } 
 
+.activity-container .event-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: inherit;
+}
+
+.info-container {
+  text-align: left;
+}
+/* for date */
+.info-container p.date {
+  /* padding-left: 1rem; */
+  font-size: 3.8vw;
+  font-weight: bold;
+  /* margin: 0rem 0rem .5rem 0rem; */
+}
+
+.icon-container p#name {
+  color: #FF7A50;
+  font-family: Raleway;
+  font-size: 3.8vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 img.profileIcon {
   display: block;
   width: 5rem;

@@ -1,7 +1,11 @@
 #restaurant-container {
   /* height: inherit; */
   /* width: inherit; */
-  height: 46%;
+  /* height: 46%; */
+  flex: 0 1 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
 }
 
 #restaurant-display {
@@ -10,16 +14,17 @@
   /* width: 100%; */
   /* max-width: 90vw; */
   background-color: white;
-  position: relative;
+  /* position: relative; */
   z-index: 2;
   border-radius: 2rem 2rem 0rem 0rem;
-  margin-top: -15%;
-  padding: 10% 6%;
+  /* margin-top: -15%; */
+  padding: 2rem 2rem .5rem 2rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   align-items: flex-start;
+  margin-top: 10rem;
 }
 
 #image-container {
@@ -41,12 +46,26 @@ span#expenseGuide::after {
 
 }
 
+span#expenseGuide,
 #guide-container {
   font-weight: 700;
+  margin: .5rem 0rem;
+}
+
+span#expenseGuide,
+#guide-container,
+p#location {
+  margin: .5rem 0rem
 }
 
 p#location {
-  text-align-last: left;
+  text-align: left;
+  font-weight: 600;
+  font-size: 3.7vw;
+}
+
+span#cusine {
+  text-transform: capitalize;
 }
 /* 
 commented out to move to app.css
