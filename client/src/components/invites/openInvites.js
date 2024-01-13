@@ -39,47 +39,27 @@ const OpenInvite = ({account}) => {
   const restName = restData.filter(obj => obj.id === restId)[0]['name'];
   // console.log(user);
 
-  // const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
-  // const [ inviteHeight, setInviteHeight ] = useState("");
-  // useEffect(() => {
-  //   const updateInviteHeight = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-
-  //   window.addEventListener('resize', updateInviteHeight);
-
-  //   if (windowWidth <= 424) {
-  //     setInviteHeight('30'); 
-  //   } else if (windowWidth >= 768) {
-  //     setInviteHeight('40');
-  //   } else {
-  //     setInviteHeight('35');
-  //   };
-  // });
-
   return (
     <div 
       className='openInvite-container'
       style={{
         background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`,
-        // height: `${inviteHeight}vh`
-    }}
-        // style={{background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`}}
-
+      }}
+      onClick={() => setDivState(!divState)}
     >
-      <div className='profile-flex'>
+      <div 
+        className='profile-flex'
+      >
         <div className='icon-container'>
           <img src={tempPic} className='profileIcon'/>
           <p className='fullName'>{user.firstName} {user.lastName.substring(0, 1)}.</p>
         </div>
         <div 
           className='info-container'
-          onClick={() => setDivState(!divState)}
         >
           <p className='date'>{date}</p>
           <p className='time'>{time}</p>
           <p className='restName-container'>@ {restName}</p>
-        {/* </div> */}
           <ul 
             hidden={divState}
             >

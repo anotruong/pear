@@ -80,12 +80,16 @@ ACCESS:
   };
 
   const accInvites = mockData.pendingInvite.filter(obj => obj.userId === tempId);
-  // console.log(accInvites);
+  console.log(accInvites);
 
-  const invites = accInvites.filter(obj => obj.pending === true)
+  const unconfirmedInvites = accInvites.filter(obj => obj.pending === true)
+
+  const archivedInvites = accInvites.filter(obj => obj.pending === false);
   
-  const tester = invites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj}/>);
+  const unconfirmed = unconfirmedInvites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj}/>);
   // console.log(invites)
+
+  const archived = archivedInvites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj} /> );
 
   // const archived = accInvites.filter(obj => obj.pending === false);
   // console.log(archived)
@@ -186,9 +190,8 @@ ACCESS:
           </div>
           {/* Should display only one at a time for now */}
           <div id='upcoming-container'>
-            {tester}
-            {/* {!upcomingState ? <></> : <UpcomingEvent />}
-            {!pendingState ? <></> : <PendingEvent />} */}
+            
+            {upcomingState ? unconfirmed : archived}
           </div>
         </div>
         <NaviBar />

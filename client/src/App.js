@@ -43,10 +43,10 @@ function App() {
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
         {/* {!calBtn ? <></> : <CalendarPage />} */}
-        {!searchBtn ? <></> : <SearchPage />}
+        {/* {!searchBtn ? <></> : <SearchPage />} */}
         {/* {!homeBtn ? <></> : <HomePage />} */}
         {/* <ChatIndex /> */}
-        {/* <ProfilePage /> */}
+        <ProfilePage />
       </div>
     </appContext.Provider>
   );

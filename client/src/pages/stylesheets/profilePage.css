@@ -38,14 +38,14 @@
   flex: 1 1 auto;
   max-width: -webkit-fill-available;
   padding: 0rem 8vw;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .activity-container #eventBtn-flex {
   margin:.5rem 0rem;
 } 
 
-.activity-container .event-flex {
+.activity-container .upcoming-flex {
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;

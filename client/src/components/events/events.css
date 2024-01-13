@@ -1,0 +1,46 @@
+p#mealDate {
+  font-size: 3.9vw;
+  padding-left: .5rem;
+}
+
+.upcoming-container {
+  height: -moz-fit-content;
+  height: fit-content;
+  /* width: 80vw; */
+  filter: drop-shadow(3px 4px 3px lightgrey);
+  padding: 5%;
+  background-color: #FFFAFA;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.upcoming-flex {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+}
+
+.upcoming-flex #meetUpSpot,
+.upcoming-flex #schduledTime {
+  padding-left: .5rem;
+}
+
+.upcoming-flex img.miniProfileIcon {
+  /* background-size: 4rem 4rem; */
+  width: 70%;
+  /* height: 50%; */
+  border-radius: 5rem;
+  box-shadow: 1px 4px 6px 3px rgba(3, 0, 0, 0.10);
+}
+
+.upcoming-flex .icon-container {
+  width: 25%;
+  margin: 1rem 0rem;
+}
+
+.upcoming-flex p#fullName {
+  background: -webkit-linear-gradient(180deg, #FF7A97, #FF8948);
+  background-clip: text;
+  color: transparent;
+}

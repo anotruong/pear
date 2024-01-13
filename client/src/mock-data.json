@@ -343,35 +343,35 @@
     {
       "userId": "001",
       "restId": "098",
-      "time": "2-4pm",
+      "time": "7-8pm",
       "date": "2023-12-21T19:04:26.231Z", 
       "pending": true
     },
     {
       "userId": "001",
       "restId": "493",
-      "time": "2-4pm",
+      "time": "9am-12pm",
       "date": "2024-01-30T19:04:26.231Z", 
       "pending": true
     },
     {
       "userId": "001",
       "restId": "123",
-      "time": "2-4pm",
+      "time": "3-4pm",
       "date": "2024-01-14T19:04:26.231Z", 
       "pending": false
     },
     {
       "userId": "002",
       "restId": "493",
-      "time": "2-4pm",
+      "time": "2-3pm",
       "date": "2024-01-15T19:04:26.231Z", 
       "pending": true
     },
     {
       "userId": "002",
       "restId": "098",
-      "time": "2-4pm",
+      "time": "4-5pm",
       "date": "2023-12-15T19:04:26.231Z", 
       "pending": true
     },
