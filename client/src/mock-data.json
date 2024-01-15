@@ -8,7 +8,8 @@
       "lastName": "kim",
       "alcohol": "non-drinker",
       "diet": "none",
-      "personality": "talkative"
+      "personality": "talkative",
+      "bio": "Hello fellow netizens~ I'm Yoona and originally from Busan, but currently live in NYC temporarily for work. I want to try all the resturants, but I can only eat so much as a table for one."
     },
     {
       "id": "002",
@@ -18,7 +19,8 @@
       "lastName": "vreeland",
       "alcohol": "socially",
       "diet": "gluten-free",
-      "personality": "soft-spoken"
+      "personality": "soft-spoken",
+      "bio": "200 char mac"
     },
     {
       "id": "003",
@@ -28,7 +30,8 @@
       "lastName": "hernadez",
       "alcohol": "active",
       "diet": "nut-allergy",
-      "personality": "energetic"
+      "personality": "energetic",
+      "bio": "200 char mac"
     },
     {
       "id": "004",
@@ -38,7 +41,8 @@
       "lastName": "moon",
       "alcohol": "socially",
       "diet": "dislike cilantro and pigs feet",
-      "personality": "chill"
+      "personality": "chill",
+      "bio": "200 char mac"
     },
     {
       "id": "005",
@@ -48,7 +52,8 @@
       "lastName": "lee",
       "alcohol": "non-drinker",
       "diet": "none",
-      "personality": "talkative"
+      "personality": "talkative",
+      "bio": "200 char mac"
     }
   ],
   "restaurants": [
@@ -339,6 +344,13 @@
       "time": "2-4pm",
       "date": "2023-12-01T19:04:26.231Z", 
       "pending": false
+    },
+    {
+      "userId": "001",
+      "restId": "098",
+      "time": "9-10pm",
+      "date": "2023-12-29T19:04:26.231Z", 
+      "pending": true
     },
     {
       "userId": "001",

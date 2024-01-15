@@ -8,85 +8,50 @@ import mockData from '../../mock-data.json';
 
 import './events.css';
 
-const UpcomingEvent = ({invites}) => {
+const UpcomingEvent = ({...arg}) => {
 
-  console.log(invites)
+  // console.log(arg)
 
-  const date = displayDate(invites.date);
-  const user = mockData.accounts.filter(acc => acc.id === invites.userId)[0];
+  const date = displayDate(arg.invite.date);
+  const time = arg.invite.time;
+  const user = mockData.accounts.filter(acc => acc.id === arg.invite.userId)[0];
 
   const userName = `${user.firstName} ${user.lastName.slice(0,1)}`
 
-  console.log(userName)
+  // console.log(userName)
 
-  const restaurant = mockData.restaurants.filter(obj => obj.id === invites.restId)[0];
+  const restaurant = mockData.restaurants.filter(acc => acc.id === arg.invite.restId)[0];
   // console.log(restaurant)
   const restName = restaurant.name;
+
+  const fontColor = arg.color;
+
   return (
-    <div 
-      id='currentEvent' 
-      // className='event-container'
-    >
-    {/* Icon on the left */}
+    <div id='currentEvent' >
       <div 
         // className='miniProfile-container'
         className='upcoming-container'
-        style={{background: `FFFAFA`}}
+        style={{
+          background: `FFFAFA`,
+          color: fontColor}}
       >
-        <div 
-          // className='miniProfile-flex'
-          className='upcoming-flex'
-        >
+        <div className='upcoming-flex'>
           <div className='icon-container'>
             <img src={tempPic} className='miniProfileIcon'/>
             <p id='fullName' >{userName}.</p>
           </div>
           <div className='info-flex' >
-            <p 
-              id='mealDate' className='infoText'
-            >
+            <p id='mealDate' className='infoText'>
               {date}
             </p>
-            {/* clock icon */}
-            <p 
-              id='schduledTime'          className='infoText'
-            >
-              <img 
-                src={ClockIcon}  className='littleIcon'
-              />
-              {invites.time}
+            <p id='schduledTime'className='infoText'>
+              {time}
             </p>
-            {/* map icon */}
-            <p 
-              id='meetUpSpot'  className='infoText'
-            >
-                <img src={LocationIcon} className='littleIcon'/>
-                {restName}
+            <p id='meetUpSpot'  className='infoText'>
+              @ {restName}
             </p>
           </div>
-          {/* <div className='icon-container'>
-            <img src={tempPic} className='miniProfileIcon'/>
-            <p id='fullName' >Minnie S.</p>
-          </div> */}
         </div>
-        {/* <div className="button-flex">
-          <div className='btn-container'>
-            <button 
-              id='border-btn' 
-              className='duo-btn'
-            >
-              Cancel
-            </button>
-          </div>
-          <div className='btn-container'>
-            <button 
-              id='gradient-btn' 
-              className='duo-btn'
-            >
-              chat
-            </button>
-          </div>
-        </div>  */}
       </div>
     </div>
   )

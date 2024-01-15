@@ -54,6 +54,19 @@ ACCESS:
   - click on the Icon of the user
 
 */
+
+/*SORT 
+
+  PROBLEM: Sort the invitation from oldest to newest(open) and newest to oldest(archived)
+
+  EXPLICIT:
+
+
+  IMPLICIT:
+
+  DATA:
+
+  ALGO: */
   
   // Obj should include accID.
   const tempId = '001';
@@ -61,6 +74,7 @@ ACCESS:
   const username = accInfo.userName;
   const fullname = `${accInfo.firstName} ${accInfo.lastName}`
   const firstName = accInfo.firstName.charAt(0).toUpperCase() + accInfo.firstName.slice(1);
+  const bio = accInfo.bio;
 
   // console.log(accInfo);
   // console.log(usefullrname)
@@ -80,19 +94,18 @@ ACCESS:
   };
 
   const accInvites = mockData.pendingInvite.filter(obj => obj.userId === tempId);
-  console.log(accInvites);
+  // console.log(accInvites);
 
-  const unconfirmedInvites = accInvites.filter(obj => obj.pending === true)
+  const unconfirmedInvites = accInvites.filter(obj => obj.pending === true).sort((a, b) => new Date(a.date) - new Date(b.date))
 
-  const archivedInvites = accInvites.filter(obj => obj.pending === false);
+  // console.log(unconfirmedInvites)
+
+  const archivedInvites = accInvites.filter(obj => obj.pending === false).sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  const unconfirmed = unconfirmedInvites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj}/>);
+  const unconfirmed = unconfirmedInvites.map((obj, idx) => <UpcomingEvent key={idx} invite={obj} color={'black'}/>);
   // console.log(invites)
 
-  const archived = archivedInvites.map((obj, idx) => <UpcomingEvent key={idx} invites={obj} /> );
-
-  // const archived = accInvites.filter(obj => obj.pending === false);
-  // console.log(archived)
+  const archived = archivedInvites.map((obj, idx) => <UpcomingEvent key={idx} invite={obj} color={'#4D4D4D'}/> );
 
   return (
     <div className="profilePage-container">
@@ -136,7 +149,7 @@ ACCESS:
                     </div>
                   </div>
                   <div className='aboutMe-container'>
-                    Hello fellow netizens~ I'm Yoona and originally from Busan, but currently live in NYC temporarily for work. I want to try all the resturants, but I can only eat so much as a table for one.
+                    {bio}
                   </div>
                 </div>
               </div>
