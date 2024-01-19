@@ -2,8 +2,10 @@
   background: white;
   width: 100%;
   height: fit-content;
-  max-height: 50%;
+  /* max-height: 50%; */
   border-radius: 2rem 2rem 0rem 0rem;
+ 
+  flex: 1 1 auto;
 }
 
 .notes {
@@ -11,16 +13,19 @@
   padding-bottom: 2rem;
   padding-left: 20px;
   line-height: 2rem;
-  margin: 1rem 1.5rem;
+  margin: 2rem 1.5rem 1rem 1.5rem;
 }
 
 ul{
   list-style-type: none;
   text-align-last: left;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   padding-left: 20px;
-  line-height: 3rem;
+  /* line-height: 3rem; */
   margin: 1px 0px;
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+  margin-top: 1.2rem;
 }
 
 ul li::before {
@@ -29,4 +34,14 @@ ul li::before {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+
+li.agenda {
+  font-weight: 500;
+  margin: 1rem 0rem;
+}
+
+b.date {
+  font-weight: 600;
+  margin-right: .5rem;
 }

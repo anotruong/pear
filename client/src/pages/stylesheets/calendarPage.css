@@ -1,20 +1,30 @@
 #calendarPage-container {
   /* background: #FFCAC4; */
-  height: 100vh;
+  /* height: 100vh; */
   /* z-index: 1; */
+  height: 100%;
 }
 
 #calendarPage-flex {
   background: #FFCAC4;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  height: 90%;
+  /* height: 90%; */
   /* z-index: 2; */
+  min-height: -webkit-fill-available;
 }
+
+.cal-container {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 
 .react-calendar {

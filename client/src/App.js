@@ -18,7 +18,7 @@ function App() {
   const [ searchBtn, setSearchBtn ] = useState(true);
   const [ addBtn, setAddBtn ] = useState(false);
   const [ profileBtn, setProfileBtn ] = useState(false);
-  const [ calBtn, setCalBtn ] = useState(false);
+  const [ calBtn, setCalBtn ] = useState(true);
   const [ loginState, setLoginState ] = useState(true);
   const [ homeState, setHomeState ] = useState(false);
 
@@ -42,11 +42,11 @@ function App() {
     }}>
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
-        {/* {!calBtn ? <></> : <CalendarPage />} */}
+        {!calBtn ? <></> : <CalendarPage />}
         {/* {!searchBtn ? <></> : <SearchPage />} */}
         {/* {!homeBtn ? <></> : <HomePage />} */}
         {/* <ChatIndex /> */}
-        <ProfilePage />
+        {/* <ProfilePage /> */}
       </div>
     </appContext.Provider>
   );

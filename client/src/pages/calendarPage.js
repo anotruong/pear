@@ -12,12 +12,14 @@ const CalendarPage = () => {
   return (
     <div id='calendarPage-container'>
       <div id='calendarPage-flex'>
-        <h2>Calendar</h2>
-        <Calendar />
+        <div className='cal-container'>
+          <h2>Calendar</h2>
+          <Calendar />
+        </div>
         <MonthlyNotes />
-
+        <NaviBar />
       </div>
-      <NaviBar />
+
     </div>
   )
 };

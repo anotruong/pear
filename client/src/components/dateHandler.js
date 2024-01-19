@@ -109,3 +109,64 @@ export const displayDate = (str) => {
 
   return formattedDate;
 }
+
+export const displayMonthDay = (dateString) => {
+  const dateObject = new Date(dateString);
+
+  // Get month and day in two-digit format
+  const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+  const day = String(dateObject.getDate()).padStart(2, '0');
+
+  // Form the desired output
+  const transformedDate = `${month}/${day}`;
+
+  return transformedDate;
+}
+
+export const categorizeMeal = (timeString) => {
+  // Convert the time string to a Date object
+  const currentTime = new Date();
+  const [startHour, endHour] = timeString.split('-').map(parseTime);
+
+  // Set the time in the current date object
+  currentTime.setHours(startHour, 0, 0, 0);
+
+  // Define meal time ranges
+  const breakfastStart = new Date(currentTime);
+  const breakfastEnd = new Date(currentTime);
+  const lunchStart = new Date(currentTime);
+  const lunchEnd = new Date(currentTime);
+  const dinnerStart = new Date(currentTime);
+  const dinnerEnd = new Date(currentTime);
+
+  breakfastStart.setHours(5, 0, 0, 0);
+  breakfastEnd.setHours(11.5, 0, 0, 0);
+  lunchStart.setHours(11.5, 0, 0, 0);
+  lunchEnd.setHours(15, 0, 0, 0);
+  dinnerStart.setHours(16, 0, 0, 0);
+  dinnerEnd.setHours(24, 0, 0, 0);
+
+  // Compare the given time with meal time ranges
+  if (currentTime >= breakfastStart && currentTime <= breakfastEnd) {
+    return 'Breakfast';
+  } else if (currentTime >= lunchStart && currentTime <= lunchEnd) {
+    return 'Lunch';
+  } else if (currentTime >= dinnerStart && currentTime <= dinnerEnd) {
+    return 'Dinner';
+  } else {
+    return 'Unknown';
+  }
+}
+
+// Helper function to parse time in AM/PM format
+function parseTime(time) {
+  const [hours, minutes] = time.split(':');
+  const parsedHours = parseInt(hours);
+  const parsedMinutes = parseInt(minutes) || 0; // Default to 0 if minutes are not provided
+  return time.includes('pm') ? parsedHours + 12 : parsedHours;
+}
+
+// Example usage:
+// const timeString = '2:00pm-4:00pm';
+// const mealCategory = categorizeMeal(timeString);
+// console.log(`The meal category for ${timeString} is: ${mealCategory}`);
