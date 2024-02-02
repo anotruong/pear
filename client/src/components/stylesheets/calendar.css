@@ -1,0 +1,113 @@
+.App{
+  opacity: 0.7;
+  background: var(--pear-gradient, linear-gradient(180deg, rgba(255, 138, 122, 0.66) 0%, rgba(255, 116, 116, 0.40) 34.9%, rgba(255, 124, 83, 0.17) 100%));
+}
+.calendar {
+  /* width: 900px;
+  height: 600px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-header {
+  /* height: 100px; */
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+}
+
+.calendar-body {
+  /* width: 100%; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.table-header {
+  /* height: 100px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#monthHandler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button.monthHander-btn {
+  width: 17%;
+}
+
+.weekday {
+  /* width: 100px; */
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+}
+
+.table-content {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-content: center;
+}
+
+.calendar-day {
+  margin: .4rem;
+  border: .2rem solid transparent;
+  border-radius: 2rem;
+  /* text-align: center; */
+  /* align-self: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.calendar-day:hover {
+  background-color: rgba(0,0,0,.10);
+}
+
+.calendar-day p {
+  /* position: absolute;
+  right: 10px; */
+  color: #a6a6a6;
+}
+
+.current p {
+  color: #000000;
+
+}
+
+.selected p {
+  /* color: #cc0000; */
+  font-weight: bold;
+
+}
+
+.calendar-day.current.selected {
+  background-color: white;
+  border: .2rem solid #FF8947;
+}
+
+.week {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
