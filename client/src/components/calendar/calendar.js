@@ -12,14 +12,20 @@ const Calendar = () => {
 
     <div className="calendar">
       <div className="calendar-header">
-        <h2>
+        <h3>
           {/* {months[currentDay.getMonth()]} {currentDay.getFullYear()} */}
           Calendar
-        </h2>
+        </h3>
         <div id="monthHandler">
-          <button className='monthHandler-btn'>+</button>
-          <h3>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h3> 
-          <button className='monthHandler-btn'>+</button>
+          <div className='month-btn-container'>
+            <button className='monthHandler-btn'>+</button>
+          </div>
+          {/* <div className='monthDisplay-container'> */}
+            <h3 className='monthDisplay'>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h3> 
+          {/* </div> */}
+          <div className='month-btn-container'>
+            <button className='monthHandler-btn'>+</button>
+          </div>
         </div>
       </div>
       <div className="calendar-body">

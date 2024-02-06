@@ -10,13 +10,18 @@
   align-items: center;
 }
 
+.calendar p {
+  font-size: 3.5vw;
+  font-weight: 600;
+}
+
 .calendar-header {
   /* height: 100px; */
   /* width: 100%; */
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
 }
 
 .calendar-body {
@@ -27,19 +32,24 @@
   width: fit-content;
 }
 
+h3.monthDisplay {
+  margin: 0rem .5rem;
+}
+
 .table-header {
   /* height: 100px; */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: .5rem;
 }
 
 #monthHandler {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
 

@@ -41,29 +41,44 @@ const MonthlyNotes = () => {
   //   },
   // ];
 
-  let filteredTemp = mockData.confirmedMeals[tempUserId];
+  let filteredTemp = mockData.confirmedMeals[tempUserId].map(ele => mockData.pendingInvite.filter(obj => obj.id === ele))
+  // .filter(obj => );
 
-  let transformedTemp = filteredTemp.map(ele => 
-    mockData.pendingInvite.filter(obj => obj.id === ele)
-  );
+  console.log(filteredTemp)
+  
+  let transformedTemp = filteredTemp.map(obj => {
+    const accDate = new Date(obj[0].date);  
+    let year = accDate.getFullYear();
+    let month = (accDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = accDate.getDate().toString().padStart(2, '0');
+  
+    console.log(accDate.getMonth().toString().padStart(2, '0'))
+    let newDisplayDate = year + month + day;
+    obj.date = newDisplayDate;
+    // console.log(newDisplayDate)
+    return obj;
+  })
+  // console.log(filteredTemp)
+  // console.log(transformedTemp)
 
-  // In the context of sorting Date objects, using getTime() ensures that the sorting is based on the underlying timestamp representation of each date. 
-  let sortedTemp = transformedTemp.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
-  console.log(sortedTemp)
+  // // In the context of sorting Date objects, using getTime() ensures that the sorting is based on the underlying timestamp representation of each date. 
+  // let sortedTemp = transformedTemp.sort((a, b) => b.date - a.date);
 
-  let agendaList = sortedTemp.map(obj => {
-    const date = displayMonthDay(obj[0].date);
-    const meal = categorizeMeal(obj[0].time);
+  // // console.log(sortedTemp)
 
-    const firstName = `${acc(obj[0].userId)[0].firstName.slice(0, 1).toUpperCase()}${acc(obj[0].userId)[0].firstName.slice(1)}`
-    const lastInitial = acc(obj[0].userId)[0].lastName.slice(0, 1).toUpperCase();
-    // console.log(abbrName)
+  // let agendaList = sortedTemp.map(obj => {
+  //   const date = displayMonthDay(obj[0].date);
+  //   const meal = categorizeMeal(obj[0].time);
 
-    return (
-      <li className='agenda'><b className='date'>{date}</b> {obj[0].time}: {meal} w/ {firstName} {lastInitial}.</li>
-    )
-  });
+  //   const firstName = `${acc(obj[0].userId)[0].firstName.slice(0, 1).toUpperCase()}${acc(obj[0].userId)[0].firstName.slice(1)}`
+  //   const lastInitial = acc(obj[0].userId)[0].lastName.slice(0, 1).toUpperCase();
+  //   // console.log(abbrName)
+
+  //   return (
+  //     <li className='agenda'><b className='date'>{date}</b> {obj[0].time}: {meal} w/ {firstName} {lastInitial}.</li>
+  //   )
+  // });
 
 
   return(
@@ -71,7 +86,7 @@ const MonthlyNotes = () => {
       <div className='notes'>
         <h3>This month at a glance:</h3>
         <ul>
-          {agendaList}
+          {/* {agendaList} */}
           {/* will iterate this and stylelize the information */}
         </ul>
       </div>

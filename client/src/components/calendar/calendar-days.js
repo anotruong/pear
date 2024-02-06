@@ -1,6 +1,11 @@
 import React from 'react';
+import mockData from '../../mock-data.json';
 
 function CalendarDays(props) {
+
+  const pendingInvite = mockData.pendingInvite;
+  // console.log(pendingin)
+
   let firstDayOfMonth = new Date(props.day.getFullYear(), props.day.getMonth(), 1);
   let weekdayOfFirstDay = firstDayOfMonth.getDay();
   let currentDays = [];
@@ -22,10 +27,11 @@ function CalendarDays(props) {
       number: firstDayOfMonth.getDate(),
       selected: (firstDayOfMonth.toDateString() === props.day.toDateString()),
       year: firstDayOfMonth.getFullYear()
+      // appointment: 'evaluate if there is a pending invite that correlates with value of 'date'
     }
 
     currentDays.push(calendarDay);
-    // console.log(calendarDay)
+    console.log(calendarDay.date)
 
   }
 
