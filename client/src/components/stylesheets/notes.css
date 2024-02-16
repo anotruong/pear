@@ -20,7 +20,7 @@ ul{
   list-style-type: none;
   text-align-last: left;
   /* padding-bottom: 2rem; */
-  padding-left: 20px;
+  padding-left: 0rem;
   /* line-height: 3rem; */
   margin: 1px 0px;
   line-height: 1.5rem;
@@ -32,16 +32,28 @@ ul li::before {
   content: "\2022";
   color: #FF8A76;
   display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  width: 1.5rem;
+  font-size: 3rem;
+  /* margin-left: -1em; */
 }
 
 li.agenda {
   font-weight: 500;
   margin: 1rem 0rem;
+  /* font-weight: 500; */
+  /* margin: 1rem 0rem; */
+  width: 100%;
+  display: flex;
 }
+
+/* li.agenda::before {
+      font-weight: 500;
+    margin: 1rem 0rem;
+    width: 100%;
+    display: flex;
+} */
 
 b.date {
   font-weight: 600;
-  margin-right: .5rem;
+  margin-right: .8rem;
 }

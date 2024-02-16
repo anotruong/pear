@@ -114,6 +114,11 @@ button.monthHander-btn {
   border: .2rem solid #FF8947;
 }
 
+.calendar-day.current.app {
+  border: .2rem solid #FF8947;
+  border-radius: 2rem;
+}
+
 .week {
   display: flex;
   flex-direction: row;
