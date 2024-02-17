@@ -46,12 +46,7 @@ li.agenda {
   display: flex;
 }
 
-/* li.agenda::before {
-      font-weight: 500;
-    margin: 1rem 0rem;
-    width: 100%;
-    display: flex;
-} */
+
 
 b.date {
   font-weight: 600;

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { appContext } from '../hook/appContext';
 // import Calendar from 'react-calendar';
 import Calendar from '../components/calendar/calendar';
 import NaviBar from '../components/naviBar';
@@ -8,7 +9,6 @@ import './stylesheets/calendarPage.css';
 import MonthlyNotes from '../components/monthlyNotes';
 
 const CalendarPage = () => {
-
   /* 
     Libraries: 
       react-datetime-picker 
@@ -21,21 +21,26 @@ const CalendarPage = () => {
         - BaaS alternative to Firebase (google)
         - an all in one backend framework that implements a clean architecture for routing, to databases, to front end. 
         - Doesn't force the use to use a specific technology (aws, googlecloud etc... )
-
    */
+  
+  // highlight 'weekday friday' to change 'background' value.
+  const [ friState, setFriState ] = useState(false);
 
   return (
-    <div id='calendarPage-container'>
-      <div id='calendarPage-flex'>
-        <div className='cal-container'>
+    <appContext.Provider value={{
+     friState, setFriState
+    }}>
+      <div id='calendarPage-container'>
+        <div id='calendarPage-flex'>
+          <div className='cal-container'>
           {/* <h2>Calendar</h2> */}
-          <Calendar />
+            <Calendar />
+          </div>
+          <MonthlyNotes />
+          <NaviBar />
         </div>
-        <MonthlyNotes />
-        <NaviBar />
       </div>
-
-    </div>
+    </appContext.Provider>
   )
 };
 

@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0rem 2rem;
+  width: -webkit-fill-available;
 }
 
 .calendar p {
@@ -25,11 +27,11 @@
 }
 
 .calendar-body {
-  /* width: 100%; */
+  width: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 h3.monthDisplay {
@@ -41,8 +43,8 @@ h3.monthDisplay {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-bottom: .5rem;
+  justify-content: space-between;
+  /* margin-bottom: .5rem; */
 }
 
 #monthHandler {
@@ -58,10 +60,23 @@ button.monthHander-btn {
 }
 
 .weekday {
-  /* width: 100px; */
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.5rem;
+  /* margin: 0rem .2rem; */
+
+  height: 3.5rem;
   text-align: center;
+  /* background: linear-gradient(270deg, #FF6B8FE5, #FF8947); */
+
+  
+  height: 3rem;
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+
+p.weekday {
+  margin: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .table-content {
@@ -75,17 +90,28 @@ button.monthHander-btn {
   align-content: center;
 }
 
+.day-container {
+  /* background: linear-gradient(270deg, #FF6B8FE5, #FF8947); */
+  width: 3.5rem;
+  /* height: fit-content; */
+  /* margin: 0.4rem; */
+  border-radius: 0rem 0rem 2rem 2rem;
+  height: max-content;
+  /* margin: 0rem .2rem .2rem .2rem; */
+}
+
 .calendar-day {
-  margin: .4rem;
+  margin: 0rem .2rem .4rem .2rem;
   border: .2rem solid transparent;
   border-radius: 2rem;
-  /* text-align: center; */
-  /* align-self: center; */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 2.5rem;
   height: 2.5rem;
+
+  /* border: .2rem solid #FF6B8FE5; */
+  padding: .1rem;
 }
 
 .calendar-day:hover {
@@ -122,7 +148,8 @@ button.monthHander-btn {
 .week {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
+  width: 100%;
 }

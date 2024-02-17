@@ -1,15 +1,26 @@
-import React, { Component, useState } from 'react';
+import React, { 
+  Component, 
+  useContext, 
+  useState 
+} from 'react';
+import { appContext } from '../../hook/appContext';
+
 import CalendarDays from './calendar-days';
 import '../stylesheets/calendar.css';
 
 const Calendar = () => {
   const [ currentDay, setCurrentDay] = useState(new Date());
+
   const weekdays = ['S', 'M', 'T', 'W', 'Th', 'F', 'S'];
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 
   'July', 'August', 'September', 'October', 'November', 'December'];
+
+
+  const { friState } = useContext(appContext);
+
+  const bgGradient = 'linear-gradient(270deg, #FF6B8FE5, #FF8947)';
   
   return (
-
     <div className="calendar">
       <div className="calendar-header">
         <h3>
@@ -31,11 +42,20 @@ const Calendar = () => {
       <div className="calendar-body">
         <div className="table-header">
           {
-            weekdays.map((weekday) => {
-              return <div className="weekday"><p>{weekday}</p></div>
+            weekdays.map((weekday, idx) => {
+              const currentDay = new Date().getDay();
+              // if the 'weekday' element matches the day of the current date, allow them permission to alter the background 
+              const gradient = idx !== currentDay ? "transpartent": `${!friState ? 'transparent' : bgGradient}`;
+
+              return <div 
+                  className={"weekday " + weekday}
+                  style={{background: `${gradient}`}}
+
+                ><p id={weekday} className='weekday'>{weekday}</p></div>
             })
           }
         </div>
+        {/* evaluate the if the days are less then the current date for border radius as well as if the position in the index is different. */}
         <CalendarDays 
           day={currentDay} 
           // changeCurrentDay={this.changeCurrentDay} 

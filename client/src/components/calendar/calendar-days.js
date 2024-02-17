@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { appContext } from '../../hook/appContext';
 import mockData from '../../mock-data.json';
 
 function CalendarDays(props) {
 
+  const { friState, setFriState } = useContext(appContext);
+
   const tempUserId = '001';
   const confirmedMeals = mockData.confirmedMeals;
+  const bgGradient = 'linear-gradient(270deg, #FF6B8FE5, #FF8947)';
 
   let currentMonth = String(new Date().getMonth() + 1); //add 1 to the result because Jan is '0'.
   currentMonth = currentMonth.length === 2 ? currentMonth : '0' + currentMonth;
-  // console.log(pendingInvite.forEach(obj => console.log(new Date(obj.date).getMonth() + 1)))
+
   const filteredTemp = confirmedMeals[tempUserId]
     .map(ele => mockData.pendingInvite.filter(obj => obj.id === ele))
-    // .filter(obj => obj.date.slice(6, 7));
-  // filteredTemp.forEach(obj => console.log(obj))
-  // console.log(filteredTemp.filter(obj => obj.date.slice(6, 7)))
-  // filteredTemp.forEach(obj => console.log(new Date(obj[0].date))
 
-  // create a clone to prevent .map method from mutating object pointed by 'filteredTemp'
+  // create a, clone to prevent .map method from mutating object pointed by 'filteredTemp'
   // let transformedTemp = JSON.parse(JSON.stringify(filteredTemp)); 
   
   // transformedTemp = transformedTemp.map(obj => {
@@ -31,13 +31,7 @@ function CalendarDays(props) {
   //   return obj;
   // });
 
-  // const sortedTemp = transformedTemp.sort((a, b) => b.date - a.date);
-
   // console.log(currentMonth)
-
-  // const currentMonthEvents = sortedTemp.filter(obj => obj.date.slice(4, 6) == currentMonth);
-
-  // console.log(currentMonthEvents)
 
   let firstDayOfMonth = new Date(props.day.getFullYear(), props.day.getMonth(), 1);
   let weekdayOfFirstDay = firstDayOfMonth.getDay();
@@ -77,6 +71,7 @@ function CalendarDays(props) {
     let calendarDay = {
       currentMonth: (firstDayOfMonth.getMonth() === props.day.getMonth()),
       date: (new Date(firstDayOfMonth)),
+      day: (new Date(firstDayOfMonth).getDay()),
       month: firstDayOfMonth.getMonth(),
       number: firstDayOfMonth.getDate(),
       selected: (firstDayOfMonth.toDateString() === props.day.toDateString()),
@@ -85,6 +80,7 @@ function CalendarDays(props) {
     }
 
     currentDays.push(calendarDay);
+    // console.log(calendarDay)
   }
 
   /* Create a function that would insert a break in the line of divs.
@@ -97,7 +93,6 @@ function CalendarDays(props) {
         SORT the array into a variable that's length is less then 7.
         END 6 variables
   */
-
   let week1 = [];
   let week2 = [];
   let week3 = [];
@@ -105,12 +100,36 @@ function CalendarDays(props) {
   let week5 = [];
   let week6 = [];
 
-  currentDays.map((day) => {
-    console.log(day)
-    let divDay =  <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "") + (day.appointment ? " app" : "")}
-          onClick={() => props.changeCurrentDay(day)}>
-      <p>{day.number}</p>
-      </div>;
+  /* Create a function that changes the style background color of the elements that correspond with the 
+
+  */
+
+  currentDays.map((day, idx) => {
+    /* if the 'todayDate' is a smaller number than the element, && if the idx is divisible by then allow the border radius to be blocked
+    if 
+
+    should I put all the 'week' arrays into a subarray and iterate through them in order to add the new function for the style?
+    
+    */
+    const today = (new Date(new Date().setHours(0, 0, 0))).toString();
+    const todayDay = newDate().getDay();
+    const todayDate = newDate().getDay();
+    const bg = `if the 'todayDate' is a smaller number than the element, then allow the border radius to be blocked`
+    const roundRadius = '0rem 0rem 2rem 2rem';
+
+    const divDay =  <div className={'day-container'}
+        style={{}} 
+      ><div 
+        className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "") + (day.appointment ? " app" : "")}
+        onClick={() => {
+          if (day.date.toString() === today){
+            console.log("it's working")
+            setFriState(!friState)
+          }
+        }}
+      >
+        <p>{day.number}</p>
+      </div></div>;
 
     if (week1.length !== 7) {
       week1.push(divDay)
@@ -125,11 +144,7 @@ function CalendarDays(props) {
     } else {
       week6.push(divDay)
     }
-    // <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "")}
-    //       onClick={() => props.changeCurrentDay(day)}>
-    //   <p>{day.number}</p>
-    //   </div>
-    })
+  })
 
   return (
     <div className="table-content">
