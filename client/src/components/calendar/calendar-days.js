@@ -36,6 +36,9 @@ function CalendarDays(props) {
   let firstDayOfMonth = new Date(props.day.getFullYear(), props.day.getMonth(), 1);
   let weekdayOfFirstDay = firstDayOfMonth.getDay();
   let currentDays = [];
+  let todayIdx;
+  let todayIdxArr = [];
+
 
   // console.log(firstDayOfMonth)
 
@@ -82,6 +85,19 @@ function CalendarDays(props) {
     currentDays.push(calendarDay);
     // console.log(calendarDay)
   }
+  currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
+  let count = todayIdx;
+  // console.log(todayIdx)
+
+  while (count > 0) {
+    const daysInWeek = 7;
+    // console.log(todayIdx);
+    todayIdxArr.push(count)
+    count = count - daysInWeek;
+  }
+  // let tempId = 22;
+
+  // console.log(todayIdxArr.some(ele => tempId === ele ))
 
   /* Create a function that would insert a break in the line of divs.
       Options: 
@@ -103,6 +119,7 @@ function CalendarDays(props) {
   /* Create a function that changes the style background color of the elements that correspond with the 
 
   */
+//  console.log(currentDays)
 
   currentDays.map((day, idx) => {
     /* if the 'todayDate' is a smaller number than the element, && if the idx is divisible by then allow the border radius to be blocked
@@ -112,13 +129,33 @@ function CalendarDays(props) {
     
     */
     const today = (new Date(new Date().setHours(0, 0, 0))).toString();
-    const todayDay = newDate().getDay();
-    const todayDate = newDate().getDay();
+    const todayDay = new Date().getDay();
+    const todayDate = new Date().getDay();
     const bg = `if the 'todayDate' is a smaller number than the element, then allow the border radius to be blocked`
     const roundRadius = '0rem 0rem 2rem 2rem';
+    const cornerRadius = '0rem';
+    const gradient = friState ? bgGradient : "";
+    const checkIdxHighlight = todayIdxArr.some(ele => idx === ele);
+    /*
+      PROB: 
+        -highlight the elements of the idx that was divisble by their idx
+        -
+      EXPLICIT:
+        - only change the bg of the index that was divisible of the current day index/
+      IMPLICIT: 
+      DATA:
+      ALGO:
+        START element and idx
+        check for the 
+    
+    */
+  //  console.log(todayIdx === idx)
 
     const divDay =  <div className={'day-container'}
-        style={{}} 
+        style={{
+          background: `${!checkIdxHighlight ? "" : gradient}`,
+          borderRadius: `${(checkIdxHighlight && todayIdx === idx) ? roundRadius : cornerRadius}`  
+        }} 
       ><div 
         className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "") + (day.appointment ? " app" : "")}
         onClick={() => {
