@@ -152,4 +152,14 @@ p.weekday {
   align-items: center;
   align-content: center;
   width: 100%;
+
+  /* animation-name: fadeDiv; */
+  animation-duration: 2s;
+}
+
+/* keyframes */
+
+@keyframes fadeDiv {
+  from {opacity: 100%}
+  to {opacity: 0%}
 }

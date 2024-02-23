@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { appContext } from '../../hook/appContext';
 import mockData from '../../mock-data.json';
 
@@ -85,6 +85,7 @@ function CalendarDays(props) {
     currentDays.push(calendarDay);
     // console.log(calendarDay)
   }
+  // bottom few lines of code handles the highlight when 'selected' ele is clicked
   currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
   let count = todayIdx;
   // console.log(todayIdx)
@@ -116,10 +117,15 @@ function CalendarDays(props) {
   let week5 = [];
   let week6 = [];
 
+  //Marks the idx position of the week that the current day points to.
+  let weekSelected;
+
   /* Create a function that changes the style background color of the elements that correspond with the 
 
   */
-//  console.log(currentDays)
+
+
+
 
   currentDays.map((day, idx) => {
     /* if the 'todayDate' is a smaller number than the element, && if the idx is divisible by then allow the border radius to be blocked
@@ -129,9 +135,9 @@ function CalendarDays(props) {
     
     */
     const today = (new Date(new Date().setHours(0, 0, 0))).toString();
-    const todayDay = new Date().getDay();
-    const todayDate = new Date().getDay();
-    const bg = `if the 'todayDate' is a smaller number than the element, then allow the border radius to be blocked`
+    // const todayDay = new Date().getDay();
+    // const todayDate = new Date().getDay();
+    // const bg = `if the 'todayDate' is a smaller number than the element, then allow the border radius to be blocked`
     const roundRadius = '0rem 0rem 2rem 2rem';
     const cornerRadius = '0rem';
     const gradient = friState ? bgGradient : "";
@@ -149,7 +155,6 @@ function CalendarDays(props) {
         check for the 
     
     */
-  //  console.log(todayIdx === idx)
 
     const divDay =  <div className={'day-container'}
         style={{
@@ -168,53 +173,71 @@ function CalendarDays(props) {
         <p>{day.number}</p>
       </div></div>;
 
+
     if (week1.length !== 7) {
+      if (day.selected) weekSelected = 0;
+      // console.log(divDay)
       week1.push(divDay)
     } else if (week2.length !== 7) {
+      if (day.selected) weekSelected = 1;
+
       week2.push(divDay)
     } else if (week3.length !== 7) {
+      if (day.selected) weekSelected = 2;
+
       week3.push(divDay)
     } else if(week4.length !== 7) {
+      if (day.selected) weekSelected = 3;
+
       week4.push(divDay)
     } else if(week5.length !== 7) {
+      if (day.selected) weekSelected = 4;
       week5.push(divDay)
     } else {
+      if (day.selected) weekSelected = 5;
       week6.push(divDay)
     }
   })
 
+  /*
+    PROB: The arrays that come after 'currentDay' will be assigned a function that activates on 'onClick' attribute when the 'currentDay' is selected. 
+
+      The attribute will hide the respective arrays.
+      The arrays will be unhidden after the 'onClick' attribute evaluates to falsy value.
+
+    EXPLICIT:
+      - When 'oncClick' attribute evaluates to true, hide the arrays.
+
+    IMPLICIT:
+      - The array that comes after the array that the 'currentDay' is asssigned to will have the value of their 'display' attribute be assigned to 'none'.
+      - Iterate through array.
+      - If the current day isn't in the array anymore then housing array, then assign the display attribute to the following divs.
+      
+    DATA:
+    ALGO:
+      START sub arrays
+  
+  */
+  let weeks = [week1, week2, week3, week4, week5, week6];
+
+  weeks = weeks.map((arr, idx) => {
+    const displayState = `${friState ? "none" : ""}`
+
+    return <div 
+    id={ idx}
+    className={"week " + idx}
+    style={{
+      display: `${idx > weekSelected ? displayState : ""}`,
+      animationName: `${idx > weekSelected ? "fadeDiv" : ""}`
+    }}
+    >
+      {arr}
+    </div>
+  })
+
   return (
     <div className="table-content">
-      {/* {
-        currentDays.map((day, idx) => {
-          return (
-            <>
-              <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "")}
-                    onClick={() => props.changeCurrentDay(day)}>
-                <p>{day.number}</p>
-              </div>
-            </>
-          )
-        })
-      } */}
-      <div className="week">
-        {week1}
-      </div>
-      <div className="week">
-        {week2}
-      </div>
-      <div className="week">
-        {week3}
-      </div>
-      <div className="week">
-        {week4}
-      </div>
-      <div className="week">
-        {week5}
-      </div>
-      <div className="week">
-        {week6}
-      </div>
+      {weeks}
     </div>
   )
 }
