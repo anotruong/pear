@@ -6,6 +6,8 @@ import React, {
 import { appContext } from '../../hook/appContext';
 
 import CalendarDays from './calendar-days';
+import leftArr from '../../images/arrow-left-btn.png';
+import rightArr from '../../images/arrow-right-btn.png';
 import '../stylesheets/calendar.css';
 
 const Calendar = () => {
@@ -29,7 +31,7 @@ const Calendar = () => {
         </h3>
         <div id="monthHandler">
           <div className='month-btn-container'>
-            <button className='monthHandler-btn'>+</button>
+            <button className='monthHandler-btn' style={{backgroundImage: `${leftArr}` }}></button>
           </div>
           {/* <div className='monthDisplay-container'> */}
             <h3 className='monthDisplay'>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h3> 

@@ -152,8 +152,6 @@ p.weekday {
   align-items: center;
   align-content: center;
   width: 100%;
-
-  /* animation-name: fadeDiv; */
   animation-duration: 2s;
 }
 

@@ -19,14 +19,15 @@ const MonthlyNotes = () => {
     let month = (accDate.getMonth() + 1).toString().padStart(2, '0');
     let day = accDate.getDate().toString().padStart(2, '0');
   
-    // console.log(accDate.getMonth().toString().padStart(2, '0'))
     let newDisplayDate = year + month + day;
     obj.date = newDisplayDate;
-    // console.log(newDisplayDate);
     return obj;
   })
-  // console.log(filteredTemp)
-  // console.log(transformedTemp)
+
+  /* NEW FUNCTION
+    PROBLEM: WHEN 'currentDay selected' is selected, only show the notes that pertain to that day.
+
+  */
 
 
   // // In the context of sorting Date objects, using getTime() ensures that the sorting is based on the underlying timestamp representation of each date. 
