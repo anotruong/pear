@@ -165,8 +165,11 @@ function CalendarDays(props) {
         className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "") + (day.appointment ? " app" : "")}
         onClick={() => {
           if (day.date.toString() === today){
-            console.log("it's working")
-            setFriState(!friState)
+            console.log("it's working");
+            setFriState(!friState);
+
+            // affects ../../....monthlyNotes.js
+            
           }
         }}
       >

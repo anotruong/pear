@@ -152,12 +152,12 @@ p.weekday {
   align-items: center;
   align-content: center;
   width: 100%;
-  animation-duration: 2s;
+  /* animation-duration: 2s; */
 }
 
 /* keyframes */
 
-@keyframes fadeDiv {
+/* @keyframes fadeDiv {
   from {opacity: 100%}
   to {opacity: 0%}
-}
+} */

@@ -82,17 +82,20 @@ const MonthlyNotes = () => {
   // agendaListObj.forEach(obj => console.log(obj))
   const displayNotes = (obj) =>  <li className='agenda'><b className='date'>{obj.date}</b> {obj.time}: {obj.meal} w/ {obj.firstName} {obj.lastInitial}.</li>;
 
-  let monthlyEvents = agendaListObj.map(obj => displayNotes(obj));
-  let dailyEvents = agendaListObj.filter(obj => obj.dateObj === String(new Date(new Date().setHours())));
-  dailyEvents = dailyEvents.length === 0 ? "You have no meals planned today" : dailyEvents.maps(obj => displayNotes(obj))
+  let monthlyEvents = agendaListObj.length === 0 ? "You have no meals planned for this month yet" : agendaListObj.map(obj => displayNotes(obj));
+
+  // this needs to display the component that shows the events.
+  // let dailyEvents = agendaListObj.filter(obj => obj.dateObj === String(new Date(new Date().setHours())));
+  // dailyEvents = dailyEvents.length === 0 ? "You have no meals planned today" : dailyEvents.maps(obj => displayNotes(obj))
+
 
   return(
     <div className='notes-container'>
       <div className='notes'>
-        <h3>This month at a glance:</h3>
+        <h3>{friState ? "Today's events" :"This month at a glance"}:</h3>
         <ul>
           {/* {agendaList} */}
-          {friState ? dailyEvents : monthlyEvents}
+          {friState ? "" : monthlyEvents}
           {/* {dailyEvents} */}
           {/* will iterate this and stylelize the information */}
         </ul>

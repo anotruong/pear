@@ -41,11 +41,15 @@ div#upperNaviBtn-container {
 }
 
 #white-container {
+  padding: 0rem 2rem;
+  max-width: -webkit-fill-available;
+
   background: white;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   filter: drop-shadow(6px 6px 6px lightgrey);
   flex: 1 1;
+  width: 100%;
 }
 
 a#calLink {
@@ -62,6 +66,10 @@ button.upperNavi-btn {
   background-repeat: no-repeat;
   border: none;
   margin: 1vw;
+}
+
+h1.firstName {
+  text-transform: capitalize;
 }
 
 img#smallCalIcon {
@@ -213,4 +221,22 @@ p#fullName {
   /* width: -moz-fit-content; */
   width: 30%;
   margin: 1rem 0rem;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: -webkit-fill-available;
+  background: white;
+  padding: 2rem 2rem 0rem 2rem;
+  flex: 0 1;
+  width: 100%;
+}
+
+#upcoming-container {
+  overflow: scroll;
+  /* min-height: -webkit-fill-available; */
+  max-height: 39vh;
+  margin-bottom: 1rem;
 }

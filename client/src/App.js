@@ -42,9 +42,9 @@ function App() {
     }}>
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
-        {!calBtn ? <></> : <CalendarPage />}
+        {/* {!calBtn ? <></> : <CalendarPage />} */}
         {/* {!searchBtn ? <></> : <SearchPage />} */}
-        {/* {!homeBtn ? <></> : <HomePage />} */}
+        {!homeBtn ? <></> : <HomePage />}
         {/* <ChatIndex /> */}
         {/* <ProfilePage /> */}
       </div>
