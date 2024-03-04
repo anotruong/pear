@@ -10,11 +10,12 @@ import NaviBar from '../components/naviBar.js';
 import { appContext } from '../hook/appContext';
 
 import tempPic from '../images/tempPP.png';
-import PendingEvent from '../components/events/pending';
-import UpcomingEvent from '../components/events/upcoming';
+// import PendingEvent from '../components/events/pending';
+// import UpcomingEvent from '../components/events/upcoming';
 import mockData from '../mock-data.json';
 
 import './stylesheets/profilePage.css'
+import ProfileInvites from '../components/invites/profileInvite.js';
 
 const ProfilePage = ({obj}) => {
 /* This page is to display the profiles of other users.
@@ -102,10 +103,10 @@ ACCESS:
 
   const archivedInvites = accInvites.filter(obj => obj.pending === false).sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  const unconfirmed = unconfirmedInvites.map((obj, idx) => <UpcomingEvent key={idx} invite={obj} color={'black'}/>);
+  const unconfirmed = unconfirmedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'}/>);
   // console.log(invites)
 
-  const archived = archivedInvites.map((obj, idx) => <UpcomingEvent key={idx} invite={obj} color={'#4D4D4D'}/> );
+  const archived = archivedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'#4D4D4D'}/> );
 
   return (
     <div className="profilePage-container">
@@ -205,6 +206,7 @@ ACCESS:
           <div id='upcoming-container'>
             
             {upcomingState ? unconfirmed : archived}
+            {/* <ProfileInvites /> */}
           </div>
         </div>
         <NaviBar />

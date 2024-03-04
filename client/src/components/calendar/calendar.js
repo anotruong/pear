@@ -37,7 +37,8 @@ const Calendar = () => {
             <h3 className='monthDisplay'>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h3> 
           {/* </div> */}
           <div className='month-btn-container'>
-            <button className='monthHandler-btn'>+</button>
+            <button className='monthHandler-btn'
+            style={{backgroundImage: `${rightArr}`}}>+</button>
           </div>
         </div>
       </div>

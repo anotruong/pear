@@ -26,6 +26,8 @@ ul{
   line-height: 1.5rem;
   padding-bottom: 1rem;
   margin-top: 1.2rem;
+  /* display: inline-flex; */
+
 }
 
 ul li::before {
@@ -37,13 +39,15 @@ ul li::before {
   /* margin-left: -1em; */
 }
 
+/* monthly notes */
 li.agenda {
   font-weight: 500;
   margin: 1rem 0rem;
   /* font-weight: 500; */
   /* margin: 1rem 0rem; */
   width: 100%;
-  display: flex;
+  /* display: flex; */
+  display: inline-flex;
 }
 
 

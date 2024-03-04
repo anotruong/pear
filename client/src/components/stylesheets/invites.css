@@ -87,14 +87,15 @@ p.fullName {
   margin: 0rem;
 }
 
+li.trait {
+  display: flex;
+}
+
 /* ul {
   line-height: 1.5rem;
   padding-bottom: 1rem;
 }
 
-ul li::before {
-  width: .8rem;
-}
 
 .button-flex {
   display: flex;

@@ -8,6 +8,10 @@ h4#chats {
   height: 100vh;
 }
 
+.chatRoom-container {
+  background-color: white;
+}
+
 #chatIndex-container {
   display: flex;
   flex-direction: column;

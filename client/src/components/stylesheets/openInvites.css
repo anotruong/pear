@@ -70,9 +70,9 @@ ul {
   padding-bottom: 1rem;
 }
 
-ul li::before {
+/* ul li::before {
   width: .8rem;
-}
+} */
 
 .button-flex {
   display: flex;

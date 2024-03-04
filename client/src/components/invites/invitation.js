@@ -50,9 +50,9 @@ const Invitation = ({acc}) => {
           <ul 
           hidden={divState}
           >
-          <li>{user.personality}</li>
-          <li>{user.diet}</li>
-          <li>{user.alcohol}</li>
+          <li className='trait'>{user.personality}</li>
+          <li className='trait'>{user.diet}</li>
+          <li className='trait'>{user.alcohol}</li>
         </ul>
       </div>
       </div>
