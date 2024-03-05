@@ -31,14 +31,14 @@ const Calendar = () => {
         </h3>
         <div id="monthHandler">
           <div className='month-btn-container'>
-            <button className='monthHandler-btn' style={{backgroundImage: `${leftArr}` }}></button>
+            <button className='monthHandler-btn' style={{backgroundImage: `url(${leftArr})` }}></button>
           </div>
           {/* <div className='monthDisplay-container'> */}
             <h3 className='monthDisplay'>{months[currentDay.getMonth()]} {currentDay.getFullYear()}</h3> 
           {/* </div> */}
           <div className='month-btn-container'>
             <button className='monthHandler-btn'
-            style={{backgroundImage: `${rightArr}`}}>+</button>
+            style={{backgroundImage: `url(${rightArr})`}}></button>
           </div>
         </div>
       </div>
@@ -60,6 +60,7 @@ const Calendar = () => {
         </div>
         {/* evaluate the if the days are less then the current date for border radius as well as if the position in the index is different. */}
         <CalendarDays 
+          key={''}
           day={currentDay} 
           // changeCurrentDay={this.changeCurrentDay} 
         />

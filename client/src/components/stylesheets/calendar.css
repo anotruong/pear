@@ -52,11 +52,15 @@ h3.monthDisplay {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
-button.monthHander-btn {
-  width: 17%;
+button.monthHandler-btn {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  background-size: cover;
+  border: none;
 }
 
 .weekday {

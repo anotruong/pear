@@ -85,8 +85,14 @@ const MonthlyNotes = () => {
   let monthlyEvents = agendaListObj.length === 0 ? "You have no meals planned for this month yet" : agendaListObj.map(obj => displayNotes(obj));
 
   // this needs to display the component that shows the events.
-  // let dailyEvents = agendaListObj.filter(obj => obj.dateObj === String(new Date(new Date().setHours())));
+  let dailyEvents = agendaListObj.filter(obj => String(obj.dateObj) === String(new Date(new Date().setHours())));
   // dailyEvents = dailyEvents.length === 0 ? "You have no meals planned today" : dailyEvents.maps(obj => displayNotes(obj))
+
+  // let dailyEvents = agendaListObj.filter(obj => obj.date === new Date(new Date().setHours(0, 0, 0)))
+
+  agendaListObj.forEach(obj => console.log(obj.dateObj))
+  // console.log(new Date(new Date().setHours(0, 0, 0)))
+  // console.log(dailyEagevents)
 
 
   return(
@@ -95,7 +101,7 @@ const MonthlyNotes = () => {
         <h3>{friState ? "Today's events" :"This month at a glance"}:</h3>
         <ul>
           {/* {agendaList} */}
-          {friState ? "" : monthlyEvents}
+          {friState ? "dailyEvents" : monthlyEvents}
           {/* {dailyEvents} */}
           {/* will iterate this and stylelize the information */}
         </ul>
