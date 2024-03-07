@@ -36,8 +36,13 @@ const CalendarPage = () => {
           {/* <h2>Calendar</h2> */}
             <Calendar />
           </div>
+          <div className='notes-header'>
+            <h3>{friState ? "Today's events" :"This month at a glance"}:</h3>
+          </div>
           <MonthlyNotes />
-          <NaviBar />
+          <div className='calNavi-page'>
+            <NaviBar />
+          </div>
         </div>
       </div>
     </appContext.Provider>

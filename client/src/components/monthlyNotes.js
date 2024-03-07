@@ -97,9 +97,9 @@ const MonthlyNotes = () => {
 
   return(
     <div className='notes-container'>
-      <div className='notes'>
-        <h3>{friState ? "Today's events" :"This month at a glance"}:</h3>
-        <ul>
+      <div className='notes-flex'>
+
+        <ul className='list-container'>
           {/* {agendaList} */}
           {friState ? "dailyEvents" : monthlyEvents}
           {/* {dailyEvents} */}
