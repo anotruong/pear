@@ -39,7 +39,7 @@ function App() {
       loginState, setLoginState,
       upcomingState, setUpcomingState,
       pendingState, setPendingState
-    }}> 
+    }}>  
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
         {!calBtn ? <></> : <CalendarPage />}

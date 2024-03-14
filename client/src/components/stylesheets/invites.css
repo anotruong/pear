@@ -26,6 +26,10 @@ h3.invite {
   align-items: center;
 }
 
+.icon-container.hidden {
+  display: none;
+}
+
 .profile-container {
   height: fit-content;
   width: 80vw;
@@ -89,12 +93,15 @@ p.fullName {
 
 li.trait {
   display: flex;
+  margin-left: .5rem;
 }
 
 /* ul {
   line-height: 1.5rem;
   padding-bottom: 1rem;
 }
+
+
 
 
 .button-flex {

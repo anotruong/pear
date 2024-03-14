@@ -1,7 +1,7 @@
 .notes-container {
   overflow: auto;
   background: white;
-  /* width: 100%; */
+  width: 100%;
   height: -moz-fit-content;
   /* height: fit-content; */
   /* max-height: 50%; */

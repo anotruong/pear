@@ -127,7 +127,7 @@ export const categorizeMeal = (timeString) => {
   // Convert the time string to a Date object
   const currentTime = new Date();
   const [startHour, endHour] = timeString.split('-').map(parseTime);
-
+  // console.log(startHour, end)
   // Set the time in the current date object
   currentTime.setHours(startHour, 0, 0, 0);
 
@@ -163,6 +163,7 @@ function parseTime(time) {
   const [hours, minutes] = time.split(':');
   const parsedHours = parseInt(hours);
   const parsedMinutes = parseInt(minutes) || 0; // Default to 0 if minutes are not provided
+  console.log(hours, parsedMinutes)
   return time.includes('pm') ? parsedHours + 12 : parsedHours;
 }
 

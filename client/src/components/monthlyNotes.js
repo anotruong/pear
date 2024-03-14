@@ -3,11 +3,13 @@ import { appContext } from '../hook/appContext';
 import mockData from '../mock-data.json';
 import { categorizeMeal ,displayMonthDay } from './dateHandler';
 import './stylesheets/notes.css';
+import ProfileInvites from './invites/profileInvite';
 
 const MonthlyNotes = () => {
 
   const {friState} = useContext(appContext);
   const tempUserId = "001";
+  const today = new Date();
   const acc = (id) => mockData.accounts.filter(obj => obj.id === id);
 
   const filteredTemp = mockData.confirmedMeals[tempUserId].map(ele => mockData.pendingInvite.filter(obj => obj.id === ele));
@@ -37,8 +39,11 @@ const MonthlyNotes = () => {
 
   // function 'agendaListObj' returns an object.
   let agendaListObj = currentMonthEvents.map(obj => {
+    // console.log(obj)
+  
     const date = displayMonthDay(obj[0].date);
-    const dateObj = new Date((new Date(obj[0].date)).setHours(0, 0, 0));
+    const dateObj = new Date(obj[0].date)
+    // .setHours(0, 0, 0));
 
     const meal = categorizeMeal(obj[0].time);
 
@@ -46,6 +51,8 @@ const MonthlyNotes = () => {
     const lastInitial = acc(obj[0].userId)[0].lastName.slice(0, 1).toUpperCase();
     // console.log(obj)
     const time = obj[0].time;
+    const userId = obj[0].userId;
+    const restId = obj[0].restId;
 
     return {
       date,
@@ -53,7 +60,9 @@ const MonthlyNotes = () => {
       meal,
       firstName,
       lastInitial,
-      time
+      time,
+      userId,
+      restId
     } 
   });
 
@@ -79,21 +88,16 @@ const MonthlyNotes = () => {
 
   */
 
-  // agendaListObj.forEach(obj => console.log(obj))
   const displayNotes = (obj) =>  <li className='agenda'><b className='date'>{obj.date}</b> {obj.time}: {obj.meal} w/ {obj.firstName} {obj.lastInitial}.</li>;
 
   let monthlyEvents = agendaListObj.length === 0 ? "You have no meals planned for this month yet" : agendaListObj.map(obj => displayNotes(obj));
 
   // this needs to display the component that shows the events.
-  let dailyEvents = agendaListObj.filter(obj => String(obj.dateObj) === String(new Date(new Date().setHours())));
-  // dailyEvents = dailyEvents.length === 0 ? "You have no meals planned today" : dailyEvents.maps(obj => displayNotes(obj))
+  let dailyEvents = agendaListObj.filter(obj => (obj.dateObj).setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0));
 
-  // let dailyEvents = agendaListObj.filter(obj => obj.date === new Date(new Date().setHours(0, 0, 0)))
+  dailyEvents = dailyEvents.length === 0 ? "You have no meals planned for today" : dailyEvents.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={false}/>);
 
-  agendaListObj.forEach(obj => console.log(obj.dateObj))
-  // console.log(new Date(new Date().setHours(0, 0, 0)))
-  // console.log(dailyEagevents)
-
+  // dailyEvents.forEach(obj => console.log(obj))
 
   return(
     <div className='notes-container'>
@@ -101,7 +105,7 @@ const MonthlyNotes = () => {
 
         <ul className='list-container'>
           {/* {agendaList} */}
-          {friState ? "dailyEvents" : monthlyEvents}
+          {friState ? dailyEvents : monthlyEvents}
           {/* {dailyEvents} */}
           {/* will iterate this and stylelize the information */}
         </ul>
