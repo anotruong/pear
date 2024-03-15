@@ -12,6 +12,7 @@ import ChatIndex from './pages/chat/index';
 
 import './App.css';
 import ProfilePage from './pages/profilePage';
+import SigninPage from './pages/signinPage';
 
 function App() {
   const [ homeBtn, setHomeBtn ] = useState(true);
@@ -42,11 +43,12 @@ function App() {
     }}>  
       <div className="App">
         {/* {!loginState ? <></> : <LoginPage />} */}
-        {!calBtn ? <></> : <CalendarPage />}
+        {/* {!calBtn ? <></> : <CalendarPage />} */}
         {/* {!searchBtn ? <></> : <SearchPage />} */}
         {/* {!homeBtn ? <></> : <HomePage />} */}
         {/* <ChatIndex /> */}
         {/* <ProfilePage /> */}
+        <SigninPage />
       </div>
     </appContext.Provider>
   );

@@ -95,9 +95,7 @@ const MonthlyNotes = () => {
   // this needs to display the component that shows the events.
   let dailyEvents = agendaListObj.filter(obj => (obj.dateObj).setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0));
 
-  dailyEvents = dailyEvents.length === 0 ? "You have no meals planned for today" : dailyEvents.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={false}/>);
-
-  // dailyEvents.forEach(obj => console.log(obj))
+  dailyEvents = dailyEvents.length === 0 ? "You have no meals planned for today" : dailyEvents.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={true}/>);
 
   return(
     <div className='notes-container'>

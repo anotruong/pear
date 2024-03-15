@@ -103,10 +103,10 @@ ACCESS:
 
   const archivedInvites = accInvites.filter(obj => obj.pending === false).sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  const unconfirmed = unconfirmedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'}/>);
+  const unconfirmed = unconfirmedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={false}/>);
   // console.log(invites)
 
-  const archived = archivedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'#4D4D4D'}/> );
+  const archived = archivedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'#4D4D4D'} picAlign={false}/> );
 
   return (
     <div className="profilePage-container">

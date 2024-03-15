@@ -26,7 +26,12 @@ h3.invite {
   align-items: center;
 }
 
-.icon-container.hidden {
+.icon-container.right.hidden,
+.button-flex.right.hidden {
+  display: none;
+}
+
+.icon-container.left.hidden {
   display: none;
 }
 

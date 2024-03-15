@@ -5,11 +5,11 @@ import mockData from '../../mock-data.json';
 
 
 const ProfileInvites = ({...arg}) => {
-  const [ leftPic, setLeftPic ] = useState(!arg.picAlign); //if true, show left
-  const [ rightPic, setRightPic] = useState(arg.PicAlign); // if true, show right
+  const [ picAlign, setPicAlign ] = useState(arg.picAlign); //if true, show left
+  // const [ rightPic, setRightPic] = useState(arg.PicAlign); // if false, show right
 
   const invite = arg.invite;
-  // console.log(arg)
+  console.log(arg)
 
   console.log(invite)
   const fontColor = arg.color ? arg.color : "";
@@ -45,8 +45,10 @@ const ProfileInvites = ({...arg}) => {
           color: fontColor
         }}
       >
-        <div className='upcoming-flex'>
-          <div className={`icon-container ${leftPic ? "hidden" : ""}`}>
+        <div className='upcoming-flex'
+            style={{justifyContent: `${picAlign ? 'space-between' : 'flex-start'}`}}
+         >
+          <div className={`icon-container left ${picAlign ? "hidden" : ""}`} >
             <img src={tempPic} className='miniProfileIcon' 
             />
             <p id='fullName' >{name}.</p>
@@ -62,10 +64,26 @@ const ProfileInvites = ({...arg}) => {
               @ {restName}
             </p>
           </div>
-          <div className={`icon-container ${rightPic ? "hidden" : ""}`}>
+          <div className={`icon-container right ${!picAlign ? "hidden" : ""}`}>
             <img src={tempPic} className='miniProfileIcon' 
             />
               <p id='fullName' >{userName}.</p> 
+          </div>
+
+        </div>
+        <div className={`button-flex right ${!picAlign ? "hidden" : ""}`} >
+          <div 
+            className='btn-container'
+            // hidden={divState}
+          >
+            <button 
+            id='border-btn' className='duo-btn'>Cancel</button>
+          </div>
+          <div 
+            className='btn-container'
+            // hidden={divState}
+          >
+            <button id='gradient-btn' className='duo-btn'>Chat</button>
           </div>
         </div>
       </div>

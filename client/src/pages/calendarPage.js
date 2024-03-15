@@ -33,7 +33,6 @@ const CalendarPage = () => {
       <div id='calendarPage-container'>
         <div id='calendarPage-flex'>
           <div className='cal-container'>
-          {/* <h2>Calendar</h2> */}
             <Calendar />
           </div>
           <div className='notes-header'>
@@ -41,6 +40,8 @@ const CalendarPage = () => {
           </div>
           <MonthlyNotes />
           <div className='calNavi-page'>
+            {/* 'NaviBar' is a child of 'calNavi-page' so it has a white background for `NaviBar'. 
+            May intergrate the parent div into `NaviBar` later. */}
             <NaviBar />
           </div>
         </div>
