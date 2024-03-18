@@ -1,0 +1,9 @@
+.signUpPage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

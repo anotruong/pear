@@ -1,7 +1,7 @@
 import React from 'react';
 
-import pearLogo from '../images/pear-logo.png';
-import './stylesheets/loginPage.css';
+import pearLogo from '../../images/pear-logo.png';
+import '../stylesheets/loginPage.css';
 
 const LoginPage = () => {
   return (

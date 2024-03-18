@@ -1,16 +1,16 @@
-.signinPage {
+.signInPage {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.signinForms-container {
+.signInForms-container {
   height: 25%;
   width: 100%;
 }
 
-.signinForms-flex {
+.signInForms-flex {
   display: inline-flex;
   flex-direction: column;
   height: 100%;
@@ -19,7 +19,7 @@
   justify-content: space-around;
 }
 
-.signinPage > .button-flex {
+.signInPage > .button-flex {
   flex-direction: column;
   align-items: center;
 }
@@ -41,7 +41,7 @@
   inset: -2px;
 }
 
-.btn-container.signin,
+.btn-container.signIn,
 .btn-container.border {
   width: 67%;
   height: 7vh;
@@ -55,7 +55,7 @@
   border-radius: 2rem;
 }
 
-.signinTitle-flex {
+.signInTitle-flex {
   background-image: url('../../images/orangeLogo.png');
   background-repeat: no-repeat;
   background-position-y: top;
@@ -65,7 +65,7 @@
 
 }
 
-h1.signinTitle{
+h1.signInTitle{
   /* background-image: url('../../images/orangeLogo.png');
   background-repeat: no-repeat;
   background-position-y: top;
@@ -98,17 +98,18 @@ hr:after {
   background: white;
 }
 
-input#email,
+/* input#email,
 input#password {
   border: none;
-}
+} */
 
-input.signinForms {
+input.signInForms {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   font-weight: 500;
+  border: none;
 }
-input.signinForms:focus {
+input.signInForms:focus {
   outline: none;
 }
 
@@ -172,7 +173,7 @@ linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
 
-p.signin-subtitle {
+p.signIn-subtitle {
   font-weight: 500;
   font-size: 5.5vw;
   width: -webkit-fill-available;

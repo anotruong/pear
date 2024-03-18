@@ -1,21 +1,19 @@
 import React from 'react';
-import orangeLogo from '../images/orangeLogo.png';
-import './stylesheets/signinPage.css';
+import '../stylesheets/signinPage.css';
 
-const SigninPage = () => {
+const SignInPage = () => {
   return (
-    <div className='signinPage'>
-      <div className='signinTitle-flex'>
-        {/* <img src={orangeLogo}/> */}
-        <h1 className='signinTitle' style={{fontSize: '8vw'}}>Ready to pear up?</h1>
-        <p className='signin-subtitle'>Let's get you logged in.</p>  
+    <div className='signInPage'>
+      <div className='signInTitle-flex'>
+        <h1 className='signInTitle' style={{fontSize: '8vw'}}>Ready to pear up?</h1>
+        <p className='signIn-subtitle'>Let's get you logged in.</p>  
       </div>
-      <div className='signinForms-container'>
-       <div className='signinForms-flex'>
+      <div className='signInForms-container'>
+       <div className='signInForms-flex'>
         <div id='form' className='form'>
           <input 
             id='email' 
-            className='signinForms' 
+            className='signInForms' 
             type='email' 
             name='email'
             placeholder='Email'
@@ -24,7 +22,7 @@ const SigninPage = () => {
         <div id='form' className='form'>
           <input
             id='password'
-            className='signinForms' 
+            className='signInForms' 
             type='password' 
             name="password" 
             maxLength={18} 
@@ -39,7 +37,7 @@ const SigninPage = () => {
         // style={{flexDirection: 'column', alignItems: 'center'}}
       >
         <div 
-          className='btn-container signin'
+          className='btn-container signIn'
           // hidden={divState}
         >
           <button 
@@ -58,4 +56,4 @@ const SigninPage = () => {
   )
 };
 
-export default SigninPage;
+export default SignInPage;

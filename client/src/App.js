@@ -2,7 +2,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { appContext } from './hook/appContext';
-import LoginPage from './pages/loginPage';
+import LoginPage from './pages/login/loginPage';
 
 import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/search/searchPage';
@@ -12,7 +12,8 @@ import ChatIndex from './pages/chat/index';
 
 import './App.css';
 import ProfilePage from './pages/profilePage';
-import SigninPage from './pages/signinPage';
+import SignInPage from './pages/login/signinPage';
+import SignUpPage from './pages/login/signupPage';
 
 function App() {
   const [ homeBtn, setHomeBtn ] = useState(true);
@@ -48,7 +49,8 @@ function App() {
         {/* {!homeBtn ? <></> : <HomePage />} */}
         {/* <ChatIndex /> */}
         {/* <ProfilePage /> */}
-        <SigninPage />
+        {/* <SignInPage /> */}
+        <SignUpPage />
       </div>
     </appContext.Provider>
   );
