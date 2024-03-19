@@ -7,3 +7,56 @@
   height: 100%;
   width: 100%;
 }
+
+.signUpForms-container {
+  height: 35%;
+  width: 100%;
+  margin: 1rem;
+}
+
+.signUpTitle {
+  background-image: url('../../images/signup-logo.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+  background-position-y: top;
+  padding-top: 6rem;
+}
+
+.signUp-subtitle {
+  font-weight: 500;
+  font-size: 5.5vw;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  margin: 0rem;
+}
+
+.signUpForms-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+}
+
+.form.signup {
+  /* height: 14%; */
+  margin: .5rem ;
+}
+
+.button-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  height: fit-content;
+  /* padding: .5rem 0rem; */
+  align-items: center;
+}
+
+.btn-container.signUp {
+  /* width: 67%;
+  height: 7vh; */
+  margin: 1rem;
+}

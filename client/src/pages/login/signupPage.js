@@ -5,48 +5,56 @@ import '../stylesheets/signupPage.css';
 const SignUpPage = () => {
   return (
     <div className='signUpPage-container'>
-      <div className='signInForms-container'>
-        <div className='signInForms-flex'>
-          <div id='form' className='form'>
+      <div className='signUpTitle'>
+        <h1 
+          style={{
+            fontSize: '8vw',
+            margin: '0rem'
+        }}>Need a Pear?</h1>
+        <p className='signUp-subtitle'>Sign up today</p>
+      </div>
+      <div className='signUpForms-container'>
+        <div className='signUpForms-flex'>
+          <div id='form' className='form signUp'>
             <input 
               id='username' 
-              className='signInForms' 
+              className='signInUp-Forms' 
               type='text' 
               name='username'
               placeholder='User name'
             />
           </div>
-          <div id='form' className='form'>
+          <div id='form' className='form signUp'>
             <input 
               id='firstName' 
-              className='signInForms' 
+              className='signInUp-Forms' 
               type='text' 
               name='firstName'
               placeholder='First name'
             />
           </div>
-          <div id='form' className='form'>
+          <div id='form' className='form signUp'>
             <input 
               id='lastName' 
-              className='signInForms' 
+              className='signInUp-Forms' 
               type='text' 
               name='lastName'
               placeholder='Last name'
             />
           </div>
-          <div id='form' className='form'>
+          <div id='form' className='form signUp'>
             <input 
               id='email' 
-              className='signInForms' 
+              className='signInUp-Forms' 
               type='email' 
               name='email'
               placeholder='Email'
             />
           </div>
-          <div id='form' className='form'>
+          <div id='form' className='form signUp'>
             <input
               id='password'
-              className='signInForms' 
+              className='signInUp-Forms' 
               type='password' 
               name="password" 
               maxLength={18} 
@@ -60,19 +68,19 @@ const SignUpPage = () => {
         // style={{flexDirection: 'column', alignItems: 'center'}}
       >
         <div 
-          className='btn-container signIn'
+          className='btn-container signUp'
           // hidden={divState}
         >
           <button 
-          id='gradient-btn' className='duo-btn'>Continue</button>
+          id='gradient-btn' className='duo-btn'>Submit</button>
         </div>
         {/* <div className='breakBorder'><hr>or</hr> </div> */}
-        <hr/>
+        {/* <hr/> */}
         <div 
         className='btn-container border'
         // hidden={divState}
         >
-          <button id='border-btn' className='duo-btn'>Continue with google</button>
+          <button id='border-btn' className='duo-btn'>Already have an account?</button>
         </div>
       </div>
     

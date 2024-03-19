@@ -5,12 +5,12 @@
   justify-content: center;
 }
 
-.signInForms-container {
-  height: 25%;
+.signInUp-Forms-container {
+  height: 40%;
   width: 100%;
 }
 
-.signInForms-flex {
+.signInUp-Forms-flex {
   display: inline-flex;
   flex-direction: column;
   height: 100%;
@@ -42,6 +42,7 @@
 }
 
 .btn-container.signIn,
+.btn-container.signUp,
 .btn-container.border {
   width: 67%;
   height: 7vh;
@@ -103,13 +104,13 @@ input#password {
   border: none;
 } */
 
-input.signInForms {
+input.signInUp-Forms {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   font-weight: 500;
   border: none;
 }
-input.signInForms:focus {
+input.signInUp-Forms:focus {
   outline: none;
 }
 
@@ -138,7 +139,7 @@ input.signInForms:focus {
 #form {
 
   width: 63%;
-  height: 16%;
+  /* height: 16%; */
   
   margin: 0;
   background-clip: text;
@@ -171,6 +172,15 @@ input.signInForms:focus {
   mask: linear-gradient(#fff 0 0) content-box, 
 linear-gradient(#fff 0 0);
   mask-composite: exclude;
+}
+
+.form.signUp {
+  /* width: 63%; */
+  height: 13%;
+}
+
+.form.signIn {
+  height: 16%;
 }
 
 p.signIn-subtitle {
