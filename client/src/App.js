@@ -31,6 +31,22 @@ function App() {
   const [ upcomingState, setUpcomingState ] = useState(true);
   const [ pendingState, setPendingState ] = useState(false);
 
+  useEffect(() => {
+    const resolutionHandler = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener('resize', resolutionHandler);
+
+    return () => {
+      window.removeEventListener('resize', resolutionHandler);
+    };
+  }, []);
+
+  useEffect(() => {
+    // This effect runs when the 'width' variable changes
+    console.log('Width changed:', windowWidth);
+    // You can perform any action here based on the width change
+  }, [windowWidth]); 
+
   return (
     <appContext.Provider value={{
       homeBtn, setHomeBtn,
@@ -43,6 +59,20 @@ function App() {
       pendingState, setPendingState
     }}>  
       <div className="App">
+        {windowWidth > 605 ? <div className='resoTooLarge' >
+          This application is best viewed on a mobile browser or with a resolution width below 605. Please use Google Inspect to view through the project.
+        </div> : <>
+          {/* {!loginState ? <></> : <LoginPage />} */}
+          {/* {!calBtn ? <></> : <CalendarPage />} */}
+          {/* {!searchBtn ? <></> : <SearchPage />} */}
+          {/* {!homeBtn ? <></> : <HomePage />} */}
+          {/* <ChatIndex /> */}
+          {/* <ProfilePage /> */}
+          {/* <SignInPage /> */}
+          <SignUpPage />
+        </>}
+        
+
         {/* {!loginState ? <></> : <LoginPage />} */}
         {/* {!calBtn ? <></> : <CalendarPage />} */}
         {/* {!searchBtn ? <></> : <SearchPage />} */}
