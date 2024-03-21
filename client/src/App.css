@@ -10,11 +10,42 @@
   overflow: hidden;
 }
 
-.resoTooLarge {
-  background: linear-gradient(90deg, #FF884A, #FF7F98);
+.mobilePls {
+  background: white;
   height: 100%;
   width: 100%;
-  opacity: 50%;
+  /* opacity: 50%; */
+}
+
+.mobilePls-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: -webkit-fill-available;
+  padding: 0rem 5rem;
+  flex-wrap: nowrap;
+
+  background-image: url('./images/pearLogo-faded.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 32%;
+}
+
+.mobilePls-flex  > h1 {
+  /* font-size: 6.5vw; */
+  margin: 0rem 0rem .5rem 0rem;
+}
+
+.mobilePls-flex > h3 {
+  margin: .5rem 0rem;
+}
+
+.mobilePls-flex > span {
+  font-size: larger;
+  font-weight: 500;
+  color: black;
 }
 
 ::-webkit-scrollbar {

@@ -59,8 +59,13 @@ function App() {
       pendingState, setPendingState
     }}>  
       <div className="App">
-        {windowWidth > 605 ? <div className='resoTooLarge' >
-          This application is best viewed on a mobile browser or with a resolution width below 605. Please use Google Inspect to view through the project.
+        {windowWidth > 605 ? <div className='mobilePls' >
+          <div className='mobilePls-flex'>
+            <h1>Pear</h1>
+            <h3>is a mobile only web app.</h3>
+            <span>This application is best viewed on a mobile browser or with a resolution width below 605. Please use Google Inspect to view through the project.</span>
+    
+          </div>
         </div> : <>
           {/* {!loginState ? <></> : <LoginPage />} */}
           {/* {!calBtn ? <></> : <CalendarPage />} */}
