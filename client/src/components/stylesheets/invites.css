@@ -35,14 +35,13 @@ h3.invite {
   display: none;
 }
 
-.profile-container {
+/* .profile-container {
   height: fit-content;
   width: 80vw;
   filter: drop-shadow(6px 8px 6px #4A4A4A);
   padding: 5%;
-  /* background-color: #FFF1F1; */
   margin: 1rem 0rem 2rem 0rem;
-}
+} */
 
 /* .profile-flex {
   display: inline-flex;

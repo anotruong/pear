@@ -1,19 +1,18 @@
-.profile-container {
+/* .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* align-content: center; */
+
   flex-wrap: nowrap;
   height: 100%;
   width: 100%;
-  /* background-color: white; */
-}
+} */
  
-.profilePage-container {
+.profile-container {
   background: white;
 }
 
-.profilePage-flex {
+.profile-flex {
   display: flex;
   flex-flow: column;
   height: 100vh;

@@ -12,17 +12,18 @@ import HomePage from './pages/homePage';
 import Calendar from 'react-calendar';
 import ChatIndex from './pages/chat/index';
 
-import ProfilePage from './pages/profilePage';
+import ProfilePage from './pages/profile/profile';
 
 import './App.css';
+import RequestConfirm from './pages/requestConfirm';
 
 function App() {
   // state for Navigation bar
-  const [ homeBtn, setHomeBtn ] = useState(true);
+  const [ homeBtn, setHomeBtn ] = useState(false);
   const [ searchBtn, setSearchBtn ] = useState(true);
   const [ addBtn, setAddBtn ] = useState(false);
+  const [ calBtn, setCalBtn ] = useState(false);
   const [ profileBtn, setProfileBtn ] = useState(false);
-  const [ calBtn, setCalBtn ] = useState(true);
 
   // state for startPage
   const [ logBtnState, setLogBtnState ] = useState(false);
@@ -31,6 +32,9 @@ function App() {
   // State before login or signup is performed
   const [ startState, setStartState ] = useState(true);
   const [ homeState, setHomeState ] = useState(false);
+
+  // State for chat 
+  const [ chatBtn, setChatBtnState ] = useState();
 
   // HomePage hooks
   const [ upcomingState, setUpcomingState ] = useState(true);
@@ -79,17 +83,29 @@ function App() {
     
           </div>
         </div> : <>
-          {/* {!startState ? <></> : <StartPage />} */}
+          {/* Only one btn state should evaluate as true at any given time. */}
+          {/* {startState ?<StartPage />  : <></>} */}
 
           {/*After logging in, 'HomePage' should be viewed first.  */}
-          {!homeBtn ? <></> : <HomePage />}
-          {/* {!calBtn ? <></> : <CalendarPage />} */}
+          {/* {homeBtn ? <HomePage /> : <></>} */}
           {/* 'LoginPage' and 'SignUpPage' were moved to 'StartPage' */}
 
-          {/* {!searchBtn ? <></> : <SearchPage />} */}
+          {/* {searchBtn ? <SearchPage /> : <></>} */}
 
-          {/* <ChatIndex /> */}
+          {/* Add btn doesn't have a page. 
+            - should be able to create a new invite and leave it open for nearby users to be notified. 
+            - utilize yelp api for resturant location
+            - */}
+
+          {/* {calBtn ? <CalendarPage /> : <></>} */}
+          <RequestConfirm />
+            
+          {/* Profile/Account Icon is not set up.
+            - ProfilePage is probably not the profile page set up. 
+            - The icon should be an account Icon used for settings? */}
+          {/* {profileBtn ? <ProfilePage /> : <></>} */}
           {/* <ProfilePage /> */}
+         {/* <ChatIndex /> */}
 
         </>}
       </div>

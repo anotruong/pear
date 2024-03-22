@@ -1,0 +1,55 @@
+.requestConfirm-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(114deg, #FCBBB1, #F6DAD3);
+  position: absolute;
+  z-index: 1;
+}
+
+.requestConfirm-flex {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.requestConfirm-header {
+  margin-top: 7rem;
+}
+
+.orangeIcon {
+  background-image: url('../../images/orangePfp.png');
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: top;
+  height: 26%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.orangeIcon > img.pfp {
+  /* height: 30%; */
+  width: 25%;
+  border-radius: 5rem;
+  margin-top: 1.6rem;
+}
+
+.apptInfo {
+  padding: 1rem 6rem;
+}
+
+.requestConBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-container.request {
+  width: 32%;
+  padding: 1rem;
+}
