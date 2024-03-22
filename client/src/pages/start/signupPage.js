@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {
+  useContext
+} from 'react';
+import { appContext } from '../../hook/appContext';
 
 import '../stylesheets/signupPage.css';
 
 const SignUpPage = () => {
+  const { setLogBtnState } = useContext(appContext);
+  const { setSignBtnState } = useContext(appContext);
+
+  const loginHandler = () => {
+    setLogBtnState(true);
+    setSignBtnState(false);
+  };
+
+
   return (
     <div className='signUpPage-container'>
       <div className='signUpTitle'>
@@ -18,7 +30,7 @@ const SignUpPage = () => {
           <div id='form' className='form signUp'>
             <input 
               id='username' 
-              className='signInUp-Forms' 
+              className='logInUp-Forms' 
               type='text' 
               name='username'
               placeholder='User name'
@@ -27,7 +39,7 @@ const SignUpPage = () => {
           <div id='form' className='form signUp'>
             <input 
               id='firstName' 
-              className='signInUp-Forms' 
+              className='logInUp-Forms' 
               type='text' 
               name='firstName'
               placeholder='First name'
@@ -36,7 +48,7 @@ const SignUpPage = () => {
           <div id='form' className='form signUp'>
             <input 
               id='lastName' 
-              className='signInUp-Forms' 
+              className='logInUp-Forms' 
               type='text' 
               name='lastName'
               placeholder='Last name'
@@ -45,7 +57,7 @@ const SignUpPage = () => {
           <div id='form' className='form signUp'>
             <input 
               id='email' 
-              className='signInUp-Forms' 
+              className='logInUp-Forms' 
               type='email' 
               name='email'
               placeholder='Email'
@@ -54,7 +66,7 @@ const SignUpPage = () => {
           <div id='form' className='form signUp'>
             <input
               id='password'
-              className='signInUp-Forms' 
+              className='logInUp-Forms' 
               type='password' 
               name="password" 
               maxLength={18} 
@@ -64,7 +76,7 @@ const SignUpPage = () => {
           </div>
         </div>
       </div>
-      <div className='button-flex'
+      <div className='button-flex signUp'
         // style={{flexDirection: 'column', alignItems: 'center'}}
       >
         <div 
@@ -80,7 +92,11 @@ const SignUpPage = () => {
         className='btn-container border'
         // hidden={divState}
         >
-          <button id='border-btn' className='duo-btn'>Already have an account?</button>
+          <button 
+            id='border-btn' 
+            className='duo-btn'
+            onClick={loginHandler}
+          >Already have an account?</button>
         </div>
       </div>
     

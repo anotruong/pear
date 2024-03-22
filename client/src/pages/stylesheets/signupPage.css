@@ -9,7 +9,8 @@
 }
 
 .signUpForms-container {
-  height: 35%;
+  height: 40%;
+
   width: 100%;
   margin: 1rem;
 }
@@ -40,17 +41,18 @@
 
 }
 
-.form.signup {
-  /* height: 14%; */
+.form.signUp {
+  /* width: 63%; */
+  height: 13%;
   margin: .5rem ;
 }
 
-.button-flex {
+.button-flex.signUp {
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: space-between;
-  height: fit-content;
+  /* justify-content: space-between; */
+  /* height: fit-content; */
   /* padding: .5rem 0rem; */
   align-items: center;
 }

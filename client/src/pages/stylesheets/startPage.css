@@ -1,0 +1,102 @@
+#startPage-container {
+  height: 100vh;
+  width: 100vw;
+  /* border: solid red 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.startPage-flex {
+  max-width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+#intro-flex {
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#pearLogo {
+  height: 168px;
+  width: 204px;
+  background-image: url(../../images/pear-logo.png);
+  background-size: contain;
+}
+
+#btn-container {
+  max-width: 88%;
+  width: 100%;
+  margin: 1rem;
+}
+
+#login-container button#border-btn {
+  color: transparent;
+
+}
+
+#login-container button#border-btn,
+#signUp-container button#gradient-btn {
+  font-weight: 700;
+  font-size: 4.5vw;
+}
+
+#login-container,
+#signUp-container {
+  height: 52%;
+  margin-bottom: .5rem;
+}
+
+
+button.startPage-btn {
+  /* width: 100%; */
+  /* height: 15%; */
+  margin: .5rem 0rem;
+  border-radius: 10rem;
+  border: .2rem solid;
+  font-size: 18px;
+  padding: .5rem;
+
+  width: 100%;
+  height: 100%;
+  /* border: transparent solid; */
+  /* border-radius: 1rem; */
+
+  /* padding: 0.5rem 1rem; */
+  position: relative;
+  background-color: white;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  /* border-radius: 1.75rem; */
+  background-image: linear-gradient(
+    90deg,
+    #FF884A,
+    #FF7F98
+  );
+}
+
+
+
+button#login-btn {
+  border-image: linear-gradient(to right, #FFDFC9, #FF7E9F) 1;
+  background: linear-gradient(white, white) padding-box,              linear-gradient(to right, #FFDFC9, #FF7E9F) border-box;
+}
+
+button#signup-btn{
+  /* width: 100%; */
+  /* background: linear-gradient(90deg, #FF8850, #FF7B97);*/
+  border-color: linear-gradient(90deg, #FF8850, #FF7B97); 
+
+  /* width: 100%; */
+  background: linear-gradient(90deg, #FF8850, #FF7B97);
+  color: white;
+  filter: drop-shadow(5px 15px 8px lightgrey);
+}

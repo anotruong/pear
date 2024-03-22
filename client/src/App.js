@@ -2,7 +2,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { appContext } from './hook/appContext';
-import LoginPage from './pages/login/loginPage';
+import StartPage from './pages/start/startPage';
+import LogInPage from './pages/start/loginPage';
+import SignUpPage from './pages/start/signupPage';
 
 import CalendarPage from './pages/calendarPage';
 import SearchPage from './pages/search/searchPage';
@@ -10,26 +12,32 @@ import HomePage from './pages/homePage';
 import Calendar from 'react-calendar';
 import ChatIndex from './pages/chat/index';
 
-import './App.css';
 import ProfilePage from './pages/profilePage';
-import SignInPage from './pages/login/signinPage';
-import SignUpPage from './pages/login/signupPage';
+
+import './App.css';
 
 function App() {
+  // state for Navigation bar
   const [ homeBtn, setHomeBtn ] = useState(true);
   const [ searchBtn, setSearchBtn ] = useState(true);
   const [ addBtn, setAddBtn ] = useState(false);
   const [ profileBtn, setProfileBtn ] = useState(false);
   const [ calBtn, setCalBtn ] = useState(true);
-  const [ loginState, setLoginState ] = useState(true);
-  const [ homeState, setHomeState ] = useState(false);
 
-  // Custom hook component for font and maybe something else
-  const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
+  // state for startPage
+  const [ logBtnState, setLogBtnState ] = useState(false);
+  const [ signBtnState, setSignBtnState ] = useState(false);
+
+  // State before login or signup is performed
+  const [ startState, setStartState ] = useState(true);
+  const [ homeState, setHomeState ] = useState(false);
 
   // HomePage hooks
   const [ upcomingState, setUpcomingState ] = useState(true);
   const [ pendingState, setPendingState ] = useState(false);
+
+  // Custom hook component for viewing application
+  const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
 
   useEffect(() => {
     const resolutionHandler = () => setWindowWidth(window.innerWidth);
@@ -47,6 +55,8 @@ function App() {
     // You can perform any action here based on the width change
   }, [windowWidth]); 
 
+  
+
   return (
     <appContext.Provider value={{
       homeBtn, setHomeBtn,
@@ -54,9 +64,11 @@ function App() {
       addBtn, setAddBtn,
       profileBtn, setProfileBtn,
       calBtn, setCalBtn,
-      loginState, setLoginState,
+      startState, setStartState,
       upcomingState, setUpcomingState,
-      pendingState, setPendingState
+      pendingState, setPendingState,
+      logBtnState, setLogBtnState,
+      signBtnState, setSignBtnState
     }}>  
       <div className="App">
         {windowWidth > 605 ? <div className='mobilePls' >
@@ -67,25 +79,19 @@ function App() {
     
           </div>
         </div> : <>
-          {/* {!loginState ? <></> : <LoginPage />} */}
+          {/* {!startState ? <></> : <StartPage />} */}
+
+          {/*After logging in, 'HomePage' should be viewed first.  */}
+          {!homeBtn ? <></> : <HomePage />}
           {/* {!calBtn ? <></> : <CalendarPage />} */}
+          {/* 'LoginPage' and 'SignUpPage' were moved to 'StartPage' */}
+
           {/* {!searchBtn ? <></> : <SearchPage />} */}
-          {/* {!homeBtn ? <></> : <HomePage />} */}
+
           {/* <ChatIndex /> */}
           {/* <ProfilePage /> */}
-          {/* <SignInPage /> */}
-          <SignUpPage />
-        </>}
-        
 
-        {/* {!loginState ? <></> : <LoginPage />} */}
-        {/* {!calBtn ? <></> : <CalendarPage />} */}
-        {/* {!searchBtn ? <></> : <SearchPage />} */}
-        {/* {!homeBtn ? <></> : <HomePage />} */}
-        {/* <ChatIndex /> */}
-        {/* <ProfilePage /> */}
-        {/* <SignInPage /> */}
-        <SignUpPage />
+        </>}
       </div>
     </appContext.Provider>
   );

@@ -47,13 +47,21 @@ div#upperNaviBtn-container {
   background: white;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  filter: drop-shadow(6px 6px 6px lightgrey);
+  filter: drop-shadow(6px 6px 2px lightgrey);
   flex: 1 1;
   width: 100%;
+
+
+  /* replacement shadow */
+  /* border-bottom: grey 2px;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-style: solid; */
 }
 
 a#calLink {
-  font-size: 5vw;
+  font-size: 4vw;
   display: inline-flex;
 }
 
