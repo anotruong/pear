@@ -11,7 +11,7 @@
   border-radius: 2rem 2rem 0rem 0rem;
   /* position: relative; */
   z-index: 4;
-  filter: drop-shadow(6px 6px 16px grey);
+  filter: drop-shadow(6px 6px 16px lightgrey);
 /* alterations */
   /* position: absolute; */
   bottom: 0rem;
