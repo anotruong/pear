@@ -1,4 +1,4 @@
-.requestConfirm-container {
+.confirmRes-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -8,14 +8,14 @@
   z-index: 1;
 }
 
-.requestConfirm-flex {
+.confirmRes-flex {
   flex: 1 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.requestConfirm-header {
+.confirmRes-header {
   /* margin-top: 7rem; */
   padding: 0rem 2rem;
 }

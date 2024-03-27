@@ -2,9 +2,9 @@ import React from 'react';
 import tempPic from '../images/tempPP.png';
 import NaviBar from '../components/naviBar';
 
-import './stylesheets/requestConfirm.css';
+import './stylesheets/confirmRes.css';
 
-const RequestConfirm = () => {
+const ConfirmRes = () => {
 
   // example of required confirmation state
   const firstName = 'Yoona';
@@ -17,9 +17,9 @@ const RequestConfirm = () => {
   const cancellation = 2;
 
   return (
-    <div className="requestConfirm-container">
-      <div className='requestConfirm-flex'>
-        <div className='requestConfirm-header'>
+    <div className="confirmRes-container">
+      <div className='confirmRes-flex'>
+        <div className='confirmRes-header'>
           <h2>Sweet!</h2>
           <h4 id='subHeading'>{name}. accepted your request to eat together.</h4>
         </div>
@@ -58,4 +58,4 @@ const RequestConfirm = () => {
   );
 }
 
-export default RequestConfirm;
+export default ConfirmRes;
