@@ -11,7 +11,7 @@ const ProfileInvites = ({...arg}) => {
   const invite = arg.invite;
   console.log(arg)
 
-  console.log(invite)
+  console.log(invite.date)
   const fontColor = arg.color ? arg.color : "";
   const date = displayDate(invite.date); // arg is string type
   // typeof invite.date === 'object' ? displayDate(invite.date) : `this is 

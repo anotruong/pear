@@ -1,25 +1,61 @@
 import React from 'react';
-import tempPic from '../images/tempPP.png';
-import NaviBar from '../components/naviBar';
+import { displayDate } from '../dateHandler';
+import tempPic from '../../images/tempPP.png';
+import NaviBar from '../naviBar';
 
-import './stylesheets/confirmRes.css';
+import mockData from '../../mock-data.json';
 
-const ConfirmRes = () => {
+import '../stylesheets/confirmation.css';
 
-  // example of required confirmation state
-  const firstName = 'Yoona';
-  const lastIntial = 'K';
+const confirmation = (confirmNum) => {
+
+  // the value passed through the arg 'confirmNum' is a string that represents the confirmation number assigned between two users.
+  const tempConfirmNumber = '8903';
+
+  // ReservationInformation pulled from mockData
+
+  const reservationInfo = mockData.pendingInvite.filter(obj => obj.id === tempConfirmNumber)[0];
+  const date = displayDate(reservationInfo.date);
+  const time = reservationInfo.time;
+  // 'area' is not a feature created in mockData
+
+
+  const restaurantId = reservationInfo.restId;
+  const restaurantInfo = mockData.restaurants.filter(obj => obj.id === restaurantId)[0];
+
+  console.log(restaurantInfo)
+  // const date = 'Thursday, Oct. 7th, 2021';
+  // const time = '12pm-2pm';
+  const restName = restaurantInfo.name;
+  // const area = 'downtown LA';
+  console.log(reservationInfo)
+
+
+  // information pulled between user inviter and invitees
+
+  const user = reservationInfo.userId;
+  const userInfo = mockData.accounts.filter(obj => obj.id === user)[0];
+  console.log(userInfo);
+
+  const firstName = userInfo.firstName.slice(0, 1).toUpperCase() + userInfo.firstName.slice(1);
+  const lastIntial = userInfo.lastName.slice(0, 1).toUpperCase();
   const name = firstName + ' ' + lastIntial;
-  const date = 'Thursday, Oct. 7th, 2021';
-  const time = '12pm-2pm';
-  const restName = 'Bestia';
-  const area = 'downtown LA';
+
+  
   const cancellation = 2;
 
+  /* Connect btn
+      -What does it do? The reservation between users have already been established.
+  */
   return (
-    <div className="confirmRes-container">
-      <div className='confirmRes-flex'>
-        <div className='confirmRes-header'>
+    <div className="confirmation-container">
+      <div className='confirmation-flex'>
+        <div className='closeOut-flex'>
+          <div className='closeOut-btn'>
+            <button id='closeOut' />
+          </div>
+        </div>
+        <div className='confirmation-header'>
           <h2>Sweet!</h2>
           <h4 id='subHeading'>{name}. accepted your request to eat together.</h4>
         </div>
@@ -28,7 +64,7 @@ const ConfirmRes = () => {
         </div>
         <div className='apptInfo'>
           <p className='confirm date'>Scheduled for <b>{date} {time}</b></p>
-          <p className='confirm location'><b>{restName}</b> ({area})</p>
+          <p className='confirm location'><b>{restName}</b> {/*({area})*/} </p>
         </div>
         <div className='requestConBtn'>
           <div 
@@ -58,4 +94,4 @@ const ConfirmRes = () => {
   );
 }
 
-export default ConfirmRes;
+export default confirmation;

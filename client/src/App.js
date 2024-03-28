@@ -13,9 +13,11 @@ import Calendar from 'react-calendar';
 import ChatIndex from './pages/chat/index';
 
 import ProfilePage from './pages/profile/profile';
+import ConfirmRes from './components/confirmation/confirmRes';
 
 import './App.css';
-import RequestConfirm from './pages/requestConfirm';
+import Cancellation from './components/confirmation/cancellation';
+import RestaurantPage from './pages/search/restaurantPage';
 
 function App() {
   // state for Navigation bar
@@ -98,7 +100,9 @@ function App() {
             - */}
 
           {/* {calBtn ? <CalendarPage /> : <></>} */}
-          <RequestConfirm />
+          {/* <RestaurantPage /> */}
+          <ConfirmRes />
+          {/* <Cancellation /> */}
             
           {/* Profile/Account Icon is not set up.
             - ProfilePage is probably not the profile page set up. 

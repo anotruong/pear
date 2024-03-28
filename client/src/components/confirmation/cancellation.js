@@ -1,8 +1,8 @@
 import React from 'react';
-import tempPic from '../images/tempPP.png';
+import tempPic from '../../images/tempPP.png';
 import NaviBar from '../naviBar';
 
-import './stylesheets/cancellation.css';
+// import './stylesheets/cancellation.css';
 
 const Cancellation = () => {
 
@@ -16,10 +16,13 @@ const Cancellation = () => {
   const area = 'downtown LA';
   const cancellation = 2;
 
+  /*Server Function:
+    -Since this would remove an existing object from the database, */
+
   return (
-    <div className="cancellation-container">
-      <div className='cancellation-flex'>
-        <div className='cancellation-header'>
+    <div className="confirmation-container">
+      <div className='confirmation-flex'>
+        <div className='confirmation-header'>
           <h2>Cancellation Confirmed!</h2>
           <h4 id='subHeading'>Your meal with {name} has been cancelled</h4>
         </div>
@@ -47,8 +50,8 @@ const Cancellation = () => {
         <div className='cancelInfo-container'>
           You have <b>{cancellation}</b> cancellations left this month
         </div>
-        <div className='addedCal'>
-        This event has been removed to your calendar.
+        <div className='removeCal'>
+          This event has been removed to your calendar.
         </div>
       </div>
 

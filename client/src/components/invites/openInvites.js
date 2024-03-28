@@ -19,6 +19,7 @@ const OpenInvite = ({account}) => {
   const restId = account.restId;
 
   const time = account.time;
+  console.log(account.date)
   const date = displayDate(account.date);
   // console.log(typeof tempRestId)
   // console.log(tempAccId, tempRestId)
