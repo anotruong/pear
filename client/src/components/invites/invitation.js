@@ -36,14 +36,16 @@ const Invitation = ({acc}) => {
         background: `${!divState ? '#FFF1F1' : '#FFFAFA'}`,
       }}
     >
-      <div className='profile-flex'>
+      <div 
+        className='OIprofile-flex'
+        onClick={() => setDivState(!divState)}
+      >
         <div className='icon-container'>
           <img src={tempPic} className='profileIcon'/>
           <p className='fullName'>{user.firstName} {user.lastName.substring(0, 1)}.</p>
         </div>
         <div 
           className='info-container'
-          onClick={() => setDivState(!divState)}
         >
           <p className='date'>{date}</p>
           <p className='time'>{acc.time}</p>

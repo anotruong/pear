@@ -116,8 +116,8 @@ function App() {
             - */}
 
           {/* {calBtn ? <CalendarPage /> : <></>} */}
-          {/* <RestaurantPage /> */}
-          <CalendarPage />
+          <SearchPage />
+          {/* <CalendarPage /> */}
           {cancellationState ? <Cancellation id={cancelIdState} /> : <></>}
             
           {/* Profile/Account Icon is not set up.

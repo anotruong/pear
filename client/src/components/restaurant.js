@@ -1,5 +1,5 @@
 import React from 'react';
-import HoeHyeong from '../images/rest-hoeHyeong.jpeg';
+import restaurantPic from '../images/rest-hoeHyeong.jpeg';
 import StarRating from './starRating';
 import mockData from './../mock-data.json';
 import './stylesheets/restaurant.css';
@@ -17,9 +17,10 @@ const RestaurantDisplay = ({restId}) => {
 
   return (
     <div id='restaurant-container'
-    style={{
-      backgroundImage: `url(${HoeHyeong})`
-    }}>
+      style={{
+        backgroundImage: `url(${restaurantPic})`
+      }}
+    >
       <div 
         id='restaurant-display'
       >
