@@ -163,7 +163,7 @@ function parseTime(time) {
   const [hours, minutes] = time.split(':');
   const parsedHours = parseInt(hours);
   const parsedMinutes = parseInt(minutes) || 0; // Default to 0 if minutes are not provided
-  console.log(hours, parsedMinutes)
+  // console.log(hours, parsedMinutes)
   return time.includes('pm') ? parsedHours + 12 : parsedHours;
 }
 

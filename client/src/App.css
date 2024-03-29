@@ -6,7 +6,8 @@
   height: 100vh;
   font-family: 'Raleway', sans-serif;
   /* size: 16px; */
-  font-size: 1.8vh;
+  /* font-size: 1.8vh; */
+  font-size: 3.5vw;
   overflow: hidden;
 }
 

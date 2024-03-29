@@ -4,7 +4,8 @@ import mockData from '../../mock-data.json';
 
 function CalendarDays(props) {
 
-  const { friState, setFriState } = useContext(appContext);
+  // const { eventDisplay, setEventDisplay } = useContext(appContext);
+  const { eventDisplay, setEventDisplay } = useContext(appContext)
 
   const tempUserId = '001';
   const confirmedMeals = mockData.confirmedMeals;
@@ -140,7 +141,7 @@ function CalendarDays(props) {
     // const bg = `if the 'todayDate' is a smaller number than the element, then allow the border radius to be blocked`
     const roundRadius = '0rem 0rem 2rem 2rem';
     const cornerRadius = '0rem';
-    const gradient = friState ? bgGradient : "";
+    const gradient = eventDisplay ? bgGradient : "";
     const checkIdxHighlight = todayIdxArr.some(ele => idx === ele);
     /*
       PROB: 
@@ -166,7 +167,7 @@ function CalendarDays(props) {
         onClick={() => {
           if (day.date.toString() === today){
             console.log("it's working");
-            setFriState(!friState);
+            setEventDisplay(!eventDisplay);
 
             // affects ../../....monthlyNotes.js
             
@@ -224,7 +225,7 @@ function CalendarDays(props) {
   let weeks = [week1, week2, week3, week4, week5, week6];
 
   weeks = weeks.map((arr, idx) => {
-    const displayState = `${friState ? "none" : ""}`
+    const displayState = `${eventDisplay ? "none" : ""}`
 
     return <div 
     id={ idx}

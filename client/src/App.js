@@ -38,9 +38,18 @@ function App() {
   // State for chat 
   const [ chatBtn, setChatBtnState ] = useState();
 
+  // State for confirmation components
+  const [ confirmState, setConfirmState ] = useState(false);
+  const [ confirmIdState, setConfirmIdState ] = useState('');
+  const [ cancellationState, setCancellationState ] = useState(false);
+  const [ cancelIdState, setCancelIdState ] = useState('');
+  
+  // console.log(`cancellation state is ${cancellationState}`)
+
   // HomePage hooks
   const [ upcomingState, setUpcomingState ] = useState(true);
   const [ pendingState, setPendingState ] = useState(false);
+
 
   // Custom hook component for viewing application
   const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
@@ -61,7 +70,9 @@ function App() {
     // You can perform any action here based on the width change
   }, [windowWidth]); 
 
-  
+  // State for switching between daily and monthly notes for calendarPage
+  const [ eventDisplay, setEventDisplay ] = useState(false);
+
 
   return (
     <appContext.Provider value={{
@@ -74,7 +85,12 @@ function App() {
       upcomingState, setUpcomingState,
       pendingState, setPendingState,
       logBtnState, setLogBtnState,
-      signBtnState, setSignBtnState
+      signBtnState, setSignBtnState,
+      confirmState, setConfirmState,
+      confirmIdState, setConfirmIdState,
+      cancellationState, setCancellationState,
+      cancelIdState, setCancelIdState,
+      eventDisplay, setEventDisplay
     }}>  
       <div className="App">
         {windowWidth > 605 ? <div className='mobilePls' >
@@ -101,8 +117,8 @@ function App() {
 
           {/* {calBtn ? <CalendarPage /> : <></>} */}
           {/* <RestaurantPage /> */}
-          <ConfirmRes />
-          {/* <Cancellation /> */}
+          <CalendarPage />
+          {cancellationState ? <Cancellation id={cancelIdState} /> : <></>}
             
           {/* Profile/Account Icon is not set up.
             - ProfilePage is probably not the profile page set up. 

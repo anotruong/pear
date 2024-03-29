@@ -3,7 +3,11 @@
   /* height: 100vh; */
   /* z-index: 1; */
   height: 100%;
-}
+
+  /* Testing Position and z index for confirmation components */
+  position: fixed;
+  z-index: 1;
+  }
 
 #calendarPage-flex {
   background: #FFCAC4;

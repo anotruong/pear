@@ -24,19 +24,20 @@ const CalendarPage = () => {
    */
   
   // highlight 'weekday friday' to change 'background' value.
-  const [ friState, setFriState ] = useState(false);
+  // const [ friState, setFriState ] = useState(false);
+  const { eventDisplay, setEventDisplay } = useContext(appContext)
 
   return (
-    <appContext.Provider value={{
-     friState, setFriState
-    }}>
+    // <appContext.Provider value={{
+    //  eventDisplay, setFriState
+    // }}>
       <div id='calendarPage-container'>
         <div id='calendarPage-flex'>
           <div className='cal-container'>
             <Calendar />
           </div>
           <div className='notes-header'>
-            <h3>{friState ? "Today's events" :"This month at a glance"}:</h3>
+            <h3>{eventDisplay ? "Today's events" :"This month at a glance"}:</h3>
           </div>
           <MonthlyNotes />
           <div className='calNavi-page'>
@@ -46,7 +47,7 @@ const CalendarPage = () => {
           </div>
         </div>
       </div>
-    </appContext.Provider>
+    // </appContext.Provider>
   )
 };
 

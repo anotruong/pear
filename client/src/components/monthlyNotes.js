@@ -7,7 +7,7 @@ import ProfileInvites from './invites/profileInvite';
 
 const MonthlyNotes = () => {
 
-  const {friState} = useContext(appContext);
+  const {eventDisplay} = useContext(appContext);
   const tempUserId = "001";
   const today = new Date();
   const acc = (id) => mockData.accounts.filter(obj => obj.id === id);
@@ -101,9 +101,13 @@ const MonthlyNotes = () => {
     <div className='notes-container'>
       <div className='notes-flex'>
 
-        <ul className='list-container'>
+        <ul 
+          className='list-container'
+          style={{
+            padding: `${eventDisplay ? '0rem 1rem' : '0rem 0em 0rem 2.5rem'}`
+          }}>
           {/* {agendaList} */}
-          {friState ? dailyEvents : monthlyEvents}
+          {eventDisplay ? dailyEvents : monthlyEvents}
           {/* {dailyEvents} */}
           {/* will iterate this and stylelize the information */}
         </ul>

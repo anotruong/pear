@@ -18,7 +18,7 @@ const Calendar = () => {
   'July', 'August', 'September', 'October', 'November', 'December'];
 
 
-  const { friState } = useContext(appContext);
+  const { eventDisplay } = useContext(appContext);
 
   const bgGradient = 'linear-gradient(270deg, #FF6B8FE5, #FF8947)';
   
@@ -48,7 +48,7 @@ const Calendar = () => {
             weekdays.map((weekday, idx) => {
               const currentDay = new Date().getDay();
               // if the 'weekday' element matches the day of the current date, allow them permission to alter the background 
-              const gradient = idx !== currentDay ? "transpartent": `${!friState ? 'transparent' : bgGradient}`;
+              const gradient = idx !== currentDay ? "transpartent": `${!eventDisplay ? 'transparent' : bgGradient}`;
 
               return <div 
                   className={"weekday " + weekday}
