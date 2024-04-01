@@ -12,7 +12,7 @@ const AvailableInvite = ({restId}) => {
 
   const openInvite = mockData.openInvite.filter(obj => obj.restId === restId && obj.confirmed === false);
 
-  console.log(openInvite)
+  // console.log(openInvite)
 
   const profileForm = openInvite.map((acc, idx) => <Invitation key={idx} acc={acc} />)
 
@@ -24,8 +24,13 @@ const AvailableInvite = ({restId}) => {
           <div>
             <h3 className='invite'>Available Invites</h3>
           </div>
-          <div className='links'> 
-            <a href='reddit.com'>+ Create invite</a>
+          <div id='createInvite-container' className='links'> 
+          {/* send post request to server to create invitation.
+              - When inviting, the invite should be an open invite from the user creating it.
+              - Information needed from user..
+                - Time and Date
+                - Location is already set due to the restaurant state that the page points to.*/}
+            <a href='reddit.com' id='createInvite'>Create invite</a>
           </div>
         </div>
       <div 

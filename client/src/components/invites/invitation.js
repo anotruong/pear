@@ -27,7 +27,7 @@ const Invitation = ({acc}) => {
   // const restName = restData.filter(obj => obj.id === restId)[0]['name'];
 // 
   const date = displayDate(acc.date)
-  console.log(user)
+  // console.log(user)
   
   return (
     <div 
@@ -50,7 +50,8 @@ const Invitation = ({acc}) => {
           <p className='date'>{date}</p>
           <p className='time'>{acc.time}</p>
           <ul 
-          hidden={divState}
+            id='trait'
+            hidden={divState}
           >
           <li className='trait'>{user.personality}</li>
           <li className='trait'>{user.diet}</li>

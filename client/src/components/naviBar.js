@@ -25,34 +25,71 @@ const NaviBar = (bgColor) => {
   const { addBtn, setAddBtn } = useContext(appContext);
   const { profileBtn, setProfileBtn } = useContext(appContext);
   const { calBtn, setCalBtn } = useContext(appContext);
-  const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
-  const [ viewHeight, setViewHeight ] = useState("");
+
+  // depreciated feature
+
+  // const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
+  // const [ viewHeight, setViewHeight ] = useState("");
 
   /*
     height < 375px : 2vh
     height >  425px : 3vh
     height > 768px : 4vh
     */
+  // depreciated feature
+  // useEffect(() => {
+  //   const updateWindowDimensions = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
 
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  //   window.addEventListener('resize', updateWindowDimensions);
 
-    window.addEventListener('resize', updateWindowDimensions);
+  //   if (windowWidth <= 424) {
+  //     setViewHeight('2'); 
+  //   } else if (windowWidth >= 768) {
+  //     setViewHeight('4');
+  //   } else {
+  //     setViewHeight('3');
+  //   };
 
-    if (windowWidth <= 424) {
-      setViewHeight('2'); 
-    } else if (windowWidth >= 768) {
-      setViewHeight('4');
-    } else {
-      setViewHeight('3');
-    };
+  //   // console.log(windowWidth);
 
-    // console.log(windowWidth);
+  // }, [window.innerWidth]);
 
-  }, [window.innerWidth]);
+  const naviStateHandler = () => {
+        
+    if (homeBtn) {
+      setSearchBtn(false);
+      setAddBtn(false);
+      setProfileBtn(false);
+      setCalBtn(false);
+    } else if (searchBtn) {
+      setHomeBtn(false);
+      setAddBtn(false);
+      setProfileBtn(false);
+      setCalBtn(false);
+    } else if (addBtn) {
+      setHomeBtn(false);
+      setSearchBtn(false);
+      setProfileBtn(false);
+      setCalBtn(false);
+    } else if (calBtn) {
+      setHomeBtn(false);
+      setAddBtn(false);
+      setSearchBtn(false);
+      setProfileBtn(false);
+    } 
+    if (profileBtn) {
+      setHomeBtn(false);
+      setAddBtn(false);
+      setSearchBtn(false);
+      setCalBtn(false);
+    } 
+  };
 
+  // useEffect(() => {
+  //   naviStateHandler();
+  // }, [homeBtn, searchBtn, addBtn, calBtn, profileBtn])
   return(
     <div id='naviBar-container'>
       <div id='naviBar-flex'>
@@ -62,9 +99,16 @@ const NaviBar = (bgColor) => {
             className='navi-btn' 
             style={{
               backgroundImage: `url(${!homeBtn ? homeIconOff : homeIconOn})`,
-              height: `${viewHeight}vh`
+              // height: `${viewHeight}vh`
             }}
-            onClick={() => setHomeBtn(!homeBtn)} 
+            onClick={() => {
+              setHomeBtn(true);
+              setSearchBtn(false);
+              setAddBtn(false);
+              setCalBtn(false);
+              setProfileBtn(false)
+              console.log('home is ' + homeBtn)
+            }} 
           />
         </div>
         <div className='button-container'>
@@ -73,9 +117,16 @@ const NaviBar = (bgColor) => {
             className='navi-btn'
             style={{
               backgroundImage: `url(${!searchBtn ? searchOff : searchOn})`,
-              height: `${viewHeight}vh`
+              // height: `${viewHeight}vh`
             }}
-            onClick={() => setSearchBtn(!searchBtn)} />
+            onClick={() => {
+              setHomeBtn(false);
+              setSearchBtn(true);
+              setAddBtn(false);
+              setCalBtn(false);
+              setProfileBtn(false)
+              console.log('search is ' + searchBtn)
+            }} />
         </div>
         <div className='button-container'>
           <button 
@@ -83,9 +134,16 @@ const NaviBar = (bgColor) => {
             className='navi-btn'
             style={{
               backgroundImage: `url(${!addBtn ? addOff : addOn})`,
-              height: `${viewHeight}vh`
+              // height: `${viewHeight}vh`
           }}
-            onClick={() => setAddBtn(!addBtn)}
+            onClick={() => {
+              setHomeBtn(false);
+              setSearchBtn(false);
+              setAddBtn(true);
+              setCalBtn(false);
+              setProfileBtn(false)
+              console.log('add is ' + addBtn)
+            }}
           /> 
         </div>
         <div className='button-container'>
@@ -94,9 +152,16 @@ const NaviBar = (bgColor) => {
             className='navi-btn'
             style={{
               backgroundImage: `url(${!calBtn ? calIconOff : calIconOn})`,
-              height: `${viewHeight}vh`
+              // height: `${viewHeight}vh`
             }}
-            onClick={() => setCalBtn(!calBtn)}  
+            onClick={() => {
+              setHomeBtn(false);
+              setSearchBtn(false);
+              setAddBtn(false);
+              setCalBtn(true);
+              setProfileBtn(false)
+              console.log('cal is ' + searchBtn)
+            }}  
           />
         </div>
         <div className='button-container'>
@@ -105,9 +170,18 @@ const NaviBar = (bgColor) => {
             className='navi-btn'
             style={{
               backgroundImage: `url(${!profileBtn ? accOff : accOn})`,
-              height: `${viewHeight}vh`
+              // height: `${viewHeight}vh`
             }}
-            onClick={() => setProfileBtn(!profileBtn)} 
+            onClick={() => {
+   
+              setHomeBtn(false);
+              setSearchBtn(false);
+              setAddBtn(false);
+              setCalBtn(false);
+              setProfileBtn(true)
+
+              console.log('profile is ' + profileBtn)
+            }} 
           />
         </div>
 

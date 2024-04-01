@@ -1,19 +1,14 @@
-/*  */
-
-
-
-/* moved to app.css */
-/* a {
-  font-size: larger;
-  font-weight: bold;
-  background: linear-gradient(45deg, #FF884A, #FF7F98);
-  text-decoration: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
+/* container for link in 'available.js*/
+#createInvite-container {
+  background-image: url('../../images/plus-cross.png');
+  background-repeat: no-repeat;
+  background-size: .9rem;
+  background-position-x: left;
+  background-position-y: center;
+  padding-left: 1.2rem;
+}
 
 h3.invite {
-  /* font-size: x-large; */
   font-weight: bold;
   margin: .5rem 0rem;
 }
@@ -35,21 +30,7 @@ h3.invite {
   display: none;
 }
 
-/* .profile-container {
-  height: fit-content;
-  width: 80vw;
-  filter: drop-shadow(6px 8px 6px #4A4A4A);
-  padding: 5%;
-  margin: 1rem 0rem 2rem 0rem;
-} */
 
-/* .profile-flex {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: inherit;
-} */
 
 .profileIcon {
   /* background-size: 4rem 4rem; */
@@ -66,7 +47,7 @@ h3.invite {
 
 .availableNow-container {
   width: -webkit-fill-available;
-  padding: 1rem 1rem;
+  padding: 0rem 1rem;
   overflow: scroll;
   
 }
@@ -95,93 +76,17 @@ p.fullName {
   margin: 0rem;
 }
 
+ul#trait {
+  padding-left: 0;
+  padding-bottom: 0;
+
+}
+
 li.trait {
   display: flex;
   margin-left: .5rem;
 }
 
-/* ul {
-  line-height: 1.5rem;
-  padding-bottom: 1rem;
-}
-
-
-
-
-.button-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: fit-content;
-}
-
-.btn-container {
-  width: 47%;
-  height: 5vh;
-} */
-
-/* Moved to app.css */
-/* 
-.invite-btn { 
-  padding: 0.5rem 1rem;
-  position: relative;
-  background-color: white;
-  background-clip: padding-box;
-  border: 2px solid transparent;
-
-  border-radius: 1.75rem;
-  background-image: linear-gradient(
-    90deg,
-    #FF884A,
-    #FF7F98
-  );
-} 
-
-#gradient-btn {
-  font-size: 3.7vw;
-  font-weight: bold;
-  text-transform: capitalize;
-  color: white;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.10);
-}
-
-#border-btn {
-  margin: 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-weight: 600;
-  font-size: 3.2vw;
-  line-height: 1.5rem;
-  text-wrap: nowrap;
-}
-
-
-#border-btn:before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  z-index: -1;
-  inset: 0;
-  padding: 3px;
-  background-image: linear-gradient(
-    90deg,
-    #FF884A,
-    #FF7F98
-  );
-  border-radius: 1.75rem;
-
-  -webkit-mask: 
-  linear-gradient(#fff 0 0) content-box, 
-  linear-gradient(#fff 0 0);
-       mask: 
-  linear-gradient(#fff 0 0) content-box, 
-  linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-} */
 
 
 /* for resturant page */
@@ -226,4 +131,5 @@ li.trait {
   padding: 5%;
   /* background-color: #FFF1F1; */
   margin: 1rem 1rem 2rem 1rem;
+  border-radius: 1rem;
 }
