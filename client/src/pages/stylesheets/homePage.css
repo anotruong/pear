@@ -41,16 +41,15 @@ div#upperNaviBtn-container {
 }
 
 #white-container {
-  padding: 0rem 2rem;
+  padding: 0rem 2rem .5rem;
   max-width: -webkit-fill-available;
-
   background: white;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  filter: drop-shadow(6px 6px 2px lightgrey);
-  flex: 1 1;
+  /* border-bottom-left-radius: 2rem; */
+  /* border-bottom-right-radius: 2rem; */
+  /* filter: drop-shadow(6px 6px 2px lightgrey); */
+  flex: 1 1 auto;
   width: 100%;
-
+  overflow: hidden;
 
   /* replacement shadow */
   /* border-bottom: grey 2px;
@@ -60,9 +59,29 @@ div#upperNaviBtn-container {
   border-style: solid; */
 }
 
+#white-container #upcoming-container {
+  overflow: scroll;
+  /* min-height: -webkit-fill-available; */
+  /* max-height: 39vh; */
+  margin-bottom: 1rem;
+  height: 100%;
+}
+
 a#calLink {
   font-size: 4vw;
   display: inline-flex;
+}
+
+.miscLinks {
+  padding: 1rem 2rem;
+  max-width: -webkit-fill-available;
+  background: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  filter: drop-shadow(6px 6px 2px lightgrey);
+  /* flex: 1 1 auto; */
+  width: 100%;
+  /* overflow: hidden; */
 }
 
 button.upperNavi-btn {
@@ -134,11 +153,14 @@ button#upcoming {
   margin-right: 1rem;
 }
 
-#eventBtn-flex {
+#homePage-container #eventBtn-flex {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 1rem 0rem;
+  /* margin: 1rem 0rem; */
+  background: white;
+  width: -webkit-fill-available;
+  padding: 0rem 2rem;
 }
 
 button.eventBtn {
@@ -242,9 +264,3 @@ p#fullName {
   width: 100%;
 }
 
-#upcoming-container {
-  overflow: scroll;
-  /* min-height: -webkit-fill-available; */
-  max-height: 39vh;
-  margin-bottom: 1rem;
-}

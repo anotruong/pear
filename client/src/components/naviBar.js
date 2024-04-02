@@ -20,6 +20,8 @@ import homeIconOn from '../images/homeIcon-on.png';
 import './stylesheets/naviBar.css'
 
 const NaviBar = (bgColor) => {
+  const { userId } = useContext(appContext);
+
   const { homeBtn, setHomeBtn } = useContext(appContext);
   const { searchBtn, setSearchBtn } = useContext(appContext);
   const { addBtn, setAddBtn } = useContext(appContext);

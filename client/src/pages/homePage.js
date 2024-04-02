@@ -8,22 +8,25 @@ import mockData from '../mock-data.json';
 import NaviBar from '../components/naviBar';
 import PendingEvent from '../components/events/pending';
 import UpcomingEvent from '../components/events/upcoming';
-// import Invites from '../components/invites/invites';
-// import Invitation from '../components/invites/invitation';
 
 // Images
 import SinglePear from '../images/smallLogo.png';
 import AlertOffIcon from '../images/notificationOffIcon.png';
-// import AlertOnIcon from '../images/notificationOnIcon.png';
 import CalIcon from '../images/calIcon-on.png';
 import ChatOffIcon from '../images/chatOffIcon.png';
-// import ChatOnIcon from '../images/chatOnIcon.png';
-// import ClockIcon from '../images/clockIcon.png';
-// import LocationIcon from '../images/locationIcon.png';
-// import tempPic from '../images/tempPP.png';
+
 import './stylesheets/homePage.css';
 
-const HomePage = () => {
+const HomePage = ({id}) => {
+  // The userId will be requested after 'login' or 'signin' state is assigned.
+
+  const tempUserId = '001';
+  const { setUserIdState } = useContext(appContext);
+
+  setUserIdState(tempUserId)
+
+  // console.log(userIdState)
+
   const { upcomingState, setUpcomingState } = useContext(appContext);
   const { pendingState, setPendingState } = useContext(appContext);
 
@@ -76,37 +79,38 @@ const HomePage = () => {
           <h1 className='firstName'>hello {userObj.firstName},</h1>
         </div>
       </div>
+      <div id='eventBtn-flex'>
+        <button 
+          id='upcoming' 
+          className='eventBtn' 
+          style={{
+            borderImageSource: `
+            ${!upcomingState ? "none" : colorGradient}`,
+            color: `${!upcomingState ? "#4D4D4D" : "#000000"}`
+          }}
+          onClick={(eventStateHandler)}
+        >
+          <h4 className='eventBtnName'>Upcoming event</h4>
+        </button>
+        <button 
+          id='pending' 
+          className='eventBtn'
+          style={{
+            borderImageSource: `
+          ${!pendingState ? "none" : colorGradient}`,
+          color: `${!pendingState ? "#4D4D4D" : "#000000"}`
+          }}
+          onClick={(eventStateHandler)}
+        >
+          <h4 className='eventBtnName'>Pending</h4>
+        </button>
+      </div>
       <div id='white-container'>
         {/* <div id='homePage-flex'> */}
 
-          <div id='event-container'>
+          {/* <div id='event-container'> */}
             {/* upcoming and pending events */}
-            <div id='eventBtn-flex'>
-              <button 
-                id='upcoming' 
-                className='eventBtn' 
-                style={{
-                  borderImageSource: `
-                  ${!upcomingState ? "none" : colorGradient}`,
-                  color: `${!upcomingState ? "#4D4D4D" : "#000000"}`
-                }}
-                onClick={(eventStateHandler)}
-              >
-                <h4 className='eventBtnName'>Upcoming event</h4>
-              </button>
-              <button 
-                id='pending' 
-                className='eventBtn'
-                style={{
-                  borderImageSource: `
-                ${!pendingState ? "none" : colorGradient}`,
-                color: `${!pendingState ? "#4D4D4D" : "#000000"}`
-              }}
-                onClick={(eventStateHandler)}
-              >
-                <h4 className='eventBtnName'>Pending</h4>
-              </button>
-            </div>
+            
             {/* Should display only one at a time for now */}
             <div id='upcoming-container'>
               {/* component */}
@@ -115,9 +119,13 @@ const HomePage = () => {
 
               {/* <UpcomingEvent /> */}
             </div>
-          </div>
+          {/* </div> */}
 
           {/* link to calendar */}
+          
+
+        </div>
+        <div className='miscLinks'>
           <div className='link-container'>
             <a 
               href='reddit.com'
@@ -132,7 +140,6 @@ const HomePage = () => {
           <div id='weatherAPI-container'>
             <h1> weatherAPI </h1>
           </div>
-
         </div>
         <div id='article-container'>
           {/* articles to the community */}

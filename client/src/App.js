@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
 import { appContext } from './hook/appContext';
 import StartPage from './pages/start/startPage';
@@ -20,9 +20,12 @@ import Cancellation from './components/confirmation/cancellation';
 import RestaurantPage from './pages/search/restaurantPage';
 
 function App() {
+  // state for user
+  const [ userIdState, setUserIdState ] = useState('');
+
   // state for Navigation bar
-  const [ homeBtn, setHomeBtn ] = useState(false);
-  const [ searchBtn, setSearchBtn ] = useState(true);
+  const [ homeBtn, setHomeBtn ] = useState(true);
+  const [ searchBtn, setSearchBtn ] = useState(false);
   const [ addBtn, setAddBtn ] = useState(false);
   const [ calBtn, setCalBtn ] = useState(false);
   const [ profileBtn, setProfileBtn ] = useState(false);
@@ -74,8 +77,11 @@ function App() {
   const [ eventDisplay, setEventDisplay ] = useState(false);
 
 
+
+
   return (
     <appContext.Provider value={{
+      userIdState, setUserIdState,
       homeBtn, setHomeBtn,
       searchBtn, setSearchBtn,
       addBtn, setAddBtn,
@@ -105,25 +111,25 @@ function App() {
           {/* {startState ?<StartPage />  : <></>} */}
 
           {/*After logging in, 'HomePage' should be viewed first.  */}
-          {/* {homeBtn ? <HomePage /> : <></>} */}
+          {homeBtn ? <HomePage /> : <></>}
           {/* 'LoginPage' and 'SignUpPage' were moved to 'StartPage' */}
 
-          {/* {searchBtn ? <SearchPage /> : <></>} */}
+          {searchBtn ? <SearchPage /> : <></>}
 
           {/* Add btn doesn't have a page. 
             - should be able to create a new invite and leave it open for nearby users to be notified. 
             - utilize yelp api for resturant location
             - */}
 
-          {/* {calBtn ? <CalendarPage /> : <></>} */}
-          <SearchPage />
+          {calBtn ? <CalendarPage /> : <></>}
+          {/* <SearchPage /> */}
           {/* <CalendarPage /> */}
           {cancellationState ? <Cancellation id={cancelIdState} /> : <></>}
             
           {/* Profile/Account Icon is not set up.
             - ProfilePage is probably not the profile page set up. 
             - The icon should be an account Icon used for settings? */}
-          {/* {profileBtn ? <ProfilePage /> : <></>} */}
+          {profileBtn ? <ProfilePage /> : <></>}
           {/* <ProfilePage /> */}
          {/* <ChatIndex /> */}
 

@@ -6,6 +6,8 @@ import mockData from '../../mock-data.json';
 import Cancellation from '../confirmation/cancellation';
 import { appContext } from '../../hook/appContext';
 
+
+
 const ProfileInvites = ({...arg}) => {
   // State for cancellation
   const { cancellationState, setCancellationState } = useContext(appContext);
@@ -16,25 +18,22 @@ const ProfileInvites = ({...arg}) => {
   // const [ rightPic, setRightPic] = useState(arg.PicAlign); // if false, show right
 
   const invite = arg.invite;
-  // console.log(arg)
 
-  // console.log(invite.date)
   const fontColor = arg.color ? arg.color : "";
   const date = displayDate(invite.date); // arg is string type
 
-  // console.log(date)
   const meal = invite.meal;
-  // const date =  displayDate(invite.dateObj)
+
   const userId = invite.userId;
   const userAcc = mockData.accounts.filter(obj => obj.id === userId)[0];
   const userName = userAcc.userName;
   const name = userAcc.firstName + ' ' + userAcc.lastName[0].toUpperCase() + '.';
-  // const time = arg.invite.time;
+
   const title = meal ? `${meal} with ${name.slice(0,1).toUpperCase() + name.slice(1)}` : date;
 
   const time = invite.time;
   const restId = invite.restId;
-  // console.log(restId)
+
   const restaurant = mockData.restaurants.filter(obj => obj.id == restId)[0];
   const restName = restaurant.name;
 
