@@ -37,8 +37,13 @@ const HomePage = ({id}) => {
 
   // const confirmedMeals = mockData.confirmedMeals.filter(obj => obj.id)
   // mockData.confirmedMeals.forEach(obj => console.log(obj))
-  let upcoming = mockData.confirmedMeals[tempId].map(id => mockData.pendingInvite.filter(obj => obj.id === id));
+  let upcoming = mockData.confirmedMeals[tempId].map(id => mockData.pendingInvite.filter(obj => obj.id === tempUserId));
   upcoming = upcoming.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />); 
+
+  let pending = mockData.pendingInvite.map(id => mockData.pendingInvite.filter(obj => obj.id === tempUserId));
+  upcoming = upcoming.map((obj, idx) => <PendingEvent key={idx} value={obj} />); 
+
+  console.log(mockData.pendingInvite.filter(obj => obj.id === tempUserId ))
 
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
 
@@ -112,40 +117,39 @@ const HomePage = ({id}) => {
             {/* upcoming and pending events */}
             
             {/* Should display only one at a time for now */}
-            <div id='upcoming-container'>
+        <div id='upcoming-container'>
               {/* component */}
               {!upcomingState ? <></> : upcoming}
-              {!pendingState ? <></> : <PendingEvent />}
+              {!pendingState ? <></> : pending}
 
               {/* <UpcomingEvent /> */}
-            </div>
-          {/* </div> */}
-
-          {/* link to calendar */}
-          
-
-        </div>
-        <div className='miscLinks'>
-          <div className='link-container'>
-            <a 
-              href='reddit.com'
-              id='calLink'
-            >
-            <img 
-              src={CalIcon}
-              id='smallCalIcon'  
-            />Go to Calendar</a>
-          </div>
-          {/* weather API in lieu of covid19 api */}
-          <div id='weatherAPI-container'>
-            <h1> weatherAPI </h1>
-          </div>
-        </div>
-        <div id='article-container'>
-          {/* articles to the community */}
-          <h2>community articles</h2>
         </div>
         {/* </div> */}
+
+      </div>
+      <div className='miscLinks'>
+        <div className='link-container'>
+          <a 
+            href='reddit.com'
+            id='calLink'
+          >
+          <img 
+            src={CalIcon}
+            id='smallCalIcon'  
+          />Go to Calendar</a>
+        </div>
+        {/* weather API in lieu of covid19 api */}
+        <div id='weatherAPI-container'>
+          <h1> weatherAPI </h1>
+        </div>
+      </div>
+      <div id='article-container'>
+        {/* articles to the community */}
+        <h2>community articles</h2>
+        <h2>community articles</h2>
+        <h2>community articles</h2>
+      </div>
+      {/* </div> */}
 
       <NaviBar />
     </div>

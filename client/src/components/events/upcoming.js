@@ -69,7 +69,7 @@ const UpcomingEvent = (obj) => {
               id='border-btn' 
               className='duo-btn'
             >
-              Cancel
+              Change
             </button>
           </div>
           <div className='btn-container'>
@@ -77,7 +77,7 @@ const UpcomingEvent = (obj) => {
               id='gradient-btn' 
               className='duo-btn'
             >
-              Confirm
+              Chat
             </button>
           </div>
         </div> 
