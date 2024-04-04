@@ -1,10 +1,28 @@
 import React from 'react';
-
+import mockData from '../../mock-data.json';
 import ClockIcon from '../../images/clockIcon.png';
 import LocationIcon from '../../images/locationIcon.png';
 import tempPic from '../../images/tempPP.png';
+import Cancellation from '../confirmation/cancellation';
+import { displayDate, categorizeMeal } from '../dateHandler';
 
-const PendingEvent = () => {
+const PendingEvent = (obj) => {
+  const acc = obj.value;
+
+  const accInfo = mockData.accounts.filter(obj => obj.id === acc.userId)[0];
+  const firstName = accInfo.firstName.slice(0, 1).toUpperCase() + accInfo.firstName.slice(1);
+  const lastIntial = accInfo.lastName.slice(0, 1).toUpperCase();
+  const lastName = lastIntial + accInfo.lastName.slice(1);
+  const name = firstName + ' ' + lastName;
+  console.log(accInfo)
+  const restId = acc.restId;
+  const restInfo = mockData.restaurants.filter(obj => obj.id === restId)[0];
+  const restName = restInfo.name;
+  console.log(restInfo)
+  const meal = categorizeMeal(acc.date);
+  const time = acc.time;
+
+
   return (
     <div 
     id='pendingEvent' 
@@ -20,21 +38,21 @@ const PendingEvent = () => {
         className='event-flex'
       >
         <div className='info-flex' >
-          <p id='mealTime' className='infoText'>Lunch with Sooyeon M.</p>
+          <p id='mealTime' className='infoText'>{meal} with {firstName} {lastIntial}.</p>
           {/* clock icon */}
           <p id='schduledTime' className='infoText'>
             <img src={ClockIcon} className='littleIcon'/>
-            12pm-4pm
+            {time}
           </p>
           {/* map icon */}
           <p id='meetUpSpot' className='infoText'>
               <img src={LocationIcon} className='littleIcon'/>
-              Seollungtang
+              {restName}
           </p>
         </div>
         <div className='icon-container'>
           <img src={tempPic} className='miniProfileIcon'/>
-          <p id='fullName' >Sooyeon M.</p>
+          <p id='fullName' >{name}.</p>
         </div>
       </div>
       <div className="button-flex">
@@ -43,7 +61,7 @@ const PendingEvent = () => {
             id='border-btn' 
             className='duo-btn'
           >
-            Cancel
+            Reject
           </button>
         </div>
         <div className='btn-container'>

@@ -37,13 +37,17 @@ const HomePage = ({id}) => {
 
   // const confirmedMeals = mockData.confirmedMeals.filter(obj => obj.id)
   // mockData.confirmedMeals.forEach(obj => console.log(obj))
-  let upcoming = mockData.confirmedMeals[tempId].map(id => mockData.pendingInvite.filter(obj => obj.id === tempUserId));
+  let upcoming = mockData.confirmedMeals[tempId].map(id => mockData.pendingInvite.filter(obj => obj.id === id));
   upcoming = upcoming.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />); 
 
-  let pending = mockData.pendingInvite.map(id => mockData.pendingInvite.filter(obj => obj.id === tempUserId));
-  upcoming = upcoming.map((obj, idx) => <PendingEvent key={idx} value={obj} />); 
+  // console.log(upcoming)
 
-  console.log(mockData.pendingInvite.filter(obj => obj.id === tempUserId ))
+  let pending = mockData.pendingInvite.filter(obj => obj.userId === tempUserId && obj.pending === false);
+  pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />); 
+
+  // console.log(mockData.pendingInvite.filter(obj => obj.userId === tempUserId && obj.pending === false))
+
+  // console.log(pending)
 
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
 

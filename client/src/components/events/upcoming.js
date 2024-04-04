@@ -20,7 +20,9 @@ const UpcomingEvent = (obj) => {
   const user = mockData.accounts.filter(acc => acc.id === inviteObj.userId)[0];
   // console.log(user)
 
-  const userName = `${user.firstName} ${user.lastName.slice(0,1)}`
+  const firstName = user.firstName.slice(0, 1).toUpperCase() + user.firstName.slice(1);
+  const lastIntial = user.lastName.slice(0, 1).toUpperCase();
+  const lastName = lastIntial + user.lastName.slice(1);
 
   // console.log(userName)
   const meal = categorizeMeal(inviteObj.time)
@@ -46,7 +48,7 @@ const UpcomingEvent = (obj) => {
           className='event-flex'
         >
           <div className='info-flex' >
-            <p id='mealTime' className='infoText'>{meal} with {user.firstName}</p>
+            <p id='mealTime' className='infoText'>{meal} with {firstName} {lastIntial}.</p>
             {/* clock icon */}
             <p id='schduledTime' className='infoText'>
               <img src={ClockIcon} className='littleIcon'/>
@@ -60,7 +62,7 @@ const UpcomingEvent = (obj) => {
           </div>
           <div className='icon-container'>
             <img src={tempPic} className='miniProfileIcon'/>
-            <p id='fullName' >{user.firstName} {user.lastName}</p>
+            <p id='fullName' >{firstName} {lastName}</p>
           </div>
         </div>
         <div className="button-flex">
