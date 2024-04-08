@@ -10,19 +10,22 @@ import mockData from '../../mock-data.json';
 import './events.css';
 
 const UpcomingEvent = (obj) => {
+  // console.log(obj.value)
 
-  let inviteObj = obj.value[0];
+  let inviteObj = obj.value;
   // console.log(obj.value[0])
 
   const date = displayDate(inviteObj.date);
   // console.log(date)
   const time = inviteObj.time;
-  const user = mockData.accounts.filter(acc => acc.id === inviteObj.userId)[0];
-  // console.log(user)
 
-  const firstName = user.firstName.slice(0, 1).toUpperCase() + user.firstName.slice(1);
-  const lastIntial = user.lastName.slice(0, 1).toUpperCase();
-  const lastName = lastIntial + user.lastName.slice(1);
+ //There are two userId variables, 'userId1' and 'userId2' respectively. 'userId1' references the acc that is logged in, and 'userId2' is the other party that is being invited. 
+  const user2 = mockData.accounts.filter(acc => acc.id === inviteObj.userId2)[0];
+  // console.log(user2)
+
+  const firstName = user2.firstName.slice(0, 1).toUpperCase() + user2.firstName.slice(1);
+  const lastIntial = user2.lastName.slice(0, 1).toUpperCase();
+  const lastName = lastIntial + user2.lastName.slice(1);
 
   // console.log(userName)
   const meal = categorizeMeal(inviteObj.time)
@@ -85,37 +88,6 @@ const UpcomingEvent = (obj) => {
         </div> 
       </div>
     </div>
-
-  //   <div id='currentEvent' >
-  //     <div 
-  //       // className='miniProfile-container'
-  //       className='upcoming-container'
-  //       style={{
-  //         background: `FFFAFA`,
-  //         color: fontColor
-  //       }}
-  //     >
-  //       <div className='upcoming-flex'>
-
-  //         <div className='info-flex' >
-  //           <p id='mealDate' className='infoText'>
-  //             {date}
-  //           </p>
-  //           <p id='schduledTime'className='infoText'>
-  //             {time}
-  //           </p>
-  //           <p id='meetUpSpot'  className='infoText'>
-  //             @ {restName}
-  //           </p>
-  //         </div>
-  //         <div className='icon-container'>
-  //           <img src={tempPic} className='miniProfileIcon'/>
-  //           <p id='fullName' >{userName}.</p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-
   )
 }
 

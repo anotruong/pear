@@ -58,36 +58,7 @@ const NaviBar = (bgColor) => {
 
   // }, [window.innerWidth]);
 
-  const naviStateHandler = () => {
-        
-    if (homeBtn) {
-      setSearchBtn(false);
-      setAddBtn(false);
-      setProfileBtn(false);
-      setCalBtn(false);
-    } else if (searchBtn) {
-      setHomeBtn(false);
-      setAddBtn(false);
-      setProfileBtn(false);
-      setCalBtn(false);
-    } else if (addBtn) {
-      setHomeBtn(false);
-      setSearchBtn(false);
-      setProfileBtn(false);
-      setCalBtn(false);
-    } else if (calBtn) {
-      setHomeBtn(false);
-      setAddBtn(false);
-      setSearchBtn(false);
-      setProfileBtn(false);
-    } 
-    if (profileBtn) {
-      setHomeBtn(false);
-      setAddBtn(false);
-      setSearchBtn(false);
-      setCalBtn(false);
-    } 
-  };
+  
 
   // useEffect(() => {
   //   naviStateHandler();

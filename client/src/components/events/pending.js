@@ -8,13 +8,16 @@ import { displayDate, categorizeMeal } from '../dateHandler';
 
 const PendingEvent = (obj) => {
   const acc = obj.value;
+  // console.log(acc)
 
-  const accInfo = mockData.accounts.filter(obj => obj.id === acc.userId)[0];
-  const firstName = accInfo.firstName.slice(0, 1).toUpperCase() + accInfo.firstName.slice(1);
-  const lastIntial = accInfo.lastName.slice(0, 1).toUpperCase();
-  const lastName = lastIntial + accInfo.lastName.slice(1);
+   //There are two userId variables, 'userId1' and 'userId2' respectively. 'userId1' references the acc that is logged in, and 'userId2' is the other party that is being invited. 
+  const userInfo2 = mockData.accounts.filter(obj => obj.id === acc.userId2)[0];
+
+  const firstName = userInfo2.firstName.slice(0, 1).toUpperCase() + userInfo2.firstName.slice(1);
+  const lastIntial = userInfo2.lastName.slice(0, 1).toUpperCase();
+  const lastName = lastIntial + userInfo2.lastName.slice(1);
   const name = firstName + ' ' + lastName;
-  console.log(accInfo)
+  console.log(userInfo2)
   const restId = acc.restId;
   const restInfo = mockData.restaurants.filter(obj => obj.id === restId)[0];
   const restName = restInfo.name;

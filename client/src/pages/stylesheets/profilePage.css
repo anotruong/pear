@@ -39,6 +39,8 @@
 .profile-flex #eventBtn-flex {
   margin:.5rem 0rem;
   padding: 0 8vw;
+  display: flex;
+  flex-direction: row;
 } 
 
 

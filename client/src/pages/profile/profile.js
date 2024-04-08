@@ -23,12 +23,12 @@ const Profile = ({id}) => {
 
   const [ chatState, setChatState ] = useState(false);
 
-  console.log(userIdState)
+  // console.log(userIdState)
   // const tempId = '001';
   const myId = id === userIdState;
   const profileId = !myId ? userIdState : id;
 
-  console.log(profileId);
+  // console.log(profileId);
   const accInfo = mockData.accounts.filter(acc => acc.id === profileId)[0];
   const username = accInfo.userName;
   const fullname = `${accInfo.firstName} ${accInfo.lastName}`
@@ -44,21 +44,22 @@ const Profile = ({id}) => {
     setUpcomingState(!upcomingState);
     setPendingState(!pendingState);
 
-    console.log('this is working')
-    console.log(`pending state is ${pendingState}`)
-    console.log(`upcoming state is ${upcomingState}`)
+    // console.log('this is working')
+    // console.log(`pending state is ${pendingState}`)
+    // console.log(`upcoming state is ${upcomingState}`)
   };
 
-  const accInvites = mockData.pendingInvite.filter(obj => obj.userId === profileId);
+  const accInvites = mockData.pendingInvite[profileId]
+  // .filter(obj => obj.userId === profileId);
 
-  const unconfirmedInvites = accInvites.filter(obj => obj.pending === true).sort((a, b) => new Date(a.date) - new Date(b.date))
+  // const unconfirmedInvites = accInvites.filter(obj => obj.pending === true).sort((a, b) => new Date(a.date) - new Date(b.date))
 
-  const archivedInvites = accInvites.filter(obj => obj.pending === false).sort((a, b) => new Date(b.date) - new Date(a.date));
+  // const archivedInvites = accInvites.filter(obj => obj.pending === false).sort((a, b) => new Date(b.date) - new Date(a.date));
   
-  const unconfirmed = unconfirmedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={false}/>);
+  // const unconfirmed = unconfirmedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'black'} picAlign={false}/>);
   // console.log(invites)
 
-  const archived = archivedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'#4D4D4D'} picAlign={false}/> );
+  // const archived = archivedInvites.map((obj, idx) => <ProfileInvites key={idx} invite={obj} color={'#4D4D4D'} picAlign={false}/> );
 
   return (
       <div className="profile-container">
@@ -140,15 +141,15 @@ const Profile = ({id}) => {
             >
               <h4 className='eventBtnName'>{firstName}'s invites</h4>
             </button>
-            <button 
-              id='pending' 
-              className='eventBtn'
-              style={{borderImageSource: `
-              ${!pendingState ? "none" : colorGradient}`,
-              color: `${!pendingState ? "#4D4D4D" : "#000000"}`
-            }}
-              onClick={(eventStateHandler)}
-            >
+              <button 
+                id='pending' 
+                className='eventBtn'
+                style={{borderImageSource: `
+                ${!pendingState ? "none" : colorGradient}`,
+                color: `${!pendingState ? "#4D4D4D" : "#000000"}`
+              }}
+                onClick={(eventStateHandler)}
+              >
               <h4 className='eventBtnName'>Archived</h4>
             </button>
           </div>
@@ -158,7 +159,7 @@ const Profile = ({id}) => {
             {/* Should display only one at a time for now */}
             <div id='upcoming-container'>
               
-              {upcomingState ? unconfirmed : archived}
+              {/* {upcomingState ? unconfirmed : archived} */}
             </div>
           </div>
           <NaviBar />

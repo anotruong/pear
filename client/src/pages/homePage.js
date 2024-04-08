@@ -1,6 +1,10 @@
 import React, {
+  useState,
+  useEffect,
   useContext
 } from 'react';
+
+import axios from 'axios'; 
 
 // Component
 import { appContext } from '../hook/appContext';
@@ -21,33 +25,73 @@ const HomePage = ({id}) => {
   // The userId will be requested after 'login' or 'signin' state is assigned.
 
   const tempUserId = '001';
-  const { setUserIdState } = useContext(appContext);
 
-  setUserIdState(tempUserId)
+  // hook for login 'userId'
+  const { userIdState, setUserIdState } = useContext(appContext);
 
-  // console.log(userIdState)
+  // state for divs
+  const [ approvedState , setApprovedState ] = useState([]);
+  const [ unapprovedState , setUnapprovedState ] = useState([]);
 
+  // btn state
   const { upcomingState, setUpcomingState } = useContext(appContext);
   const { pendingState, setPendingState } = useContext(appContext);
 
-  // When logged in, the string value of 'id' will be passed through homePage. 
-  const tempId = '001';
-  const userObj = mockData.accounts.filter(obj => obj.id === tempId)[0];
-  // console.log(userObj);
 
-  // const confirmedMeals = mockData.confirmedMeals.filter(obj => obj.id)
-  // mockData.confirmedMeals.forEach(obj => console.log(obj))
-  let upcoming = mockData.confirmedMeals[tempId].map(id => mockData.pendingInvite.filter(obj => obj.id === id));
-  upcoming = upcoming.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />); 
+  // cause 'useEffect' to re-render.
+  setUserIdState(tempUserId);
 
-  // console.log(upcoming)
+  let confirmedMeals = mockData.confirmedMeals[userIdState];
+  let pendingInvite = mockData.pendingInvite;
 
-  let pending = mockData.pendingInvite.filter(obj => obj.userId === tempUserId && obj.pending === false);
-  pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />); 
 
-  // console.log(mockData.pendingInvite.filter(obj => obj.userId === tempUserId && obj.pending === false))
+  // Update userIdState when component mounts (just for demonstration)
+  useEffect(() => {
+    setUserIdState(tempUserId); // Set 'userIdState' to 'tempUserId'
+    confirmedMeals = mockData.confirmedMeals[userIdState]
 
-  // console.log(pending)
+
+    const fetchApproved = async () => {
+      try {
+        // let approvedInvite = await confirmedMeals.map(ele => pendingInvite.filter(obj => obj.id === ele && obj.pending === false));
+        let approvedInvite = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
+        approvedInvite = approvedInvite.filter(obj => obj.pending === false && obj.userId1 === userIdState)
+        // console.log(approvedInvite)
+
+        approvedInvite = approvedInvite.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
+
+        setApprovedState(approvedInvite)
+        // console.log(approvedState)
+        // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
+
+      } catch (error) {
+        console.error('Error fetching approved data:', error);
+      }
+    }
+
+    const fetchPending = async () => {
+      try {
+
+        let pending = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
+        pending = pending.filter(obj => obj.pending === true && obj.userId1 === userIdState)
+        // console.log(pending)
+
+        pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />)
+
+        setUnapprovedState(pending)
+        // console.log(unapprovedState)
+        // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
+
+      } catch (error) {
+        console.error('Error fetching unapproved data:', error);
+      }
+    }
+    
+    fetchPending();    
+    fetchApproved();
+
+  }, [setUserIdState, tempUserId, confirmedMeals, pendingInvite]);
+
 
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
 
@@ -85,7 +129,7 @@ const HomePage = ({id}) => {
         </div>
         <div id='greeting-container'>
           {/* Hello, FirstName or Perferred name */}
-          <h1 className='firstName'>hello {userObj.firstName},</h1>
+          {/* <h1 className='firstName'>hello {userObj.firstName},</h1> */}
         </div>
       </div>
       <div id='eventBtn-flex'>
@@ -122,17 +166,17 @@ const HomePage = ({id}) => {
             
             {/* Should display only one at a time for now */}
         <div id='upcoming-container'>
-              {/* component */}
-              {!upcomingState ? <></> : upcoming}
-              {!pendingState ? <></> : pending}
-
-              {/* <UpcomingEvent /> */}
+          {/* component */}
+          {!upcomingState ? <></> : approvedState}
+          {!pendingState ? <></> : unapprovedState}
+          {/* {mealState} */}
         </div>
         {/* </div> */}
 
       </div>
       <div className='miscLinks'>
-        <div className='link-container'>
+        {/* deprecated because there is already a cal icon at the bottom of the screen */}
+        {/* <div className='link-container'>
           <a 
             href='reddit.com'
             id='calLink'
@@ -141,7 +185,7 @@ const HomePage = ({id}) => {
             src={CalIcon}
             id='smallCalIcon'  
           />Go to Calendar</a>
-        </div>
+        </div> */}
         {/* weather API in lieu of covid19 api */}
         <div id='weatherAPI-container'>
           <h1> weatherAPI </h1>

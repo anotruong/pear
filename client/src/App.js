@@ -21,7 +21,7 @@ import RestaurantPage from './pages/search/restaurantPage';
 
 function App() {
   // state for user
-  const [ userIdState, setUserIdState ] = useState('');
+  const [ userIdState, setUserIdState ] = useState("");
 
   // state for Navigation bar
   const [ homeBtn, setHomeBtn ] = useState(true);
