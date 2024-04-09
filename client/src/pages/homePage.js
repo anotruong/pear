@@ -39,58 +39,108 @@ const HomePage = ({id}) => {
 
 
   // cause 'useEffect' to re-render.
-  setUserIdState(tempUserId);
+  // setUserIdState(tempUserId);
 
-  let confirmedMeals = mockData.confirmedMeals[userIdState];
+  // let confirmedMeals = mockData.confirmedMeals[userIdState];
   let pendingInvite = mockData.pendingInvite;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Set 'userIdState' to 'tempUserId' if it's not already set
+        if (!userIdState) {
+          setUserIdState(tempUserId);
+        }
+
+        // Fetch confirmed meals based on the updated 'userIdState'
+        const confirmedMeals = mockData.confirmedMeals[userIdState];
+
+        // console.log(confirmedMeals)
+        // Filter and map approved events
+        const userInvites = await pendingInvite.filter(obj => confirmedMeals.map(ele => ele === obj.id));
+
+        console.log(userInvites)
+        const filteredApproved = userInvites.filter(obj => obj.pending === false && obj.userId1 === userIdState);
+        const approvedEvents = filteredApproved.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />);
+
+        // Update approvedState only if it's not the same as the current state
+        if (JSON.stringify(approvedEvents) !== JSON.stringify(approvedState)) {
+          setApprovedState(approvedEvents);
+        }
+
+        console.log(approvedState)
+
+        // Filter and map unapproved events
+        // const pending = pendingInvite.filter(obj => confirmedMeals === obj.id);
+        const filteredPending = userInvites.filter(obj => obj.pending === true && obj.userId1 === userIdState);
+        const unapprovedEvents = filteredPending.map((obj, idx) => <PendingEvent key={idx} value={obj} />);
+
+        // Update unapprovedState only if it's not the same as the current state
+        if (JSON.stringify(unapprovedEvents) !== JSON.stringify(unapprovedState)) {
+          setUnapprovedState(unapprovedEvents);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [setUserIdState, tempUserId, userIdState, pendingInvite, approvedState, unapprovedState]);
+
 
 
   // Update userIdState when component mounts (just for demonstration)
-  useEffect(() => {
-    setUserIdState(tempUserId); // Set 'userIdState' to 'tempUserId'
-    confirmedMeals = mockData.confirmedMeals[userIdState]
+  // useEffect(() => {
+  //   try {
+  //     // Set 'userIdState' to 'tempUserId' if it's not already set
+  //     if (!userIdState) {
+        
+  //       setUserIdState(tempUserId);
+  //     }    confirmedMeals = mockData.confirmedMeals[userIdState]
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
 
+  //   const fetchApproved = async () => {
+  //     try {
+  //       // let approvedInvite = await confirmedMeals.map(ele => pendingInvite.filter(obj => obj.id === ele && obj.pending === false));
+  //       let approvedInvite = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
+  //       approvedInvite = approvedInvite.filter(obj => obj.pending === false && obj.userId1 === userIdState)
+  //       // console.log(approvedInvite)
 
-    const fetchApproved = async () => {
-      try {
-        // let approvedInvite = await confirmedMeals.map(ele => pendingInvite.filter(obj => obj.id === ele && obj.pending === false));
-        let approvedInvite = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
-        approvedInvite = approvedInvite.filter(obj => obj.pending === false && obj.userId1 === userIdState)
-        // console.log(approvedInvite)
+  //       approvedInvite = approvedInvite.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
 
-        approvedInvite = approvedInvite.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
+  //       setApprovedState(approvedInvite)
+  //       // console.log(approvedState)
+  //       // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
 
-        setApprovedState(approvedInvite)
-        // console.log(approvedState)
-        // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
+  //     } catch (error) {
+  //       console.error('Error fetching approved data:', error);
+  //     }
+  //   }
 
-      } catch (error) {
-        console.error('Error fetching approved data:', error);
-      }
-    }
+  //   const fetchPending = async () => {
+  //     try {
 
-    const fetchPending = async () => {
-      try {
+  //       let pending = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
+  //       pending = pending.filter(obj => obj.pending === true && obj.userId1 === userIdState)
+  //       // console.log(pending)
 
-        let pending = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
-        pending = pending.filter(obj => obj.pending === true && obj.userId1 === userIdState)
-        // console.log(pending)
+  //       pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />)
 
-        pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />)
+  //       setUnapprovedState(pending)
+  //       // console.log(unapprovedState)
+  //       // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
 
-        setUnapprovedState(pending)
-        // console.log(unapprovedState)
-        // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
-
-      } catch (error) {
-        console.error('Error fetching unapproved data:', error);
-      }
-    }
+  //     } catch (error) {
+  //       console.error('Error fetching unapproved data:');
+  //     }
+  //   }
     
-    fetchPending();    
-    fetchApproved();
+  //   fetchPending();    
+  //   fetchApproved();
 
-  }, [setUserIdState, tempUserId, confirmedMeals, pendingInvite]);
+  // }, [setUserIdState, tempUserId, confirmedMeals, pendingInvite]);
 
 
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';

@@ -17,11 +17,11 @@ const PendingEvent = (obj) => {
   const lastIntial = userInfo2.lastName.slice(0, 1).toUpperCase();
   const lastName = lastIntial + userInfo2.lastName.slice(1);
   const name = firstName + ' ' + lastName;
-  console.log(userInfo2)
+  // console.log(userInfo2)
   const restId = acc.restId;
   const restInfo = mockData.restaurants.filter(obj => obj.id === restId)[0];
   const restName = restInfo.name;
-  console.log(restInfo)
+  // console.log(restInfo)
   const meal = categorizeMeal(acc.date);
   const time = acc.time;
 
