@@ -65,4 +65,4 @@ test("renders 'accepted your request to eat together.' to the screen", () => {
 // });
 
 // future nice to test: 
-// simulate button click events on the Chat and Connect buttons
+// simulate button click events on the Chat and Connect buttons  
