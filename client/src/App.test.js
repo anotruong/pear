@@ -64,5 +64,5 @@ test("renders 'accepted your request to eat together.' to the screen", () => {
 //   expect(scheduleConfirmLocation).toBeInTheDocument();
 // });
 
-//future nice to test: 
-//simulate button click events on the Chat and Connect buttons
+// future nice to test: 
+// simulate button click events on the Chat and Connect buttons
