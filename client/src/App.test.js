@@ -43,7 +43,7 @@ test("renders 'username' to be on the screen.'", () => {
 test("renders 'accepted your request to eat together.' to the screen", () => {
   render(<RequestConfirm />);
   const requestConfirmHeaderAcceptMsg = screen.getByText(/accepted your request to eat together./i);
-  expect(requestConfirmHeaderAcceptMsg).toBeInTheDocument();
+  expect(requestConfirmHeaderAcceptMsg).toBeInTheDocument()
 });
 
 /* This test fails. I would like for this test to confirm an image is on the screen*/
