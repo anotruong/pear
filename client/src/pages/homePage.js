@@ -29,6 +29,10 @@ const HomePage = ({id}) => {
   // hook for login 'userId'
   const { userIdState, setUserIdState } = useContext(appContext);
 
+  // state for userAcc
+  const [ firstName, setfirstName ] = useState('');
+
+
   // state for divs
   const [ approvedState , setApprovedState ] = useState([]);
   const [ unapprovedState , setUnapprovedState ] = useState([]);
@@ -38,18 +42,21 @@ const HomePage = ({id}) => {
   const { pendingState, setPendingState } = useContext(appContext);
 
 
-  // cause 'useEffect' to re-render.
-  // setUserIdState(tempUserId);
-
-  // let confirmedMeals = mockData.confirmedMeals[userIdState];
   let pendingInvite = mockData.pendingInvite;
 
+  // cause 'useEffect' to re-render.
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Set 'userIdState' to 'tempUserId' if it's not already set
         if (!userIdState) {
           setUserIdState(tempUserId);
+        }
+
+        if (!firstName) {
+          const account = mockData.accounts.filter(obj => obj.id === userIdState)[0];
+
+          setfirstName(account.firstName);
         }
 
         // Fetch confirmed meals based on the updated 'userIdState'
@@ -59,7 +66,7 @@ const HomePage = ({id}) => {
         // Filter and map approved events
         const userInvites = await pendingInvite.filter(obj => confirmedMeals.map(ele => ele === obj.id));
 
-        console.log(userInvites)
+        // console.log(userInvites)
         const filteredApproved = userInvites.filter(obj => obj.pending === false && obj.userId1 === userIdState);
         const approvedEvents = filteredApproved.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />);
 
@@ -68,7 +75,7 @@ const HomePage = ({id}) => {
           setApprovedState(approvedEvents);
         }
 
-        console.log(approvedState)
+        // console.log(approvedState)
 
         // Filter and map unapproved events
         // const pending = pendingInvite.filter(obj => confirmedMeals === obj.id);
@@ -87,61 +94,7 @@ const HomePage = ({id}) => {
     fetchData();
   }, [setUserIdState, tempUserId, userIdState, pendingInvite, approvedState, unapprovedState]);
 
-
-
-  // Update userIdState when component mounts (just for demonstration)
-  // useEffect(() => {
-  //   try {
-  //     // Set 'userIdState' to 'tempUserId' if it's not already set
-  //     if (!userIdState) {
-        
-  //       setUserIdState(tempUserId);
-  //     }    confirmedMeals = mockData.confirmedMeals[userIdState]
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-
-  //   const fetchApproved = async () => {
-  //     try {
-  //       // let approvedInvite = await confirmedMeals.map(ele => pendingInvite.filter(obj => obj.id === ele && obj.pending === false));
-  //       let approvedInvite = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
-  //       approvedInvite = approvedInvite.filter(obj => obj.pending === false && obj.userId1 === userIdState)
-  //       // console.log(approvedInvite)
-
-  //       approvedInvite = approvedInvite.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
-
-  //       setApprovedState(approvedInvite)
-  //       // console.log(approvedState)
-  //       // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
-
-  //     } catch (error) {
-  //       console.error('Error fetching approved data:', error);
-  //     }
-  //   }
-
-  //   const fetchPending = async () => {
-  //     try {
-
-  //       let pending = await pendingInvite.filter(obj => confirmedMeals.map(ele => obj.id === ele))
-  //       pending = pending.filter(obj => obj.pending === true && obj.userId1 === userIdState)
-  //       // console.log(pending)
-
-  //       pending = pending.map((obj, idx) => <PendingEvent key={idx} value={obj} />)
-
-  //       setUnapprovedState(pending)
-  //       // console.log(unapprovedState)
-  //       // mealState.map((obj, idx) => <UpcomingEvent key={idx} value={obj} />)
-
-  //     } catch (error) {
-  //       console.error('Error fetching unapproved data:');
-  //     }
-  //   }
-    
-  //   fetchPending();    
-  //   fetchApproved();
-
-  // }, [setUserIdState, tempUserId, confirmedMeals, pendingInvite]);
-
+  // console.log(firstName)
 
   const colorGradient = 'linear-gradient(90deg, #FF884A, #FF7F98)';
 
@@ -179,7 +132,7 @@ const HomePage = ({id}) => {
         </div>
         <div id='greeting-container'>
           {/* Hello, FirstName or Perferred name */}
-          {/* <h1 className='firstName'>hello {userObj.firstName},</h1> */}
+          <h1 className='firstName'>hello {firstName},</h1>
         </div>
       </div>
       <div id='eventBtn-flex'>
