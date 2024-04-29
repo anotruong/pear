@@ -2,6 +2,7 @@
 import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
 import { appContext } from './hook/appContext';
+
 import StartPage from './pages/start/startPage';
 import LogInPage from './pages/start/loginPage';
 import SignUpPage from './pages/start/signupPage';
@@ -12,12 +13,17 @@ import HomePage from './pages/homePage';
 import Calendar from 'react-calendar';
 import ChatIndex from './pages/chat/index';
 
+import AddPage from './pages/add/addPage';
+
 import ProfilePage from './pages/profile/profile';
 import ConfirmRes from './components/confirmation/confirmRes';
 
-import './App.css';
 import Cancellation from './components/confirmation/cancellation';
 import RestaurantPage from './pages/search/restaurantPage';
+
+
+import './App.css';
+
 
 function App() {
   // state for user
@@ -120,6 +126,8 @@ function App() {
             - should be able to create a new invite and leave it open for nearby users to be notified. 
             - utilize yelp api for resturant location
             - */}
+
+          {addBtn ? <AddPage /> : <></>}
 
           {calBtn ? <CalendarPage /> : <></>}
           {/* <SearchPage /> */}
