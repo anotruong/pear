@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { appContext } from '../hook/appContext';
 import mockData from '../mock-data.json';
 import { categorizeMeal ,displayMonthDay } from './dateHandler';
@@ -7,18 +7,28 @@ import ProfileInvites from './invites/profileInvite';
 
 const MonthlyNotes = () => {
 
+  const { userIdState } = useContext(appContext);
+
+  // console.log(userIdState)
+
   const {eventDisplay} = useContext(appContext);
-  const tempUserId = "001";
+  // const tempUserId = "001";
   const today = new Date();
   const acc = (id) => mockData.accounts.filter(obj => obj.id === id);
 
-  const filteredTemp = mockData.confirmedMeals[tempUserId].map(ele => mockData.pendingInvite.filter(obj => obj.id === ele));
+  const filteredTemp = mockData.pendingInvite.filter(obj => mockData.confirmedMeals[userIdState].map(ele => ele === obj.id));
+
+  // let test1 = mockData.confirmedMeals[userIdState]
+  // console.log(mockData.pendingInvite.filter(obj => test1.map(ele => obj.id === ele)))
+
+  // console.log(mockData.confirmedMeals[userIdState].filter(ele ))
 
   // create a clone to prevent .map method from mutating object pointed by 'filteredTemp'
   let transformedTemp = JSON.parse(JSON.stringify(filteredTemp)); 
   
+  // mutate the value of 'date' from date obj to string for sorting
   transformedTemp = transformedTemp.map(obj => {
-    const accDate = new Date(obj[0].date);  
+    const accDate = new Date(obj.date);  
     let year = accDate.getFullYear();
     let month = (accDate.getMonth() + 1).toString().padStart(2, '0');
     let day = accDate.getDate().toString().padStart(2, '0');
@@ -35,24 +45,35 @@ const MonthlyNotes = () => {
   currentMonth = currentMonth.length === 2 ? currentMonth : '0' + currentMonth;
   // console.log(currentMonth)
 
-  const currentMonthEvents = sortedTemp.filter(obj => obj.date.slice(4, 6) == currentMonth);
+  let currentMonthEvents = sortedTemp.filter(obj => obj.date.slice(4, 6) == currentMonth);
+
+  // replace the value of 'date' with the obj value of 'date'.
+  currentMonthEvents= currentMonthEvents.map(ele => filteredTemp.filter(obj => ele.id === obj.id)[0])
+  currentMonthEvents= currentMonthEvents.filter(ele => userIdState === ele.userId1)
+
+
+  console.log(currentMonthEvents)
 
   // function 'agendaListObj' returns an object.
   let agendaListObj = currentMonthEvents.map(obj => {
     // console.log(obj)
   
-    const date = displayMonthDay(obj[0].date);
-    const dateObj = new Date(obj[0].date)
+    const dateObj = new Date(obj.date)
+    const date = displayMonthDay(obj.date);
+    // console.log(displayMonthDay((dateObj)))
+
+    // console.log(obj.date)
     // .setHours(0, 0, 0));
 
-    const meal = categorizeMeal(obj[0].time);
+    const meal = categorizeMeal(obj.time);
+    // console.log(acc(userIdState)[0].firstName.slice(0, 1).toUpperCase())
 
-    const firstName = `${acc(obj[0].userId)[0].firstName.slice(0, 1).toUpperCase()}${acc(obj[0].userId)[0].firstName.slice(1)}`
-    const lastInitial = acc(obj[0].userId)[0].lastName.slice(0, 1).toUpperCase();
+    const firstName = `${acc(userIdState)[0].firstName.slice(0, 1).toUpperCase()}${acc(userIdState)[0].firstName.slice(1)}`
+    const lastInitial = acc(userIdState)[0].lastName.slice(0, 1).toUpperCase();
     // console.log(obj)
-    const time = obj[0].time;
-    const userId = obj[0].userId;
-    const restId = obj[0].restId;
+    const time = obj.time;
+    const userId = obj.userId;
+    const restId = obj.restId;
 
     return {
       date,
@@ -88,7 +109,7 @@ const MonthlyNotes = () => {
 
   */
 
-  const displayNotes = (obj) =>  <li className='agenda'><b className='date'>{obj.date}</b> {obj.time}: {obj.meal} w/ {obj.firstName} {obj.lastInitial}.</li>;
+  const displayNotes = (obj) =>  <li className='agenda'><b className='date'>{obj.date}</b> {obj.time}: {obj.meal} w/ {obj.firstName} {obj.lastInitial}</li>;
 
   let monthlyEvents = agendaListObj.length === 0 ? "You have no meals planned for this month yet" : agendaListObj.map(obj => displayNotes(obj));
 

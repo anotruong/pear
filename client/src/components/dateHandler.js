@@ -112,6 +112,7 @@ export const displayDate = (str) => {
 
 export const displayMonthDay = (dateString) => {
   const dateObject = new Date(dateString);
+  // console.log(dateString)
 
   // Get month and day in two-digit format
   const month = String(dateObject.getMonth() + 1).padStart(2, '0');

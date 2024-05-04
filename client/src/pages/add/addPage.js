@@ -17,11 +17,20 @@ const AddPage = () => {
   */
   return (
     <div id='addPage-container'>
+      <div id='yelp map'>
+        <h1>display map here</h1>
+      </div>
       <div id='addPage-form'>
-        <input type='text' placeholder='rest id'></input>
-        <input type='text' placeholder='time'></input>
-        <input type='text' placeholder='date'></input>
-
+        <div id='form' className='form signUp'>
+          {/* The function should search for a restaurant id */}
+          <input type='text' id='restId-form' className='forms' placeholder='rest id'></input>
+        </div>
+        <div id='form' className='form signUp'>
+          <input type='text' id='restId-form' className='forms' placeholder='time'></input>
+        </div>
+        <div id='form' className='form signUp'>
+          <input type='text' id='date-form' className='forms' placeholder='date'></input>
+        </div>
       </div>
       <NaviBar />
     </div>

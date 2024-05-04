@@ -17,22 +17,9 @@ function CalendarDays(props) {
   const filteredTemp = confirmedMeals[tempUserId]
     .map(ele => mockData.pendingInvite.filter(obj => obj.id === ele))
 
-  // create a, clone to prevent .map method from mutating object pointed by 'filteredTemp'
-  // let transformedTemp = JSON.parse(JSON.stringify(filteredTemp)); 
-  
-  // transformedTemp = transformedTemp.map(obj => {
-  //   const accDate = new Date(obj[0].date);  
-  //   let year = accDate.getFullYear();
-  //   let month = (accDate.getMonth() + 1).toString().padStart(2, '0');
-  //   let day = accDate.getDate().toString().padStart(2, '0');
-  
-  //   let newDisplayDate = year + month + day;
-  //   obj.date = newDisplayDate;
-  //   // console.log(newDisplayDate);
-  //   return obj;
-  // });
+  // console.log(filteredTemp)
 
-  // console.log(currentMonth)
+  // create a, clone to prevent .map method from mutating object pointed by 'filteredTemp'
 
   let firstDayOfMonth = new Date(props.day.getFullYear(), props.day.getMonth(), 1);
   let weekdayOfFirstDay = firstDayOfMonth.getDay();
@@ -55,12 +42,12 @@ function CalendarDays(props) {
     let isTrue = filteredTemp.filter(obj => {
       let setHour = new Date(new Date(obj[0].date).setHours(0, 0, 0));
       // Coerce to date type twice because '.setHours' method coerces data to number type
-
+      // console.log(setHour)
       return setHour.toString() === dateArg.toString();
       // coerce to string type because primitive data types can strictly evaluate to each other while non-primitive data types evaluate by where the pointer is stored.
     })
-
-    return isTrue.length === 1;
+    console.log(isTrue)
+    return isTrue.length >= 1;
   };
 
   for (let day = 0; day < 42; day++) {
@@ -87,7 +74,7 @@ function CalendarDays(props) {
     // console.log(calendarDay)
   }
   // bottom few lines of code handles the highlight when 'selected' ele is clicked
-  currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
+  // currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
   let count = todayIdx;
   // console.log(todayIdx)
 
@@ -126,7 +113,7 @@ function CalendarDays(props) {
   */
 
 
-
+// console.log(currentDays)
 
   currentDays.map((day, idx) => {
     /* if the 'todayDate' is a smaller number than the element, && if the idx is divisible by then allow the border radius to be blocked
