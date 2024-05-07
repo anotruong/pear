@@ -46,7 +46,7 @@ function CalendarDays(props) {
       return setHour.toString() === dateArg.toString();
       // coerce to string type because primitive data types can strictly evaluate to each other while non-primitive data types evaluate by where the pointer is stored.
     })
-    console.log(isTrue)
+    // console.log(isTrue)
     return isTrue.length >= 1;
   };
 
@@ -74,18 +74,16 @@ function CalendarDays(props) {
     // console.log(calendarDay)
   }
   // bottom few lines of code handles the highlight when 'selected' ele is clicked
-  // currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
+  currentDays.forEach((ele, idx) => ele.selected ? todayIdx = idx : "");
+
   let count = todayIdx;
-  // console.log(todayIdx)
 
   while (count > 0) {
     const daysInWeek = 7;
-    // console.log(todayIdx);
+
     todayIdxArr.push(count)
     count = count - daysInWeek;
   }
-  // let tempId = 22;
-
   // console.log(todayIdxArr.some(ele => tempId === ele ))
 
   /* Create a function that would insert a break in the line of divs.
@@ -112,8 +110,6 @@ function CalendarDays(props) {
 
   */
 
-
-// console.log(currentDays)
 
   currentDays.map((day, idx) => {
     /* if the 'todayDate' is a smaller number than the element, && if the idx is divisible by then allow the border radius to be blocked
